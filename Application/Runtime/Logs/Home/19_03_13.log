@@ -1,0 +1,49 @@
+[ 2019-03-13T10:01:49+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000870s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002363s ]
+SQL: SHOW COLUMNS FROM `home_image` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `home_image` WHERE ( id not in (select max(id) from home_image) ) ORDER BY id desc  [ RunTime:0.0033s ]
+SQL: SELECT * FROM `home_image` WHERE ( id in (select max(id) from home_image) ) LIMIT 1   [ RunTime:0.0027s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `home_image` LIMIT 1   [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `contact_us` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `contact_us` LIMIT 1   [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `news` WHERE ( content != '' ) ORDER BY save_time desc LIMIT 4   [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `center_introduction` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `center_introduction` LIMIT 1   [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `lab_image` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `lab_image` ORDER BY id desc  [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `inspection_scope` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `inspection_scope` WHERE ( content !='' ) ORDER BY save_time desc LIMIT 4   [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `footer` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `footer` LIMIT 1   [ RunTime:0.0032s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+NOTIC: [8] Undefined variable: rs C:\BUPT\PHP\WAMPserver\www\jcweb\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 366 行.
+NOTIC: [8] Undefined variable: rs C:\BUPT\PHP\WAMPserver\www\jcweb\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 368 行.
+NOTIC: [8] Undefined variable: rs C:\BUPT\PHP\WAMPserver\www\jcweb\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 370 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019784s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019895s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000879s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000985s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001340s ]
+
+[ 2019-03-13T10:01:49+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000918s ]
+
+[ 2019-03-13T19:15:03+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000847s ]
+

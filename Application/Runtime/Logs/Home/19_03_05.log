@@ -1,0 +1,225 @@
+[ 2019-03-05T10:42:41+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000083s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001804s ]
+
+[ 2019-03-05T11:08:02+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000810s ]
+SQL: SHOW COLUMNS FROM `home_image` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `home_image` WHERE ( id not in (select max(id) from home_image) ) ORDER BY id desc  [ RunTime:0.0025s ]
+SQL: SELECT * FROM `home_image` WHERE ( id in (select max(id) from home_image) ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `home_image` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `contact` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `contact` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `information` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `information` WHERE ( if_special = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `information` WHERE ( id = 21 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `information` WHERE ( type = 1 and information_images_path != ""  ) ORDER BY id desc LIMIT 0,9   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000260s ]
+NOTIC: [8] Use of undefined constant d - assumed 'd' C:\BUPT\PHP\WAMPserver\www\jcweb\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 138 行.
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' C:\BUPT\PHP\WAMPserver\www\jcweb\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 139 行.
+NOTIC: [8] Use of undefined constant m - assumed 'm' C:\BUPT\PHP\WAMPserver\www\jcweb\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 139 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\jcweb\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\jcweb\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\jcweb\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\jcweb\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024878s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000796s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001336s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001496s ]
+
+[ 2019-03-05T11:08:02+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/jiancai.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+
+[ 2019-03-05T18:40:36+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001261s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001827s ]
+SQL: SHOW COLUMNS FROM `home_image` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `home_image` WHERE ( id not in (select max(id) from home_image) ) ORDER BY id desc  [ RunTime:0.0061s ]
+SQL: SELECT * FROM `home_image` WHERE ( id in (select max(id) from home_image) ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `home_image` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `contact_us` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `contact_us` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `news` WHERE ( content != '' ) ORDER BY save_time desc LIMIT 4   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `center_introduction` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `center_introduction` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lab_image` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `lab_image` ORDER BY id desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `inspection_scope` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `inspection_scope` WHERE ( content !='' ) ORDER BY save_time desc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `footer` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `footer` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016765s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016874s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001188s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001740s ]
+
+[ 2019-03-05T18:40:36+08:00 ] 127.0.0.1 /Public/picture/lab_image/20130301082708_76145.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+
+[ 2019-03-05T18:40:36+08:00 ] 127.0.0.1 /Public/picture/lab_image/1549161903(1).jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+
+[ 2019-03-05T18:40:36+08:00 ] 127.0.0.1 /Public/picture/lab_image/1549161859(1).jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+
+[ 2019-03-05T18:40:49+08:00 ] 127.0.0.1 /Home/Information/introduction
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+SQL: SHOW COLUMNS FROM `footer` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `footer` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `center_introduction` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `center_introduction` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007996s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008106s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000689s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000776s ]
+
+[ 2019-03-05T18:40:52+08:00 ] 127.0.0.1 /Home/Information/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `footer` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `footer` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `news` WHERE ( type=0 ) ORDER BY id desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( type = 0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `news` WHERE ( type=1 ) ORDER BY id desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `news` WHERE ( type = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010954s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011064s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000680s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000768s ]
+
+[ 2019-03-05T18:40:59+08:00 ] 127.0.0.1 /Home/Information/process
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000629s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000750s ]
+SQL: SHOW COLUMNS FROM `footer` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `footer` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `inspection_process` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `inspection_process` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009368s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009474s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000683s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000773s ]
+
+[ 2019-03-05T18:41:03+08:00 ] 127.0.0.1 /Home/Information/scope
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `footer` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `footer` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `inspection_scope` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `inspection_scope` ORDER BY id desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `inspection_scope` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026142s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026276s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000766s ]
+
+[ 2019-03-05T18:41:05+08:00 ] 127.0.0.1 /Home/Information/file
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `footer` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `footer` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `file_download` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `file_download` WHERE ( type=0 ) ORDER BY id desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `file_download` WHERE ( type = 0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `file_download` WHERE ( type=1 ) ORDER BY id desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `file_download` WHERE ( type = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029450s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000670s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000759s ]
+

@@ -1,0 +1,805 @@
+[ 2019-01-15T11:10:09+08:00 ] ::1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0126s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000434s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018472s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000864s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001632s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001848s ]
+
+[ 2019-01-15T11:10:09+08:00 ] ::1 /index.php/admin/account/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0032s ]
+NOTIC: [8] Undefined variable: body /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AccountController.class.php 第 20 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005952s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006035s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000458s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000529s ]
+
+[ 2019-01-15T11:10:10+08:00 ] ::1 /index.php/admin/Account/yzmCode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009884s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001955s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001337s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001672s ]
+
+[ 2019-01-15T11:10:44+08:00 ] ::1 /index.php/admin/account/doLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000510s ]
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `common_system_user` WHERE `username` = 'admin' AND `passwd` = 'dd6e5e5918e94d997c686fcebc56922f' AND `status` = 1 LIMIT 1   [ RunTime:0.0017s ]
+
+[ 2019-01-15T11:10:44+08:00 ] ::1 /index.php/admin/Account/yzmCode.html?0.630609189333847
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000695s ]
+
+[ 2019-01-15T11:10:58+08:00 ] ::1 /index.php/admin/account/doLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+
+[ 2019-01-15T11:10:58+08:00 ] ::1 /index.php/admin/Account/yzmCode.html?0.502482526279832
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000843s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000997s ]
+
+[ 2019-01-15T11:11:01+08:00 ] ::1 /index.php/admin/Account/yzmCode.html?0.6301326431587182
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000878s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001025s ]
+
+[ 2019-01-15T11:11:03+08:00 ] ::1 /index.php/admin/Account/yzmCode.html?0.3503821353972112
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000732s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000863s ]
+
+[ 2019-01-15T11:11:04+08:00 ] ::1 /index.php/admin/Account/yzmCode.html?0.08892273070731016
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000535s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000640s ]
+
+[ 2019-01-15T11:11:11+08:00 ] ::1 /index.php/admin/account/doLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+
+[ 2019-01-15T11:11:11+08:00 ] ::1 /index.php/admin/Account/yzmCode.html?0.38460554788732515
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000523s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000614s ]
+
+[ 2019-01-15T11:11:18+08:00 ] ::1 /index.php/admin/account/doLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000089s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000885s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000515s ]
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `common_system_user` WHERE `username` = 'admin' AND `passwd` = 'bced6fd149cfcdb85741768da12e41c6' AND `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `common_system_user` SET `login_time`='2019-01-15 11:11:18' WHERE ( id=1 ) [ RunTime:0.0033s ]
+NOTIC: [8] Undefined variable: role /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AccountController.class.php 第 52 行.
+NOTIC: [8] Undefined variable: role /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AccountController.class.php 第 56 行.
+NOTIC: [8] Undefined variable: menus /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AccountController.class.php 第 59 行.
+
+[ 2019-01-15T11:11:18+08:00 ] ::1 /index.php/admin/account/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0043s ]
+
+[ 2019-01-15T11:11:18+08:00 ] ::1 /index.php/admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0024s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009154s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009255s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000553s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000637s ]
+
+[ 2019-01-15T11:11:18+08:00 ] ::1 /admin/main/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0033s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011124s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011229s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000830s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001012s ]
+
+[ 2019-01-15T11:11:18+08:00 ] ::1 /index.php/admin/auth/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003863s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004020s ]
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `common_admin_nav` [ RunTime:0.0068s ]
+SQL: SELECT `id`,`name`,pid as parentid,`url`,`status`,`addtime`,`disorder`,`path`,`icon` FROM `common_admin_nav` WHERE ( status=1 ) ORDER BY pid asc,disorder asc  [ RunTime:0.0025s ]
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [2] strrchr() expects exactly 2 parameters, 1 given /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 511 行.
+NOTIC: [8] Undefined offset: 39 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 39 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 39 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 39 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 1 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 224 行.
+NOTIC: [8] Undefined offset: 39 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 39 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 1 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 224 行.
+NOTIC: [8] Undefined offset: 39 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 39 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 94 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 94 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 94 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 99 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 99 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 99 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 99 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 99 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 99 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 100 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 100 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 100 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 100 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 100 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 100 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 100 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+NOTIC: [8] Undefined offset: 109 /Applications/MAMP/htdocs/cj/Application/Admin/Controller/AuthController.class.php 第 214 行.
+
+[ 2019-01-15T11:11:18+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521878502
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000627s ]
+
+[ 2019-01-15T11:11:22+08:00 ] ::1 /admin/main/lunbo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000515s ]
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `home_image` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `home_image` LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `home_image` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+NOTIC: [8] Undefined variable: centreno /Applications/MAMP/htdocs/cj/Application/Runtime/Cache/Admin/693fb95b42aef6a4f677611d1562b6e3.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011108s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011198s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000185s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000723s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000828s ]
+
+[ 2019-01-15T11:11:22+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521882856
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000547s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000540s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000652s ]
+
+[ 2019-01-15T11:11:27+08:00 ] ::1 /admin/edit/aboutus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0021s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000254s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007981s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008117s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000785s ]
+
+[ 2019-01-15T11:11:27+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521887412
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000998s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000534s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000679s ]
+
+[ 2019-01-15T11:11:36+08:00 ] ::1 /index.php/admin/edit/introduction.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `aboutus` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `aboutus` WHERE ( type = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000228s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000359s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014991s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015099s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001146s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001401s ]
+
+[ 2019-01-15T11:11:36+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521896922
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0048s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001193s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001454s ]
+
+[ 2019-01-15T11:12:08+08:00 ] ::1 /index.php/admin/edit/saveIntroduction.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `aboutus` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `aboutus` WHERE ( type = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `aboutus` SET `content`='<p style=\"margin-top: 10px; margin-bottom: 10px; text-align: left; line-height: 2em;\"><span style=\"font-family: Arial; font-size: 18px;\"></span></p><p style=\"margin-left: 28px; text-align: left; line-height: 2em;\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\"><span style=\"color: rgb(0, 0, 0); font-size: 18px; font-family: 楷体, 楷体_GB2312, SimKai;\">愿景：成为中国高端化合物半导体材料与光电器件的领军企业</span></span></p><p style=\"margin-left: 28px; text-align: left; line-height: 2em;\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\"><span style=\"color: rgb(0, 0, 0); font-size: 18px; font-family: 楷体, 楷体_GB2312, SimKai;\">使命：引领材料方向、服务智能创造</span></span></p><p style=\"margin-left: 28px; text-align: left; line-height: 2em;\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\"><span style=\"color: rgb(0, 0, 0); font-size: 18px; font-family: 楷体, 楷体_GB2312, SimKai;\">核心价值观：求实 进取 创新 协同</span></span></p><p style=\"text-indent: 32px; text-align: left; line-height: 2em;\"><span style=\"color: rgb(0, 0, 0); font-size: 18px; font-family: 宋体, SimSun;\">超晶科技（北京）有限公司（简称：超晶科技）是成立于2015年，由国家千人计划特聘专家、业内多名科学家和行业专家组成国际化的技术团队，专注于为用户提供自主研制高性能化合物半导体材料和半导体光电器件。</span></p><p style=\"text-indent: 32px; text-align: left; line-height: 2em;\"><span style=\"color: rgb(0, 0, 0); font-size: 18px; font-family: 宋体, SimSun;\">2017年，公司投资建设了千余平米的超净间，构建了材料外延、器件工艺、电路设计和封装测试的完整技术链，打造了全球一流水平的半导体材料、化合物芯片与光电器件的生产线，为提升我国在本领域的技术能力与产品水平作出应有的贡献。</span></p>',`type`='1',`save_time`='2019-01-15 11:12:08' WHERE ( type = 1 ) [ RunTime:0.0043s ]
+
+[ 2019-01-15T11:12:10+08:00 ] ::1 /index.php/admin/edit/introduction.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000464s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `aboutus` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `aboutus` WHERE ( type = 1 ) LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000325s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000517s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009186s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009364s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001487s ]
+
+[ 2019-01-15T11:12:10+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521930169
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000514s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0047s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000769s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000928s ]
+
+[ 2019-01-15T11:12:12+08:00 ] ::1 /admin/edit/aboutus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0034s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007347s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007470s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000602s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000709s ]
+
+[ 2019-01-15T11:12:12+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521932553
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000477s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000578s ]
+
+[ 2019-01-15T11:12:15+08:00 ] ::1 /admin/edit/show.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000549s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `aboutus` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `aboutus` WHERE ( type = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `aboutus` WHERE ( type = 2 )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: sortby /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 535 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000301s ]
+NOTIC: [8] Undefined variable: centreno /Applications/MAMP/htdocs/cj/Application/Runtime/Cache/Admin/42c67e22c0f3bf0d03f11e9cd77ded59.php 第 315 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011541s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011618s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000169s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000789s ]
+
+[ 2019-01-15T11:12:15+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521935660
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000561s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000755s ]
+
+[ 2019-01-15T11:12:25+08:00 ] ::1 /admin/edit/production
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `production` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `production` WHERE ( type = 'A' ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `production` WHERE ( type = 'A' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: pingtai /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 433 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000214s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000300s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011867s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011958s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000811s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000960s ]
+
+[ 2019-01-15T11:12:25+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521945273
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000950s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000670s ]
+
+[ 2019-01-15T11:12:29+08:00 ] ::1 /admin/edit/production?de=B
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `production` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `production` WHERE ( type = 'B' ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `production` WHERE ( type = 'B' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: pingtai /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 433 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009655s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009801s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000705s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000811s ]
+
+[ 2019-01-15T11:12:29+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521949295
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0047s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001026s ]
+
+[ 2019-01-15T11:12:31+08:00 ] ::1 /admin/edit/production?de=A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000503s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `production` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `production` WHERE ( type = 'A' ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `production` WHERE ( type = 'A' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: pingtai /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 433 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000268s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000447s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014196s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014285s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000188s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000636s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000742s ]
+
+[ 2019-01-15T11:12:31+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521951629
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000927s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0032s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000702s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000834s ]
+
+[ 2019-01-15T11:12:45+08:00 ] ::1 /admin/edit/production?de=B
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000505s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `production` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `production` WHERE ( type = 'B' ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `production` WHERE ( type = 'B' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: pingtai /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 433 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000261s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009233s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009314s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000172s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000563s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000658s ]
+
+[ 2019-01-15T11:12:45+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521965808
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0056s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000845s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001022s ]
+
+[ 2019-01-15T11:12:50+08:00 ] ::1 /index.php/admin/edit/addProduction.html?id=13&de=B
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001106s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `production` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `production` WHERE ( id=13 ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008786s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008999s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000172s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000709s ]
+
+[ 2019-01-15T11:12:50+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521970322
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000650s ]
+
+[ 2019-01-15T11:13:18+08:00 ] ::1 /admin/edit/information
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `information` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `information` WHERE ( type = 1 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `information` WHERE ( type = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+NOTIC: [8] Use of undefined constant A - assumed 'A' /Applications/MAMP/htdocs/cj/Application/Runtime/Cache/Admin/329b2d785dcbb7cda36da04d40218ddc.php 第 300 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010343s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010427s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000169s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000666s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000767s ]
+
+[ 2019-01-15T11:13:18+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547521998575
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000513s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000617s ]
+
+[ 2019-01-15T11:13:23+08:00 ] ::1 /index.php/admin/edit/addInformation.html?id=21
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+NOTIC: [2] Declaration of Admin\Controller\EditController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/EditController.class.php 第 591 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `information` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `information` WHERE ( id =21 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000285s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008586s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008677s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000634s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000753s ]
+
+[ 2019-01-15T11:13:23+08:00 ] ::1 /index.php/Admin/Uploader/ueditor.html?action=config&&noCache=1547522003606
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+NOTIC: [2] include(exif.php): failed to open stream: No such file or directory /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+NOTIC: [2] include(): Failed opening 'exif.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php7.0.15/lib/php') /Applications/MAMP/htdocs/cj/Application/Admin/Controller/UploaderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `common_system_user` [ RunTime:0.0036s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000483s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000585s ]
+

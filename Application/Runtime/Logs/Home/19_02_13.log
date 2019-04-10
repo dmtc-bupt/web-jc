@@ -1,0 +1,318 @@
+[ 2019-02-13T09:40:31+08:00 ] 127.0.0.1 /home/Information/information
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001142s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001847s ]
+SQL: SHOW COLUMNS FROM `contact` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `contact` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `information` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `information` WHERE ( type = 1 ) ORDER BY id desc LIMIT 0,9   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `information` WHERE ( type = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000195s ]
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\01a1e56ae010515f5125848dc37f4991.php 第 148 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\01a1e56ae010515f5125848dc37f4991.php 第 148 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\01a1e56ae010515f5125848dc37f4991.php 第 148 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\01a1e56ae010515f5125848dc37f4991.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015409s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015508s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001403s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001564s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001805s ]
+
+[ 2019-02-13T09:40:32+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/touzi.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001033s ]
+
+[ 2019-02-13T09:40:32+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/byc3.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+
+[ 2019-02-13T09:40:32+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/jiancai.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000890s ]
+
+[ 2019-02-13T09:40:32+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/sichuan.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+
+[ 2019-02-13T16:22:13+08:00 ] 127.0.0.1 /index.php/home/Information/informationDetail.html?type=1&id=23
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000953s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001542s ]
+SQL: SHOW COLUMNS FROM `information` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `information` WHERE ( id =23 ) LIMIT 1   [ RunTime:0.0036s ]
+SQL: SELECT * FROM `information` WHERE ( id > 23 and type =1 ) ORDER BY id desc LIMIT 1   [ RunTime:0.0037s ]
+SQL: SELECT * FROM `information` WHERE ( id < 23 and type =1 ) ORDER BY id desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `information` WHERE ( id != 23 and type =1 ) ORDER BY id desc LIMIT 0,3   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `contact` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `contact` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000596s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000707s ]
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\983ea44cbb7a9a53bf4107ae27efd783.php 第 163 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\983ea44cbb7a9a53bf4107ae27efd783.php 第 184 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\983ea44cbb7a9a53bf4107ae27efd783.php 第 184 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\983ea44cbb7a9a53bf4107ae27efd783.php 第 184 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021300s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021402s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001093s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001333s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001437s ]
+
+[ 2019-02-13T16:22:13+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/byc3.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+
+[ 2019-02-13T16:22:13+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/touzi2.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000671s ]
+
+[ 2019-02-13T16:22:13+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/jiancai.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+
+[ 2019-02-13T16:22:13+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/sichuan.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+
+[ 2019-02-13T22:16:41+08:00 ] 127.0.0.1 /index.php/home/Information/informationDetail.html?type=1&id=23
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001936s ]
+SQL: SHOW COLUMNS FROM `information` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `information` WHERE ( id =23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `information` WHERE ( id > 23 and type =1 ) ORDER BY id desc LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `information` WHERE ( id < 23 and type =1 ) ORDER BY id desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `information` WHERE ( id != 23 and type =1 ) ORDER BY id desc LIMIT 0,3   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `contact` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `contact` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000306s ]
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\983ea44cbb7a9a53bf4107ae27efd783.php 第 163 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\983ea44cbb7a9a53bf4107ae27efd783.php 第 184 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\983ea44cbb7a9a53bf4107ae27efd783.php 第 184 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\983ea44cbb7a9a53bf4107ae27efd783.php 第 184 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018718s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018826s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001229s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001324s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001573s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001681s ]
+
+[ 2019-02-13T22:16:41+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/touzi2.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+
+[ 2019-02-13T22:16:41+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/byc3.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+
+[ 2019-02-13T22:16:41+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/sichuan.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+
+[ 2019-02-13T22:16:42+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/jiancai.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+
+[ 2019-02-13T22:16:57+08:00 ] 127.0.0.1 /home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `home_image` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `home_image` WHERE ( id not in (select max(id) from home_image) ) ORDER BY id desc  [ RunTime:0.0017s ]
+SQL: SELECT * FROM `home_image` WHERE ( id in (select max(id) from home_image) ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `home_image` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `contact` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `contact` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `information` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `information` WHERE ( if_special = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `information` WHERE ( id = 21 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `information` WHERE ( type = 1 and information_images_path != ""  ) ORDER BY id desc LIMIT 0,9   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+NOTIC: [8] Use of undefined constant d - assumed 'd' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 138 行.
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 139 行.
+NOTIC: [8] Use of undefined constant m - assumed 'm' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 139 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014363s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014460s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000818s ]
+
+[ 2019-02-13T22:16:57+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/jiancai.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000676s ]
+
+[ 2019-02-13T22:17:04+08:00 ] 127.0.0.1 /home/Information/information
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `contact` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `contact` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `information` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `information` WHERE ( type = 1 ) ORDER BY id desc LIMIT 0,9   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `information` WHERE ( type = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\01a1e56ae010515f5125848dc37f4991.php 第 148 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\01a1e56ae010515f5125848dc37f4991.php 第 148 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\01a1e56ae010515f5125848dc37f4991.php 第 148 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\01a1e56ae010515f5125848dc37f4991.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013308s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013409s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000685s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000776s ]
+
+[ 2019-02-13T22:17:04+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/touzi.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+
+[ 2019-02-13T22:17:04+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/byc3.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001013s ]
+
+[ 2019-02-13T22:17:04+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/jiancai.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+
+[ 2019-02-13T22:17:04+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/sichuan.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+
+[ 2019-02-13T22:17:07+08:00 ] 127.0.0.1 /home/Information/production
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+SQL: SHOW COLUMNS FROM `contact` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `contact` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `production` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `production` WHERE ( type = "A" ) ORDER BY id desc LIMIT 0,12   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `production` WHERE ( type = "A" ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `production` WHERE ( type = "B" ) ORDER BY id desc LIMIT 0,12   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `production` WHERE ( type = "B" ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Undefined variable: service C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\93634bf83262b5e3a9f0c19b6e581665.php 第 188 行.
+NOTIC: [8] Undefined variable: service C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\93634bf83262b5e3a9f0c19b6e581665.php 第 196 行.
+NOTIC: [8] Undefined variable: service C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\93634bf83262b5e3a9f0c19b6e581665.php 第 204 行.
+NOTIC: [8] Undefined variable: service C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\93634bf83262b5e3a9f0c19b6e581665.php 第 212 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015099s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015217s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000729s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000812s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001390s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001567s ]
+
+[ 2019-02-13T22:17:07+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/dianying3.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+
+[ 2019-02-13T22:17:07+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/tubiao2.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+
+[ 2019-02-13T22:17:07+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/gongbao2.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+
+[ 2019-02-13T22:17:07+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/dili2.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+
+[ 2019-02-13T22:17:08+08:00 ] 127.0.0.1 /index.php/home/Information/productionDetail.html?type=A&id=15
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000515s ]
+SQL: SHOW COLUMNS FROM `production` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `production` WHERE ( id =15 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `contact` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `contact` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+NOTIC: [8] Use of undefined constant A - assumed 'A' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\4b5f5787049bf57f8c63cfe93d9456fa.php 第 123 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016369s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016490s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001249s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001398s ]
+

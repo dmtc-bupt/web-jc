@@ -1,0 +1,47 @@
+[ 2019-02-24T19:02:06+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001629s ]
+SQL: SHOW COLUMNS FROM `home_image` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `home_image` WHERE ( id not in (select max(id) from home_image) ) ORDER BY id desc  [ RunTime:0.0064s ]
+SQL: SELECT * FROM `home_image` WHERE ( id in (select max(id) from home_image) ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `home_image` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `contact` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `contact` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `information` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `information` WHERE ( if_special = 1 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `information` WHERE ( id = 21 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `information` WHERE ( type = 1 and information_images_path != ""  ) ORDER BY id desc LIMIT 0,9   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001320s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001485s ]
+NOTIC: [8] Use of undefined constant d - assumed 'd' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 138 行.
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 139 行.
+NOTIC: [8] Use of undefined constant m - assumed 'm' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 139 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+NOTIC: [8] Use of undefined constant Y年m月d日 - assumed 'Y年m月d日' C:\BUPT\PHP\WAMPserver\www\chaojing\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 168 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023114s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023226s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001168s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001265s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001505s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001635s ]
+
+[ 2019-02-24T19:02:06+08:00 ] 127.0.0.1 /Public/attached/2018-09-19/jiancai.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000719s ]
+
+[ 2019-02-24T19:02:16+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+
