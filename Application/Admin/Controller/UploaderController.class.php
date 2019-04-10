@@ -287,4 +287,29 @@ class UploaderController extends Controller {
             }
         }
     }
+    public function excelUpload($return=false){
+        $upload = new \Think\Upload();
+        $upload->maxSize   =     0 ;
+        $upload->exts      =     array('xls', 'xlsx');
+        $upload->rootPath  =      './Public/attached/'; // 设置附件上传根目录
+        $upload->savePath  =     '';
+        $upload->saveName = 'time';
+        $info   =   $upload->upload();
+        if(!$info) {// 上传错误提示错误信息
+            $array['info'] = $upload->getError();
+        }else{// 上传成功 获取上传文件信息
+            $saveUrl = './Public/attached/'.$info['file']['savepath'].$info['file']['savename'];
+//            $saveUrl = str_replace("ThinkPHP/","",$saveUrl);
+            $saveUrl = str_replace("/","\\",$saveUrl);
+            $array = array(
+                'info'=>'succ',
+                'save_path'=>$saveUrl,
+            );
+            if($return){
+                return $array;
+            }else{
+                echo json_encode($array);
+            }
+        }
+    }
 }

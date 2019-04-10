@@ -1,0 +1,41 @@
+<include file="Common:head" title="前台导航栏"/>
+<div class="picContainer">
+    <img src="__PUBLIC__/picture/notice.jpg" alt="标准化工作">
+    <a id="fix-title" href="">标准化工作</a>
+</div>
+<div class="container-two" id="container-content" style="position: relative" }>
+    <div class="col-xs-2 col-md-2 left-menu">
+        <ul>
+            <li><a href="/Home/Information/project">标准立项</a></li>
+            <li><a href="/Home/Information/issued">标准发布</a></li>
+            <li><a href="/Home/Information/dynamic">标准动态</a></li>
+        </ul>
+    </div>
+    <div class="col-xs-10 col-md-10 right-content">
+        <div class="breadcrumbs">
+            <div class="row">
+                <div class="col-lg-8 col-sm-8">
+                    <ol class="breadcrumb pull-left">
+                        <li>
+                            <i class="glyphicon glyphicon-home"></i><a href="/home/Index/index">主页</a>
+                        </li>
+                        <li>
+                            <a href="/home/Information/project">
+                               标准立项
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <a name="notice">标准</a></br>
+        </br>
+        <!--<volist name="scope" id="vo">-->
+            <!--<a href="{:U('/home/Information/scopeDetail')}?id={$vo['id']}" style="display: block;font-size: large" >{$vo.title}</a>-->
+            <!--<span>发布：{$vo.save_time}</span>-->
+            <!--</br>-->
+        <!--</volist>-->
+        <!--<nav>{$pagination}</nav>-->
+    </div>
+</div>
+<include file="Common:footer"/>

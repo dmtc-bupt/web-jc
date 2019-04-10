@@ -1,4 +1,8 @@
 <?php
+namespace Admin\Controller;
+use PHPExcel;
+use PHPExcel_IOFactory;
+use PHPExcel_Cell;
 /**
  * 检查当前用户是否登录
  */
@@ -287,9 +291,219 @@ if(!function_exists("humanTime")){
 /**
      * 密码加密
      */
-if(!function_exists("SHA256Hex")){
-    function SHA256Hex($str){
-        $re=hash('sha256', $str, true);
+if(!function_exists("SHA256Hex")) {
+    function SHA256Hex($str)
+    {
+        $re = hash('sha256', $str, true);
         return md5(bin2hex($re));
+    }
+
+//    /**
+//     * Export Excel | 2017.12.06
+//     * Author:武当山道士 <912900700@qq.com>
+//     * PHPExcel Version: 1.8
+//    +----------------------------------------------------------
+//     * @param {string} $expTitle     导出后的文件名前缀
+//     * @param {string} $expCellName  标题栏
+//     * @param {array}  $expTableData 内容数组
+//     */
+//    function export_excel($expTitle,$expCellName,$expTableData){
+//        $xlsTitle = iconv('utf-8', 'gb2312', $expTitle);//文件名称
+//        $fileName = $expTitle.date('_YmdHis');//or $xlsTitle 文件名称可根据自己情况设定
+//        $cellNum = count($expCellName);
+//        $dataNum = count($expTableData);
+//        vendor("PHPExcel.PHPExcel");
+//        $objPHPExcel = new PHPExcel();
+//        $cellName = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','AA','AB','AC','AD','AE','AF','AG','AH','AI','AJ','AK','AL','AM','AN','AO','AP','AQ','AR','AS','AT','AU','AV','AW','AX','AY','AZ');
+//
+//        $objPHPExcel->getActiveSheet(0)->mergeCells('A1:'.$cellName[$cellNum-1].'1');//合并单元格
+//        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A1', $expTitle.'  Export time:'.date('Y-m-d H:i:s'));
+//        for($i=0;$i<$cellNum;$i++){
+//            $objPHPExcel->setActiveSheetIndex(0)->setCellValue($cellName[$i].'2', $expCellName[$i][1]);
+//        }
+//        // Miscellaneous glyphs, UTF-8
+//        for($i=0;$i<$dataNum;$i++){
+//            for($j=0;$j<$cellNum;$j++){
+//                $objPHPExcel->getActiveSheet(0)->setCellValue($cellName[$j].($i+3), $expTableData[$i][$expCellName[$j][0]]);
+//            }
+//        }
+//
+//        ob_end_clean();//清除缓存,避免中文乱码 *************** 这一行非常重要 ******************************
+//
+//        header('pragma:public');
+//        header('Content-type:application/vnd.ms-excel;charset=utf-8;name="'.$xlsTitle.'.xls"');
+//        header("Content-Disposition:attachment;filename=$fileName.xls");//attachment新窗口打印inline本窗口打印
+//        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+//        $objWriter->save('php://output');
+//        exit;
+//    }
+//
+//    /**
+//     * Import Excel | 2017.12.06
+//     * Author:武当山道士 <912900700@qq.com>
+//     * PHPExcel Version: 1.8
+//    +----------------------------------------------------------
+//     * @param  {file}   $file  文件流
+//    +----------------------------------------------------------
+//     * @return {array}  $array 返回数组
+//    +----------------------------------------------------------
+//     */
+//    function import_excel($file){
+//        if(!file_exists($file)){
+//            return array("error"=>0,'message'=>'file not found!');
+//        }
+//        Vendor("PHPExcel.PHPExcel.IOFactory");
+//        $objReader = PHPExcel_IOFactory::createReader('Excel5');
+//        try{
+//            $PHPReader = $objReader->load($file);
+//        }catch(Exception $e){}
+//        if(!isset($PHPReader)) return array("error"=>0,'PHPReader'=>$PHPReader,'message'=>'read error!');
+//        $allWorksheets = $PHPReader->getAllSheets();
+//        $i = 0;
+//        foreach($allWorksheets as $objWorksheet){
+//            $sheetname=$objWorksheet->getTitle();
+//            $allRow = $objWorksheet->getHighestRow();//how many rows
+//            $highestColumn = $objWorksheet->getHighestColumn();//how many columns
+//            $allColumn = PHPExcel_Cell::columnIndexFromString($highestColumn);
+//            $array[$i]["Title"] = $sheetname;
+//            $array[$i]["Cols"] = $allColumn;
+//            $array[$i]["Rows"] = $allRow;
+//            $arr = array();
+//            $isMergeCell = array();
+//            foreach ($objWorksheet->getMergeCells() as $cells) {//merge cells
+//                foreach (PHPExcel_Cell::extractAllCellReferencesInRange($cells) as $cellReference) {
+//                    $isMergeCell[$cellReference] = true;
+//                }
+//            }
+//            for($currentRow = 1 ;$currentRow<=$allRow;$currentRow++){
+//                $row = array();
+//                for($currentColumn=0;$currentColumn<$allColumn;$currentColumn++){;
+//                    $cell =$objWorksheet->getCellByColumnAndRow($currentColumn, $currentRow);
+//                    $afCol = PHPExcel_Cell::stringFromColumnIndex($currentColumn+1);
+//                    $bfCol = PHPExcel_Cell::stringFromColumnIndex($currentColumn-1);
+//                    $col = PHPExcel_Cell::stringFromColumnIndex($currentColumn);
+//                    $address = $col.$currentRow;
+//                    $value = $objWorksheet->getCell($address)->getValue();
+//                    if(substr($value,0,1)=='='){
+//                        return array("error"=>0,'message'=>'can not use the formula!');
+//                        exit;
+//                    }
+//                    if($cell->getDataType()==PHPExcel_Cell_DataType::TYPE_NUMERIC){
+//                        $cellstyleformat=$cell->getParent()->getStyle( $cell->getCoordinate() )->getNumberFormat();
+//                        $formatcode=$cellstyleformat->getFormatCode();
+//                        if (preg_match('/^([$[A-Z]*-[0-9A-F]*])*[hmsdy]/i', $formatcode)) {
+//                            $value=gmdate("Y-m-d", PHPExcel_Shared_Date::ExcelToPHP($value));
+//                        }else{
+//                            $value=PHPExcel_Style_NumberFormat::toFormattedString($value,$formatcode);
+//                        }
+//                    }
+//                    if($isMergeCell[$col.$currentRow]&&$isMergeCell[$afCol.$currentRow]&&!empty($value)){
+//                        $temp = $value;
+//                    }elseif($isMergeCell[$col.$currentRow]&&$isMergeCell[$col.($currentRow-1)]&&empty($value)){
+//                        $value=$arr[$currentRow-1][$currentColumn];
+//                    }elseif($isMergeCell[$col.$currentRow]&&$isMergeCell[$bfCol.$currentRow]&&empty($value)){
+//                        $value=$temp;
+//                    }
+//                    $row[$currentColumn] = $value;
+//                }
+//                $arr[$currentRow] = $row;
+//            }
+//            $array[$i]["Content"] = $arr;
+//            $i++;
+//        }
+//        spl_autoload_register(array('Think','autoload'));//must, resolve ThinkPHP and PHPExcel conflicts
+//        unset($objWorksheet);
+//        unset($PHPReader);
+//        unset($PHPExcel);
+//        unlink($file);
+//        return array("error"=>1,"data"=>$array);
+//    }
+}
+if(!function_exists("uplExcel")) {
+     function plExcel($filepath)
+    {
+//        vendor(PHPExcel.PHPExcel.IOFactory);
+//        vendor(PHPExcel.PHPExcel);
+//        vendor(PHPExcel.PHPExcel.Cell);
+
+         // 导出Exl
+         import("Org.Util.PHPExcel");
+         import("Org.Util.PHPExcel.IOFactory");
+         import("Org.Util.PHPExcel.Cell");
+         //$objPHPExcel = new \PHPExcel();
+
+
+         $objPHPExcel = new \PHPExcel();
+         $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+         $objSheet = $objPHPExcel->getActiveSheet();
+
+
+        if (!empty($filepath)) {
+            $dotArray = explode('.', $filepath);    //把文件名安.区分，拆分成数组
+            $type = end($dotArray);
+            if ($type != "xls" && $type != "xlsx") {
+                $ret['res'] = "0";
+                $ret['msg'] = "不是Excel文件，请重新上传!";
+                return json_encode($ret);
+            }
+
+            if (!file_exists($filepath)) {
+                $ret['res'] = "0";
+                $ret['msg'] = "上传文件丢失!" ;
+                $ret['path'] = $filepath;
+                $ret['chai'] = $dotArray;
+                return json_encode($ret,256);
+            }
+
+            //文件的扩展名
+            $ext = strtolower(pathinfo($filepath, PATHINFO_EXTENSION));
+            if ($ext == 'xlsx') {
+                $objReader = \PHPExcel_IOFactory::createReader('Excel2007');
+                $objPHPExcel = $objReader->load($filepath, 'utf-8');
+            } elseif ($ext == 'xls') {
+                $objReader = \PHPExcel_IOFactory::createReader('Excel5');
+                $objPHPExcel = $objReader->load($filepath, 'utf-8');
+            }
+
+            $sheet = $objPHPExcel->getSheet(0);
+            $highestRow = $sheet->getHighestRow(); // 取得总行数
+            $highestColumn = $sheet->getHighestColumn(); // 取得总列数
+            $ar = array();
+            $i = 0;
+            $importRows = 0;
+            for ($j = 2; $j <= $highestRow; $j++){
+                $importRows++;
+                $realName = (string)$objPHPExcel->getActiveSheet()->getCell("A$j")->getValue();//需要导入的realName
+                $phone = (string)$objPHPExcel->getActiveSheet()->getCell("B$j")->getValue();   //需要导入的phone
+                $company = (string)$objPHPExcel->getActiveSheet()->getCell("C$j")->getValue(); //需要导入的company
+                $job = (string)$objPHPExcel->getActiveSheet()->getCell("D$j")->getValue();     //需要导入的job
+                $email = (string)$objPHPExcel->getActiveSheet()->getCell("E$j")->getValue();   //需要导入的email
+                $ret['mdata'] = $this->addMemb($phone, $realName, $company, $job, $email);//这里就是我的数据库添加操作定义的一个方法啦,对应替换为自己的
+
+                if ($ret['mdata'] && !is_Bool($ret['mdata'])) {
+                    $ar[$i] = $ret['mdata'];
+                    $i++;
+                }
+            }
+            if ($i > 0) {
+                $ret['res'] = "0";
+                $ret['errNum'] = $i;
+                $ret['allNum'] = $importRows;
+                $ret['sucNum'] = $importRows - $i;
+                $ret['mdata'] = $ar;
+                $ret['msg'] = "导入完毕!";
+                return json_encode($ret);
+            }
+            $ret['res'] = "1";
+            $ret['allNum'] = $importRows;
+            $ret['errNum'] = 0;
+            $ret['sucNum'] = $importRows;
+            $ret['mdata'] = "导入成功!";
+            return json_encode($ret);
+        } else {
+            $ret['res'] = "0";
+            $ret['msg'] = "上传文件失败!";
+            return json_encode($ret);
+        }
     }
 }

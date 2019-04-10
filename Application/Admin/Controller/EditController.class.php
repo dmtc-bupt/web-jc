@@ -1,7 +1,11 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
+
 use Think\Image;
+use PHPExcel;
+use PHPExcel_IOFactory;
+use PHPExcel_Cell;
 
 class EditController extends Controller {
     public $user = array();
@@ -139,11 +143,11 @@ class EditController extends Controller {
             );
         }elseif ($de == 'B'){
             $page = I("p",'int');
-            $pagesize = 10;
+            $pagesize = 25;
             if($page<=0) $page = 1;
             $offset = ( $page-1 ) * $pagesize;
-            $data = D("inspection_scope")->limit("{$offset},{$pagesize}")->order('id desc')->select();
-            $count = D("inspection_scope")->count();//!!!!!!!!!!!!!!
+            $data = D("inspect_scope")->limit("{$offset},{$pagesize}")->order('id desc')->select();
+            $count = D("inspect_scope")->count();//!!!!!!!!!!!!!!
             $Page       = new \Think\Page($count,$pagesize);
             $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
             $pagination       = $Page->show();// 分页显示输出
@@ -1076,5 +1080,191 @@ class EditController extends Controller {
             $rs['msg'] = 'succ';
         }
         $this->ajaxReturn($rs);
+    }
+    //导出excel
+    public function expt(){
+
+        $title  = "inspection";
+        $th  = array(
+            array('id','范围id'),
+            array('path','树路径'),
+            array('cate_name','类别名称'),
+            array('metial_name','材料名称'),
+            array('name','项目名称'),
+            array('standard','标准名称'),
+            array('number','编号'),
+            array('remark','备注'),
+            array('save_time','保存时间'),
+        );
+        $data  = M('inspect_scope')->Field('id,path,cate_name,metial_name,name,standard,number,remark,save_time')->select();
+        export_excel($title,$th,$data);
+    }
+    //导入excel
+    public function impt(){
+        if(empty($_FILES)){
+            echo '文件不存在';
+        }
+        var_dump($_FILES);
+        if(isset($_FILES["import"]) && ($_FILES["import"]["error"] == 0)){
+            $result = import_excel($_FILES["import"]["tmp_name"]);
+            var_dump($result);
+            if($result["error"] == 1){
+                $execl_data = $result["data"][0]["Content"];
+                foreach($execl_data as $k=>$v){
+                    #循环写入数据库，或者开启事务..
+                    $t = $v." ".$v;
+                    echo $t;
+                    echo '<br>';
+                }
+            }
+        }
+    }
+
+    //获取单元格内容，处理单元格合并时的NULL值情况。
+    public function getCell($sheet,$col,$row){
+        import("Org.Util.PHPExcel");
+        $localtion = $col.(string)$row;
+        $cell = $sheet->getCell($localtion)->getValue();
+        while(empty($cell)){
+            $row --;
+            if($row == 2){
+                break;
+            }
+            $localtion = $col.(string)$row;
+            $cell = $sheet->getCell($localtion)->getValue();
+        }
+        return $cell;
+    }
+    //导入excel表格内容
+    public function uplExcel($filepath){
+        // 导出Exl
+        import("Org.Util.PHPExcel");
+        $excel = new \PHPExcel();
+
+        if (!empty($filepath)){
+            $dotArray = explode('.', $filepath);    //把文件名安.区分，拆分成数组
+            $type = $dotArray[2];
+
+            if ($type != "xls" && $type != "xlsx") {
+                $ret['res'] = "0";
+                $ret['msg'] = "不是Excel文件，请重新上传!";
+//                return json_encode($ret,256);
+            }
+
+            if ($type == 'xls') {
+                import("Org.Util.PHPExcel.Reader.Excel5");
+                $PHPReader = new \PHPExcel_Reader_Excel5();
+            } else if ($type == 'xlsx') {
+                import("Org.Util.PHPExcel.Reader.Excel2007");
+                $PHPReader = new \PHPExcel_Reader_Excel2007();
+            }
+            //载入文件
+            $PHPExcel = $PHPReader->load($filepath);
+
+            $sheet = $PHPExcel->getSheet(0); // 读取第一個工作表
+            $highestRow = $sheet->getHighestRow(); // 取得总行数
+            $highestColumm = $sheet->getHighestColumn(); // 取得总列数
+
+            $ar = array();
+            $errlist = array();
+            $i = 0;
+            $importRows = 0;
+            for ($j = 3; $j <= $highestRow; $j++) {
+                $importRows++;
+                $cate = $this->getCell($sheet,"A",$j);   //需要导入的phone
+                $cateName = $this->getCell($sheet,"B",$j); //需要导入的company
+                $cate2 = $this->getCell($sheet,"C",$j);
+                $metailName = $this->getCell($sheet,"D",$j);
+                $serial = $this->getCell($sheet,"E",$j);
+                $name = $this->getCell($sheet,"F",$j);
+                $standard = $this->getCell($sheet,"G",$j);
+                $number = $this->getCell($sheet,"H",$j);
+                $remark = $sheet->getCell("I".(string)$j)->getValue();
+                $path = $cate."-".str_replace(".","-",$serial);
+                $status = 1;
+                $t = $cate&&$cateName&&$cate2&&$metailName&&$serial&&$name&&$standard&&$number&&$remark&&$path;
+                if(!$t){
+                    $i++;
+                    array_push($errlist,$j);
+                }
+                $ar[$j] = array(
+                    'path' => $path,
+                    'cate_num'=>$cate,
+                    'cate_num2'=>$cate2,
+                    'cate_num3'=>$serial,
+                    'cate_name' => $cateName,
+                    'metial_name' => $metailName,
+                    'name' => $name,
+                    'standard'=> $standard,
+                    'number' => $number,
+                    'remark' => $remark,
+                    'status' => $status,
+                    'save_time'=>date("Y-m-d H:i:s"),
+                );
+            }
+            if ($i > 0) {
+                $ret['res'] = "0";
+                $ret['errNum'] = $i;
+                $ret['allNum'] = $importRows;
+                $ret['sucNum'] = $importRows - $i;
+                $ret['data'] = $ar;
+                $ret['errlist'] = $errlist;
+                $ret['msg'] = "导入完毕!";
+                //return json_encode($ret,256);
+                return $ret;
+            }
+            $ret['res'] = "1";
+            $ret['allNum'] = $importRows;
+            $ret['errNum'] = 0;
+            $ret['sucNum'] = $importRows;
+            $ret['data'] = $ar;
+            $ret['msg'] = "导入完毕";
+            //return json_encode($ret,256);
+            return $ret;
+        } else {
+            $ret['res'] = "0";
+            $ret['msg'] = "上传文件失败!";
+            //return json_encode($ret,256);
+            return $ret;
+        }
+    }
+    //处理excel表格数据
+    public function impt2(){
+      $excel=I('excelpath');
+        if($excel){
+            $result = $this->uplExcel($excel);
+            $data = $result["data"];
+//            var_dump($data['errlist']);
+//            var_dump($data);die;
+            if($data){
+                $deledata = D('inspect_scope')->where("status = 0")->delete();
+                $predata = D('inspect_scope')->where("status = 1")->select();
+                foreach($predata as $v){
+                    $v['status'] = 0;
+                    $user = D('inspect_scope')->save($v);
+                }
+                foreach($data as $v){
+                    #循环写入数据库，或者开启事务..
+                    $save = D('inspect_scope')->add($v);
+                    if(!$save){
+                        $rs = array(
+                            'msg'=> 'fail',
+                            'info'=>'数据库保存错误'
+                        );
+                        $this->ajaxReturn($rs);
+                    }
+                }
+                $rs = array(
+                    'msg'=> 'succ'
+                );
+                $this->ajaxReturn($rs);
+            }
+        }else{
+            $rs = array(
+                'msg'=>'fail',
+                'info'=>'找不到文件'
+            );
+            $this->ajaxReturn($rs);
+        }
     }
 }
