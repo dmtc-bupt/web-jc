@@ -1,0 +1,5 @@
+Application/Runtime
+.gitignore.txt
+.git
+.vscode
+.idea

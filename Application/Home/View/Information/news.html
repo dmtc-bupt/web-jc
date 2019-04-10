@@ -1,0 +1,167 @@
+<include file="Common:head" title="前台导航栏"/>
+<div class="picContainer">
+    <img src="__PUBLIC__/picture/notice.jpg" alt="新闻中心">
+    <a id="fix-title" href="">新闻中心</a>
+</div>
+<div class="container-two" id="container-content">
+    <div class="row">
+        <div class="col-xs-2 col-md-2 left-menu">
+            <ul>
+                <li><a href="/Home/Information/news">通知公告</a></li>
+                <li><a href="/Home/Information/notice">行业新闻</a></li>
+                <!--<li><a href="/Home/Information/certificate">政策法规</a></li>-->
+            </ul>
+        </div>
+        <div class="col-xs-10 col-md-10 right-content">
+            <div class="breadcrumbs">
+                <div class="row">
+                    <div class="col-lg-8 col-sm-8">
+                        <ol class="breadcrumb pull-left">
+                            <li>
+                                <i class="glyphicon glyphicon-home"></i><a href="/home/Index/index">
+                                主页
+                            </a>
+                            </li>
+                            <li>
+                                <!--<if condition="$type eq 1">-->
+                                <a href="/home/Information/information">
+                                    新闻中心
+                                </a>
+                            </li>
+                            <li>
+                                <!--<else />-->
+                                <a href="/home/Information/information#dynamic">
+                                    通知公告
+                                </a>
+                                <!--</if>-->
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="right-content-details">
+                <div class="col-xs-12 col-md-12">
+                    <ul class="media-list" id="notice-list">
+                        <volist name="notice" id="vo" key="{i}">
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="{:U('/home/Information/newDetail')}?type=1&id={$vo['id']}">
+                                        <img class="media-object" src='__PUBLIC__/picture/number-{$i}.png' alt="......">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <a href="{:U('/home/Information/newDetail')}?type=1&id={$vo['id']}" style="color: #000;">
+                                        <h4 class="media-heading">{$vo.title}</h4>
+                                    </a>
+                                    <span>发布：{$vo.save_time}</span>
+                                </div>
+                            </li>
+                        </volist>
+
+                        <!-- <li class="media">
+                            <div class="media-left">
+                                <a href="">
+                                    <img class="media-object" src="__PUBLIC__/picture/number-2.png" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">关于《机械喷涂砂浆成套设备》团体标准 项目立项的通知</h4>
+                                <span>发布：2018/12/12 浏览：212</span>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="">
+                                    <img class="media-object" src="__PUBLIC__/picture/number-3.png" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">关于《机械喷涂砂浆成套设备》团体标准 项目立项的通知</h4>
+                                <span>发布：2018/12/12 浏览：212</span>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="">
+                                    <img class="media-object" src="__PUBLIC__/picture/number-4.png" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">关于《机械喷涂砂浆成套设备》团体标准 项目立项的通知</h4>
+                                <span>发布：2018/12/12 浏览：212</span>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="">
+                                    <img class="media-object" src="__PUBLIC__/picture/number-5.png" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">关于《机械喷涂砂浆成套设备》团体标准 项目立项的通知</h4>
+                                <span>发布：2018/12/12 浏览：212</span>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="">
+                                    <img class="media-object" src="__PUBLIC__/picture/number-6.png" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">关于《机械喷涂砂浆成套设备》团体标准 项目立项的通知</h4>
+                                <span>发布：2018/12/12 浏览：212</span>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="">
+                                    <img class="media-object" src="__PUBLIC__/picture/number-7.png" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">关于《机械喷涂砂浆成套设备》团体标准 项目立项的通知</h4>
+                                <span>发布：2018/12/12 浏览：212</span>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="">
+                                    <img class="media-object" src="__PUBLIC__/picture/number-8.png" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">关于《机械喷涂砂浆成套设备》团体标准 项目立项的通知</h4>
+                                <span>发布：2018/12/12 浏览：212</span>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="">
+                                    <img class="media-object" src="__PUBLIC__/picture/number-9.png" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">关于《机械喷涂砂浆成套设备》团体标准 项目立项的通知</h4>
+                                <span>发布：2018/12/12 浏览：212</span>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="">
+                                    <img class="media-object" src="__PUBLIC__/picture/number-0.png" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">关于《机械喷涂砂浆成套设备》团体标准 项目立项的通知</h4>
+                                <span>发布：2018/12/12 浏览：212</span>
+                            </div>
+                        </li> -->
+                    </ul>
+                    <nav>{$pagination1}</nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Common:footer"/>
