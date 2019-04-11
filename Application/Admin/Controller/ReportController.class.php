@@ -21,12 +21,60 @@ class ReportController extends Controller{
     }
     public function addReport(){
         $id = I('id','0');
-        $one = D('report_query')->where('id = {$id}')->find();
+        $one = D('report_query')->where("id = {$id}")->find();
         $data = array(
             'id'=>$id,
             'one'=>$one
         );
         $this->assign($data);
         $this->display();
+    }
+    public function saveReport(){
+        $id = I('id','0');
+        $unit = I('unit');
+        $code = I('code');
+        $content = I('content');
+        $status = I('status');
+        if(empty($unit)||empty($code)||empty($content)||empty($status)){
+            $ret = array(
+                'mag'=>'fail',
+                'info'=>"信息填写不全"
+            );
+            $this->ajaxReture($ret);
+        }
+        if($id == 0){
+            $data = array(
+                'unit'=>$unit,
+                'code'=>$code,
+                'content'=>$content,
+                'status'=>$status,
+                'save_time'=>date("Y-m-d H:i:s"),
+            );
+            $save = D('report_query')->add($data);
+            if($save){
+                $ret = array(
+                    'msg'=>'succ'
+                );
+                $this->ajaxReturn($ret);
+            }
+        }else{
+            $data = array(
+                'id'=>$id,
+                'unit'=>$unit,
+                'code'=>$code,
+                'content'=>$content,
+                'status'=>$status,
+                'save_time'=>date("Y-m-d H:i:s"),
+            );
+            $save = D('report_query')->save($data);
+            if($save){
+                $ret = array(
+                    'msg'=>'succ'
+                );
+                $this->ajaxReturn($ret);
+            }
+        }
+//        'save_time'=>date("Y-m-d H:i:s"),
+//        if
     }
 }

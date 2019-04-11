@@ -3,8 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-        $image=D('home_image')->where("id not in (select max(id) from home_image)")->order('id desc')->select();
-        $picture=D('home_image')->where("id in (select max(id) from home_image)")->find();
+        $image=D('home_image')->order('id desc')->select();
         $num=D('home_image')->count();
         //主页传输内容包括：中心简介、新闻中心、质检服务、联系我们、实验室风采、页脚
         $contact=D('contact_us')->find();
@@ -16,7 +15,6 @@ class IndexController extends Controller {
         $body=array(
             "image"=>$image,
             "num"=>$num,
-            'picture'=>$picture,
             'contact'=>$contact,
             'intro'=>$intro,
             'news'=>$news,
