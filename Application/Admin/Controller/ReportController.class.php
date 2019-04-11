@@ -56,6 +56,12 @@ class ReportController extends Controller{
                     'msg'=>'succ'
                 );
                 $this->ajaxReturn($ret);
+            }else{
+                $ret = array(
+                    'msg'=>'fail',
+                    'info'=>'保存失败'
+                );
+                $this->ajaxReturn($ret);
             }
         }else{
             $data = array(
@@ -72,9 +78,13 @@ class ReportController extends Controller{
                     'msg'=>'succ'
                 );
                 $this->ajaxReturn($ret);
+            }else{
+                $ret = array(
+                    'msg'=>'fail',
+                    'info'=>'保存失败'
+                );
+                $this->ajaxReturn($ret);
             }
         }
-//        'save_time'=>date("Y-m-d H:i:s"),
-//        if
     }
 }
