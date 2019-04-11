@@ -8,8 +8,7 @@
         <div class="col-xs-2 col-md-2 left-menu">
             <ul>
                 <li><a href="/Home/Information/news">通知公告</a></li>
-                <li><a href="/Home/Information/notice">行业新闻</a></li>
-                <!--<li><a href="/Home/Information/certificate">政策法规</a></li>-->
+                <li><a href="/Home/Information/newsIns">行业新闻</a></li>
             </ul>
         </div>
         <div class="col-xs-10 col-md-10 right-content">
@@ -18,22 +17,15 @@
                     <div class="col-lg-8 col-sm-8">
                         <ol class="breadcrumb pull-left">
                             <li>
-                                <i class="glyphicon glyphicon-home"></i><a href="/home/Index/index">
+                                <i class="glyphicon glyphicon-home"></i><a href="/Home/Index/index">
                                 主页
                             </a>
                             </li>
                             <li>
-                                <!--<if condition="$type eq 1">-->
-                                <a href="/home/Information/information">
-                                    新闻中心
-                                </a>
+                                <a href="/Home/Information/news">新闻中心</a>
                             </li>
                             <li>
-                                <!--<else />-->
-                                <a href="/home/Information/information#dynamic">
-                                    通知公告
-                                </a>
-                                <!--</if>-->
+                                <span>通知公告</span>
                             </li>
                         </ol>
                     </div>
@@ -45,12 +37,12 @@
                         <volist name="notice" id="vo" key="{i}">
                             <li class="media">
                                 <div class="media-left">
-                                    <a href="{:U('/home/Information/newDetail')}?type=1&id={$vo['id']}">
+                                    <a href="{:U('/Home/Information/newDetail')}?type=0&id={$vo['id']}">
                                         <img class="media-object" src='__PUBLIC__/picture/number-{$i}.png' alt="......">
                                     </a>
                                 </div>
                                 <div class="media-body">
-                                    <a href="{:U('/home/Information/newDetail')}?type=1&id={$vo['id']}" style="color: #000;">
+                                    <a href="{:U('/Home/Information/newDetail')}?type=0&id={$vo['id']}" style="color: #000;">
                                         <h4 class="media-heading">{$vo.title}</h4>
                                     </a>
                                     <span>发布：{$vo.save_time}</span>

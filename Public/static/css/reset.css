@@ -52,6 +52,7 @@ hr{
 }
 .container-two{
     width: 100%;
+    min-height: 350px;
     padding: 0 20%;
 }
 .head-section,
@@ -71,7 +72,7 @@ hr{
 .head-section .navbar-nav{
     height: 100px;
     line-height: 100px;
-    /* float: left; */
+    float: left;
 }
 /* @media screen and (max-width: 1366px) {
     .head-section .navbar-nav{
@@ -102,6 +103,7 @@ hr{
 }
 .navbar-header .navbar-brand{
     color: #fff;
+    float: left;
     font-size: 25px;
     display: block;
     width: 100%;
@@ -123,12 +125,30 @@ hr{
         font-size: 16px;
     }
 }
-@media screen and (max-width: 1370px) {
+@media screen and (max-width: 1370px) and (min-width: 1271px) {
     .navbar-header .navbar-brand{
         font-size: 18px;
      }
     .navbar-default .navbar-nav li a{
         font-size: 16px;
+    }
+}
+@media screen and (max-width: 1270px) and (min-width: 769px) {
+    .navbar-header .navbar-brand{
+        font-size: 16px;
+     }
+    .navbar-default .navbar-nav li a{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .navbar-header{
+        height: 100px;
+        line-height: 100px;
+        width: 10%;
+    }
+    .navbar-header .navbar-brand .navbar-header-right{
+        display: none;
     }
 }
 /* @media (min-width: 768px) {

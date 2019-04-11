@@ -16,14 +16,14 @@
         <div class="carousel-caption">
         </div>
       </div>
-      <volist id="image">
+      <!-- <foreach name="image" item="vo" >
         <div class="item">
-            <img src='{$imgage}' alt="轮播图">
+            <img src="{$vo.picture}" alt="轮播图">
             <div class="carousel-caption">
             </div>
         </div>
-      </volist>
-      <!-- <div class="item">
+      </foreach> -->
+      <div class="item">
         <img src="__PUBLIC__/picture/lab_image/2.jpg" alt="...">
         <div class="carousel-caption">
         </div>
@@ -37,7 +37,7 @@
         <img src="__PUBLIC__/picture/lab_image/4.jpg" alt="...">
         <div class="carousel-caption">
         </div>
-      </div> -->
+      </div>
     </div>
   
     <!-- Controls -->
@@ -277,7 +277,14 @@
             <hr />
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <foreach name="lab_picture" item="vo">
+                        <div class="swiper-slide">
+                            <div class="thumbnail">
+                                <img style="width: 500px; height: 300px;" src="{$vo.pic_path}" type="button" data-toggle="modal" data-target="#imgPreModal" data-whatever="{$vo.pic_path}" alt="...">
+                            </div>
+                        </div>
+                    </foreach>
+                    <!-- <div class="swiper-slide">
                         <div class="thumbnail">
                             <img src="__PUBLIC__/picture/lab_image/20130301082708_76145.jpg" type="button" data-toggle="modal" data-target="#imgPreModal" data-whatever="__PUBLIC__/picture/lab_image/20130301082708_76145.jpg" alt="...">
                         </div>
@@ -306,7 +313,7 @@
                         <div class="thumbnail">
                             <img src="__PUBLIC__/picture/lab_image/20130301082708_76145.jpg" alt="...">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- <div class="swiper-pagination"></div> -->
             </div>
@@ -327,9 +334,9 @@
                     <div class="col-xs-12 col-md-12">
                         <img style="width: 100%" class="showPreImg" src="" />
                     </div>
-                    <div class="col-xs-12 col-md-12">
+                    <!-- <div class="col-xs-12 col-md-12">
                         <p>这是一段描述</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
