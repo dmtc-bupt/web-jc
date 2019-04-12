@@ -1099,26 +1099,6 @@ class EditController extends Controller {
         $data  = M('inspect_scope')->Field('id,path,cate_name,metial_name,name,standard,number,remark,save_time')->select();
         export_excel($title,$th,$data);
     }
-    //导入excel
-    public function impt(){
-        if(empty($_FILES)){
-            echo '文件不存在';
-        }
-        var_dump($_FILES);
-        if(isset($_FILES["import"]) && ($_FILES["import"]["error"] == 0)){
-            $result = import_excel($_FILES["import"]["tmp_name"]);
-            var_dump($result);
-            if($result["error"] == 1){
-                $execl_data = $result["data"][0]["Content"];
-                foreach($execl_data as $k=>$v){
-                    #循环写入数据库，或者开启事务..
-                    $t = $v." ".$v;
-                    echo $t;
-                    echo '<br>';
-                }
-            }
-        }
-    }
 
     //获取单元格内容，处理单元格合并时的NULL值情况。
     public function getCell($sheet,$col,$row){
@@ -1229,7 +1209,7 @@ class EditController extends Controller {
         }
     }
     //处理excel表格数据
-    public function impt2(){
+    public function impt(){
       $excel=I('excelpath');
         if($excel){
             $result = $this->uplExcel($excel);
@@ -1267,4 +1247,5 @@ class EditController extends Controller {
             $this->ajaxReturn($rs);
         }
     }
+
 }

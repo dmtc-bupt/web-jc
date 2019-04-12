@@ -29,8 +29,13 @@
             <div class="form-group">
                 <label class="col-sm-1 control-label talign-center fz13">状态</label>
                 <div class="col-sm-11">
-                    <input type="radio" name="status" value="1" checked> 开启&nbsp;
-                    <input type="radio" name="status" value="0"> 禁用
+                <if condition="$one['status'] eq 0">
+                        <input type="radio" name="status" value="1"> 开启&nbsp;
+                        <input type="radio" name="status" value="0" checked> 禁用
+                    <else/>
+                        <input type="radio" name="status" value="1" checked> 开启&nbsp;
+                        <input type="radio" name="status" value="0"> 禁用
+                </if>
                 </div>
                 <div class="clearfix"></div>
             </div>

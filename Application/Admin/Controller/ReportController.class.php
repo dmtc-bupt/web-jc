@@ -35,12 +35,12 @@ class ReportController extends Controller{
         $code = I('code');
         $content = I('content');
         $status = I('status');
-        if(empty($unit)||empty($code)||empty($content)||empty($status)){
+        if(empty($unit)||empty($code)||empty($content)){
             $ret = array(
                 'mag'=>'fail',
                 'info'=>"信息填写不全"
             );
-            $this->ajaxReture($ret);
+            $this->ajaxReturn($ret);
         }
         if($id == 0){
             $data = array(
@@ -86,5 +86,13 @@ class ReportController extends Controller{
                 $this->ajaxReturn($ret);
             }
         }
+    }
+    public function doRepDelete(){
+        $id =I("id",0,'intval');
+        $rs = array("msg"=>"fail");
+        if(D("report_query")->where("id=".$id)->delete()){
+            $rs['msg'] = 'succ';
+        }
+        $this->ajaxReturn($rs);
     }
 }

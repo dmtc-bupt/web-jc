@@ -288,4 +288,64 @@ class InformationController extends Controller
         $this->assign($body);
         $this->display();
     }
+    //报告查询子页面
+    public function reportQuery(){
+        $headPicture = D('head_image')->where('type = 3')->find();
+        $footer=D('footer')->find();
+        $body=array(
+            'footer'=>$footer,
+            'head_image'=>$headPicture,
+        );
+        $this->assign($body);
+        $this->display();
+    }
+    //进行报告查询
+    public function doQuery(){
+        $code = I('code');
+        $unit = I('unit');
+        if(empty($unit)||empty($code)){
+            $ret = array(
+                'msg'=>'信息填写不全'
+            );
+            $this->ajaxReturn($ret);
+        }
+        $where = "code = {$code} and unit = {$unit}";
+        $one = D('report_query')->where($where)->find();
+        if($one){
+            $ret = array(
+                'msg'=>'succ',
+                'data'=>$one,
+            );
+            $this->ajaxReturn($ret);
+        }else{
+            $ret = array(
+                'msg'=>'报告不存在',
+            );
+            $this->ajaxReturn($ret);
+        }
+    }
+    //质检范围模糊查询
+    public function searchIns(){
+        $word = I('word');
+        if(empty($word)){
+            $ret = array(
+                'msg'=>'请填写关键词'
+            );
+            $this->ajaxReturn($ret);
+        }
+        $where['cate_name|metial_name|name|standard|number'] = array('like','%'.$word.'%');
+        $list = D('inspect_scope')->where($where)->select();
+        if(empty($list)){
+            $ret = array(
+                'msg'=>'没有相关内容'
+            );
+            $this->ajaxReturn($ret);
+        }else{
+            $ret = array(
+                'msg'=>'succ',
+                'result'=>$list
+            );
+            $this->ajaxReturn($ret);
+        }
+    }
 }

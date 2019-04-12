@@ -81,7 +81,7 @@
                                     <img src="{$one.picture}" onerror="this.src='__PUBLIC__/static/images/default-timg.gif'" class="img-responsive" style="max-width: 500px;"/>
                                 </a>
                             </td>
-                            <td><a href="javascript:void(0);" onclick="onDelete('{$one.id}')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> 删除</a>
+                            <td><a href="javascript:void(0);" onclick="onDelete('{$one.id}','{$de}')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> 删除</a>
                             </td>
                         </tr>
                     </volist>
@@ -217,6 +217,7 @@
     }
     function doneDel(id,de){
         if(!id) return false;
+        if(!de) return false;
         $.ajax({
             type:"post",
             url:"{:U('/admin/edit/doDelete')}",

@@ -60,9 +60,8 @@
                 <div class=" pull-right"><nav aria-label="Page navigation" id="pagination">{$pagination}</nav></div>
             </div>
             <div>
-            <a href="{:U('admin/edit/expt')}">导出Excell</a>
             <br />
-                <form class="form-horizontal" id="myform2" action="{:U('/admin/edit/impt2')}" method="post">
+                <form class="form-horizontal" id="myform2" action="{:U('/admin/edit/impt')}" method="post">
                     <div class="form-group">
                         <label class="col-sm-2 control-label talign-center fz13">文件</label>
                         <div class="col-sm-10">
@@ -84,6 +83,44 @@
                     </div>
                 </form>
             </div>
+            <!--<div>-->
+                <!--<form class="form-horizontal" id="myform3" action="" method="post">-->
+                    <!--<div class="form-group">-->
+                        <!--<label class="col-sm-1 control-label talign-center fz13">搜索字段</label>-->
+                        <!--<input type="text" name="word" class="col-sm-8">-->
+                        <!--<div class="col-sm-11">-->
+                            <!--<button type="submit" class="btn btn-success " onclick="doSearch()">搜索</button>-->
+                        <!--</div>-->
+                        <!--<div class="clearfix"></div>-->
+                    <!--</div>-->
+                <!--</form>-->
+                <!--<table class="table table-bordered table-striped table-hover">-->
+                    <!--<thead>-->
+                    <!--<th width="5%">序号</th>-->
+                    <!--<th width="10%">大类名称</th>-->
+                    <!--<th width="15%">类别(产品/项目/参数)</th>-->
+                    <!--<th width="15%">产品/项目/参数</th>-->
+                    <!--<th width="20%">依据的标准/方法</th>-->
+                    <!--<th width="20%">编号</th>-->
+                    <!--<th width="10%">限制范围</th>-->
+                    <!--<th >状态</th>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                    <!--<volist name="search" id="one">-->
+                        <!--<tr>-->
+                            <!--<td >{$one.path}</td>-->
+                            <!--<td >{$one.cate_name}</td>-->
+                            <!--<td >{$one.metial_name}</td>-->
+                            <!--<td >{$one.name}</td>-->
+                            <!--<td >{$one.standard}</td>-->
+                            <!--<td >{$one.number}</td>-->
+                            <!--<td >{$one.remark}</td>-->
+                            <!--<td >{$one.status}</td>-->
+                        <!--</tr>-->
+                    <!--</volist>-->
+                    <!--</tbody>-->
+                <!--</table>-->
+            <!--</div>-->
         </if>
     </div>
 </div>
@@ -187,7 +224,7 @@
         var excelpath = $("input[name='excelpath']").val();
       //  console.log(excelpath)
         $.ajax({
-            url: "{:U('/admin/edit/impt2')}",
+            url: "{:U('/admin/edit/impt')}",
             dataType: 'JSON',
             data:{"excelpath":excelpath},
             beforeSubmit: function(){
@@ -195,7 +232,7 @@
             },
             success: function (ret) {
                 if(ret.msg == "succ"){
-                    var _options = {"text":"修改成功","action":function(){window.location.reload()}};
+                    var _options = {"text":"保存成功","action":function(){window.location.reload()}};
                     doAlertDialog(_options);
                 }else{
                     var _options = {"text":"上传失败","flag":"error"};
@@ -208,6 +245,36 @@
        // $("#myform2").ajaxForm(options);
         return false;
     }
+
+    // function doSearch(){
+    //     var word = $("input[name='word']").val();
+    //     if(!word){
+    //         return false;
+    //     }
+    //     //  console.log(excelpath)
+    //     $.ajax({
+    //         url: "{:U('/admin/edit/searchIns')}",
+    //         dataType: 'JSON',
+    //         data:{"word":word},
+    //         beforeSubmit: function(){
+    //             return true;
+    //         },
+    //         success: function (ret) {
+    //             if(ret.msg == "succ"){
+    //                 // $("volist[name='search']").val(ret.result);
+    //                 // var _options = {"text":"查询成功","action":function(){window.location.reload()}};
+    //                 var _options = {"text":"查询chenggong","flag":"error"};
+    //                 doAlertDialog(_options);
+    //             }else{
+    //                 var _options = {"text":"查询失败","flag":"error"};
+    //                 if(ret.msg) _options.text = ret.msg;
+    //                 doAlertDialog(_options);
+    //             }
+    //             return true;
+    //         }
+    //     });
+    //     return false;
+    // }
 
 </script>
 
