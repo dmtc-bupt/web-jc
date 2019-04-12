@@ -4,3 +4,4 @@ Application/Runtime
 .git
 .vscode
 .idea
+.gitignore
