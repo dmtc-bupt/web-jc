@@ -3,41 +3,29 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        <foreach name="image" item="vo">
+            <li style="margin-right: 5px;padding-right: 20px;" data-target="#carousel-example-generic" data-slide-to="{$key}"></li>
+        </foreach>
     </ol>
   
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="__PUBLIC__/picture/lab_image/1.jpg" alt="轮播图">
-        <div class="carousel-caption">
-        </div>
-      </div>
-      <!-- <foreach name="image" item="vo" >
-        <div class="item">
-            <img src="{$vo.picture}" alt="轮播图">
-            <div class="carousel-caption">
+      <foreach name="image" item="vo" key="k">
+          <if condition="$k eq 0">
+            <div class="item active">
+                <img src="{$vo.picture}" alt="轮播图">
+                <div class="carousel-caption">
+                </div>
             </div>
-        </div>
-      </foreach> -->
-      <div class="item">
-        <img src="__PUBLIC__/picture/lab_image/2.jpg" alt="...">
-        <div class="carousel-caption">
-        </div>
-      </div>
-      <div class="item">
-        <img src="__PUBLIC__/picture/lab_image/3.jpg" alt="...">
-        <div class="carousel-caption">
-        </div>
-      </div>
-      <div class="item">
-        <img src="__PUBLIC__/picture/lab_image/4.jpg" alt="...">
-        <div class="carousel-caption">
-        </div>
-      </div>
+            <else />
+                <div class="item">
+                    <img src="{$vo.picture}" alt="轮播图">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+          </if>
+        
+      </foreach>
     </div>
   
     <!-- Controls -->
@@ -57,54 +45,12 @@
         <div class="col-xs-12 col-md-2" id="download-left">
             <ul class="list-group">
                 <li class="list-group-item" id="list-group-title">资料下载<span class="glyphicon glyphicon-chevron-right"></span></li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
-                <li class="list-group-item">
-                    <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                    <span class="list-left-date">2019-03-12</span>
-                </li>
+                <foreach name="file" item="vo">
+                    <li class="list-group-item">
+                        <span class="list-left-title">{$vo.filename}</span>
+                        <span class="list-left-date">{$vo.savetime}</span>
+                    </li>
+                </foreach>
               </ul>
         </div>
         <div class="col-xs-12 col-md-8" id="information-news">
@@ -151,26 +97,12 @@
                 </div>
                 <div class="col-xs-8 col-md-8" id="information-news-details">
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                            <span class="list-left-date">2019-03-12</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                            <span class="list-left-date">2019-03-12</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                            <span class="list-left-date">2019-03-12</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                            <span class="list-left-date">2019-03-12</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                            <span class="list-left-date">2019-03-12</span>
-                        </li>
+                        <foreach name="news" item="vo">
+                            <li class="list-group-item">
+                                <span class="list-left-title">{$vo.title}</span>
+                                <span class="list-left-date">{$vo.save_time}</span>
+                            </li>
+                        </foreach>
                       </ul>
                 </div>
             </div>
@@ -217,22 +149,12 @@
                     </div>
                     <hr />
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                            <span class="list-left-date">2019-03-12</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                            <span class="list-left-date">2019-03-12</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                            <span class="list-left-date">2019-03-12</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="list-left-title">首届华东六省首届华东六省首届华东六省首届华东六省首届华东六省</span>
-                            <span class="list-left-date">2019-03-12</span>
-                        </li>
+                        <foreach name="standard" item="vo">
+                            <li class="list-group-item">
+                                <span class="list-left-title">{$vo.title}</span>
+                                <span class="list-left-date">{$vo.save_time}</span>
+                            </li>
+                        </foreach>
                       </ul>
                 </div>
             </div>
@@ -284,36 +206,6 @@
                             </div>
                         </div>
                     </foreach>
-                    <!-- <div class="swiper-slide">
-                        <div class="thumbnail">
-                            <img src="__PUBLIC__/picture/lab_image/20130301082708_76145.jpg" type="button" data-toggle="modal" data-target="#imgPreModal" data-whatever="__PUBLIC__/picture/lab_image/20130301082708_76145.jpg" alt="...">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="thumbnail">
-                            <img src="__PUBLIC__/picture/lab_image/20130301082708_76145.jpg" alt="...">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="thumbnail">
-                            <img src="__PUBLIC__/picture/lab_image/20130301082708_76145.jpg" alt="...">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="thumbnail">
-                            <img src="__PUBLIC__/picture/lab_image/20130301082708_76145.jpg" alt="...">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="thumbnail">
-                            <img src="__PUBLIC__/picture/lab_image/20130301082708_76145.jpg" alt="...">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="thumbnail">
-                            <img src="__PUBLIC__/picture/lab_image/20130301082708_76145.jpg" alt="...">
-                        </div>
-                    </div> -->
                 </div>
                 <!-- <div class="swiper-pagination"></div> -->
             </div>
