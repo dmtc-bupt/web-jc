@@ -164,7 +164,7 @@ hr{
     padding: 0 15px;
     text-align: center;
     height: 100px;
-    width: 100%;
+    width: 120px;
     line-height: 100px;
 }
 .head-section .navbar .navbar-nav .dropdown a,
@@ -177,22 +177,30 @@ hr{
 
 }
 .head-section .navbar .navbar-nav .dropdown:hover{
-
+    background-color: rgb(29,75,161);
 }
-.head-section .navbar .navbar-nav .dropdown .dropdown-menu{
+.head-section .navbar .navbar-nav .dropdown .dropdown-menu,
+.head-section .navbar .navbar-nav .dropdown .open>.dropdown-menu{
+    width: 220px;
     padding: 0;
 }
 .head-section .navbar .navbar-nav .dropdown, #contact-us{
     /* margin-top: 25px; */
 }
 .dropdown-menu{
-    width: 208px;
+    width: 220px;
     background-color: #1E50AE;
+    transform: rotateX('0');
+    transition: all ease-in-out 1s;
 }
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus,
 .navbar-default .navbar-nav> #contact-us>a:hover{
     background-color: rgb(29,75,161);
     color: #fff;
+}
+.navbar-default .navbar-nav>.open>a:hover .dropdown-menu,
+.navbar-default .navbar-nav>.open>a:focus .dropdown-menu{
+    transform: rotateX('180')
 }
 .head-section .dropdown-menu>li>a:hover{
     background-color: #337ab7;
