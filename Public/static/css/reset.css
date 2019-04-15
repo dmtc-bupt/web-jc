@@ -202,10 +202,13 @@ hr{
 .head-section .navbar .navbar-nav .dropdown:hover{
     background-color: rgb(29,75,161);
 }
-.dropdown-menu{
+.dropdown-menu,
+.navbar-default .navbar-nav>.open>.dropdown-menu,
+.navbar-default .navbar-nav>.open>.dropdown-menu>li
+{
+    background-color: rgb(29,75,161);
     padding: 0;
     width: 220px;
-    background-color: #1E50AE;
 }
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus,
 .navbar-default .navbar-nav> #contact-us>a:hover{
@@ -240,7 +243,7 @@ hr{
     float: left;
     cursor: pointer;
     display: block;
-    width: 80%;
+    width: 70%;
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
