@@ -6,7 +6,7 @@ class SampleController extends Controller{
         $admin_auth = session("admin_auth");
 //        var_dump($admin_auth);die;
         $auth_id = $admin_auth['id'];
-        $collector = $admin_auth['name'];
+        $collector = $admin_auth['username'];
         $data = array(
             'collector'=>$collector,
             'auth_id'=>$auth_id,
@@ -17,7 +17,8 @@ class SampleController extends Controller{
 
     public function doAddSample(){
         $id = I('id');
-        $auth_id = I("auth_id");
+        $auth_id = I("auth_id");//申请人id
+        $authname = I('authname');//申请人姓名
         $clientname = str_replace(' ','',I("clientname"));//委托单位
         $productunit = str_replace(' ','',I("productunit"));//生产单位
         $samplename = I("samplename");//样品名称
@@ -144,6 +145,7 @@ class SampleController extends Controller{
         if(empty($id)){
             $data_sample = array(
                 'auth_id'=>$auth_id,
+                'authname'=>$authname,
                 'clientname'=>$clientname,
                 'productunit'=>$productunit,
                 'samplename'=>$samplename,
@@ -176,6 +178,7 @@ class SampleController extends Controller{
                 'reportdate'=>$reportdate,
                 'package_remark'=>$package_remark,
                 'status'=> 1,
+                'lastedit'=>date("Y-m-d H:i:s"),
             );
             $save = D("sampling_form")->data($data_sample)->add();
             if($save){
@@ -189,6 +192,7 @@ class SampleController extends Controller{
             $data_sample = array(
                 'id'=>$id,
                 'auth_id'=>$auth_id,
+                'authname'=>$authname,
                 'clientname'=>$clientname,
                 'productunit'=>$productunit,
                 'samplename'=>$samplename,
@@ -221,6 +225,8 @@ class SampleController extends Controller{
                 'reportdate'=>$reportdate,
                 'package_remark'=>$package_remark,
                 'status'=> 1,
+                'ifedit'=>1,
+                'lastedit'=>date("Y-m-d H:i:s"),
             );
             $save = D("sampling_form")->data($data_sample)->save();
             if($save){
@@ -238,31 +244,23 @@ class SampleController extends Controller{
         $admin_auth = session("admin_auth");
 //        var_dump($admin_auth);die;
         $auth_id = $admin_auth['id'];
-        if($de == 'A'){
-            $where = "auth_id = {$auth_id} and status = 1 ";
-            $page = I("p",'int');
-            $pagesize = 10;
-            if($page<=0) $page = 1;
-            $offset = ( $page-1 ) * $pagesize;
-            $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
-            $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
-            $Page       = new \Think\Page($count,$pagesize);
-            $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
-            $pagination       = $Page->show();// 分页显示输出*
-        }if($de == 'B'){
-            $where = "auth_id = {$auth_id} and status = 3 ";
-            $page = I("p",'int');
-            $pagesize = 10;
-            if($page<=0) $page = 1;
-            $offset = ( $page-1 ) * $pagesize;
-            $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
-            $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
-            $Page       = new \Think\Page($count,$pagesize);
-            $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
-            $pagination       = $Page->show();// 分页显示输出*
-        }
         $collector = $admin_auth['name'];
+        if($de == 'A'){
+            $where = "auth_id = {$auth_id} and status = 1";
+        }if($de == 'B'){
+            $where = "auth_id = {$auth_id} and status = 8";
+        }
+        $page = I("p",'int');
+        $pagesize = 10;
+        if($page<=0) $page = 1;
+        $offset = ( $page-1 ) * $pagesize;
+        $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
+        $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
+        $Page       = new \Think\Page($count,$pagesize);
+        $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $pagination       = $Page->show();// 分页显示输出*
         $data = array(
+            'de'=>$de,
             'collector'=>$collector,
             'auth_id'=>$auth_id,
             'list'=>$result,
@@ -284,6 +282,7 @@ class SampleController extends Controller{
 //        var_dump($collector);
         $data = array(
             'id'=>$id,
+            'status'=>1,
             'collector'=>$collector,
             'auth_id'=>$auth_id,
             'one'=>$one,
@@ -291,6 +290,119 @@ class SampleController extends Controller{
 //        var_dump($data);
         $this->assign($data);
         $this->display();
+    }
+    public function zyNew(){
+        $de = I('de','A');
+        $admin_auth = session("admin_auth");
+//        var_dump($admin_auth);die;
+        $auth_id = $admin_auth['id'];
+        $collector = $admin_auth['name'];
+        if($de == 'A'){
+            $where = "status = 1 ";
+        }elseif ($de == 'B'){
+            $where = "status = 2";
+        }elseif ($de == 'C'){
+            $where = "status = 8";
+        }
+        $page = I("p",'int');
+        $pagesize = 10;
+        if($page<=0) $page = 1;
+        $offset = ( $page-1 ) * $pagesize;
+        $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
+        $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
+        $Page       = new \Think\Page($count,$pagesize);
+        $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $pagination       = $Page->show();// 分页显示输出*
+        $data = array(
+            'de'=>$de,
+            'collector'=>$collector,
+            'auth_id'=>$auth_id,
+            'list'=>$result,
+            'pagination'=>$pagination,
+        );
+        $this->assign($data);
+        $this->display();
+    }
+
+    public function zyCost(){
+        $id = I('id');
+        $one = D('sampling_form')->where("id = {$id}")->find();
+        $admin_auth = session("admin_auth");
+
+        $collector = $admin_auth['username'];
+
+        $data = array(
+            'id'=>$id,
+            'collector'=>$collector,
+            'one'=>$one,
+        );
+//        var_dump($data);
+        $this->assign($data);
+        $this->display();
+
+    }
+
+    public function doCost(){
+        $id = I('id');
+        $collector = I('collector');
+        $cost = I('cost');
+
+        $data = array(
+            'id'=>$id,
+            'collector'=>$collector,
+            'testcost'=>$cost,
+            'status'=> 2,
+            'ifedit'=>0,
+            'lastedit'=>date("Y-m-d H:i:s"),
+        );
+        $save = D('sampling_form')->save($data);
+        if(!$save){
+            $ret = array(
+                'msg'=>'提交失败'
+            );
+            $this->ajaxReturn($ret);
+        }elseif ($save){
+            $ret = array(
+                'msg'=>'succ'
+            );
+            $this->ajaxReturn($ret);
+        }
+    }
+
+    public function view(){
+        $id = I('id');
+        $one = D('sampling_form')->where("id = {$id}")->find();
+
+//        var_dump($collector);
+        $data = array(
+            'id'=>$id,
+            'one'=>$one,
+        );
+//        var_dump($data);
+        $this->assign($data);
+        $this->display();
+    }
+
+    public function doSamBack(){
+        $id = I('id');
+        $data = array(
+            'id'=>$id,
+            'status'=>8,
+            'ifback'=>1,
+            'lastedit'=>date("Y-m-d H:i:s"),
+        );
+        $save = D('sampling_form')->save($data);
+        if($save){
+            $ret = array(
+                'msg'=>'succ',
+            );
+            $this->ajaxReturn($ret);
+        }else{
+            $ret = array(
+                'msg'=>'退回失败',
+            );
+            $this->ajaxReturn($ret);
+        }
     }
 
 }
