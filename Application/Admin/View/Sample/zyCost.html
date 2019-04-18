@@ -6,7 +6,7 @@
             <table class="table table-bordered table-striped table-hover">
                 <tr>
                     <td  colspan="9" ><p align="center" >委 托 人 填 写 </p></td>
-                    <input name="auth_id" type="hidden"  id="auth_id" value="{$auth_id}" />
+                    <input name="collectorid" type="hidden"  id="auth_id" value="{$collectorid}" />
                     <input name="authname" type="hidden"  id="authname" value="{$collector}" />
                     <input name="id" type="hidden"  id="id" value="{$id}" />
                 </tr>
@@ -162,7 +162,7 @@
                         <input type="hidden" value="0" id="ifchoseSp" name="ifchosesp"/>
                     </td>
                     <td  ><p align="center" ><span style="color:red; font-size:15px">*</span>检验费用 </p></td>
-                    <td colspan="4"><input type="text" class="form-control"  name="cost" id=""  size="9"/></td>
+                    <td colspan="4"><input type="text" class="form-control"  name="cost" id="cost"  size="9"/></td>
                 </tr>
                 <tr >
                     <td  ><p align="center" ><span style="color:red; font-size:15px">*</span>收样日期 </p></td>
@@ -187,7 +187,7 @@
 
             <!-- <button class="btn btn-success" type="button" id="sampling_list" on>生成抽样单</button>-->
             <button class="btn btn-success" type="submit" id="check_list" onClick="doCost()">提交</button>
-            <button class="btn btn-success" type="submit" id="back_list" onClick="doBack()">退回</button>
+            <button class="btn btn-success" type="button" id="back_list" onClick="onBack('{$id}')">退回</button>
             <button type="button" class="btn btn-success" onclick="javascript:history.go(-1);">返 回</button>
         </form>
     </div>
@@ -239,6 +239,33 @@
         //}
         //return false;
     }
+
+    //退回
+    function onBack(id){
+        if(!id) return false;
+        var _options = {"flag":"error","text":"您确定要退回此申请吗？","buttons":{"ok":{"action":function(){doneBack(id);}},"cancel":{}}};
+        doConfirmDialog(_options);
+    }
+    function doneBack(id){
+        if(!id) return false;
+        $.ajax({
+            type:"post",
+            url:"{:U('/admin/sample/doSamBack')}",
+            data:{"id":id},
+            dataType:"json",
+            success:function(ret){
+                if(ret.msg=='succ'){
+                    var _options = {"text":"退回成功！","action":function(){window.location.href="/admin/sample/zyNew?de=A";}};
+                    doAlertDialog(_options);
+                }else{
+                    var _options = {"text":"退回失败！"};
+                    if(data.msg) _options.text = data.msg;
+                    doAlertDialog(_options);
+                }
+            }
+        });
+    }
+
 
 </script>
 </body>

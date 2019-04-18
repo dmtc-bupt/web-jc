@@ -40,7 +40,8 @@
                             <a class="btn btn-primary btn-xs" ><i class="glyphicon glyphicon-cog"></i>等待确认收样</a>
                         </if>
                         <if condition="$de eq C">
-                            等待重新提交
+                            <a class="btn btn-primary btn-xs" href="{:U('/admin/sample/view')}?id={$one.id}" ><i class="glyphicon glyphicon-cog"></i>查看</a>
+                            <a class="btn btn-primary btn-xs" ><i class="glyphicon glyphicon-cog"></i>等待重新提交</a>
                         </if>
                     </td>
                 </tr>
@@ -60,7 +61,7 @@
         $("#de_"+de).addClass("active");
     });
 
-    //删除
+    //退回
     function onBack(id){
         if(!id) return false;
         var _options = {"flag":"error","text":"您确定要退回此申请吗？","buttons":{"ok":{"action":function(){doneBack(id);}},"cancel":{}}};

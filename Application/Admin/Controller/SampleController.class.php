@@ -2,6 +2,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 class SampleController extends Controller{
+    //地方添加申请单
     public function input(){
         $admin_auth = session("admin_auth");
 //        var_dump($admin_auth);die;
@@ -14,7 +15,7 @@ class SampleController extends Controller{
         $this->assign($data);
         $this->display();
     }
-
+    // 地方保存申请单
     public function doAddSample(){
         $id = I('id');
         $auth_id = I("auth_id");//申请人id
@@ -238,7 +239,7 @@ class SampleController extends Controller{
             }
         }
     }
-
+    //地方已提交的新申请
     public function allInput(){
         $de = I('de','A');
         $admin_auth = session("admin_auth");
@@ -269,7 +270,23 @@ class SampleController extends Controller{
         $this->assign($data);
         $this->display();
     }
-
+    //删除申请单
+    public function doSamDelete(){
+        $id = I('id');
+        $del = D('sampling_form')->where("id = {$id}")->delete();
+        if($del){
+            $ret = array(
+              'msg'=>'succ',
+            );
+            $this->ajaxReturn($ret);
+        }else{
+            $ret = array(
+                'msg'=>'删除失败',
+            );
+            $this->ajaxReturn($ret);
+        }
+    }
+    //地方编辑申请单
     public function edit(){
         $id = I('id');
         $one = D('sampling_form')->where("id = {$id}")->find();
@@ -291,6 +308,7 @@ class SampleController extends Controller{
         $this->assign($data);
         $this->display();
     }
+    //中央待确认金额
     public function zyNew(){
         $de = I('de','A');
         $admin_auth = session("admin_auth");
@@ -300,9 +318,9 @@ class SampleController extends Controller{
         if($de == 'A'){
             $where = "status = 1 ";
         }elseif ($de == 'B'){
-            $where = "status = 2";
+            $where = "status = 2 and collectorid = {$auth_id}";
         }elseif ($de == 'C'){
-            $where = "status = 8";
+            $where = "status = 8 and collectorid = {$auth_id}";
         }
         $page = I("p",'int');
         $pagesize = 10;
@@ -323,36 +341,44 @@ class SampleController extends Controller{
         $this->assign($data);
         $this->display();
     }
-
+    //中央输入金额
     public function zyCost(){
         $id = I('id');
         $one = D('sampling_form')->where("id = {$id}")->find();
         $admin_auth = session("admin_auth");
 
         $collector = $admin_auth['username'];
+        $collectorid = $admin_auth['id'];
 
         $data = array(
             'id'=>$id,
             'collector'=>$collector,
             'one'=>$one,
+            'collectorid'=>$collectorid,
         );
 //        var_dump($data);
         $this->assign($data);
         $this->display();
 
     }
-
+    //中央确认金额
     public function doCost(){
         $id = I('id');
         $collector = I('collector');
+        $collectorid = I('collectorid');
         $cost = I('cost');
-
+        if($cost == 0){
+            $ret = array(
+                'msg'=>'金额不能为空'
+            );
+            $this->ajaxReturn($ret);
+        }
         $data = array(
             'id'=>$id,
             'collector'=>$collector,
+            'collectorid'=>$collectorid,
             'testcost'=>$cost,
             'status'=> 2,
-            'ifedit'=>0,
             'lastedit'=>date("Y-m-d H:i:s"),
         );
         $save = D('sampling_form')->save($data);
@@ -368,7 +394,7 @@ class SampleController extends Controller{
             $this->ajaxReturn($ret);
         }
     }
-
+    //不可编辑的查看
     public function view(){
         $id = I('id');
         $one = D('sampling_form')->where("id = {$id}")->find();
@@ -382,14 +408,19 @@ class SampleController extends Controller{
         $this->assign($data);
         $this->display();
     }
-
+    //中央退回
     public function doSamBack(){
         $id = I('id');
+        $admin_auth = session("admin_auth");
+        $collector = $admin_auth['username'];
+        $collectorid = $admin_auth['id'];
         $data = array(
             'id'=>$id,
             'status'=>8,
             'ifback'=>1,
             'lastedit'=>date("Y-m-d H:i:s"),
+            'collectorid'=>$collectorid,
+            'collector'=>$collector,
         );
         $save = D('sampling_form')->save($data);
         if($save){
@@ -404,5 +435,83 @@ class SampleController extends Controller{
             $this->ajaxReturn($ret);
         }
     }
-
+    //地方待收到样品
+    public function getSample(){
+        $de = I('de','A');
+        $admin_auth = session("admin_auth");
+//        var_dump($admin_auth);die;
+        $auth_id = $admin_auth['id'];
+        $collector = $admin_auth['name'];
+        if($de == 'A'){
+            $where = "status = 2 and auth_id = {$auth_id}";
+        }elseif ($de == 'B'){
+            $where = "status = 3 and auth_id = {$auth_id}";
+        }elseif ($de == 'C'){
+            $where = "status = 4 and auth_id = {$auth_id}";
+        }
+        $page = I("p",'int');
+        $pagesize = 10;
+        if($page<=0) $page = 1;
+        $offset = ( $page-1 ) * $pagesize;
+        $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
+        $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
+        $Page       = new \Think\Page($count,$pagesize);
+        $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $pagination       = $Page->show();// 分页显示输出*
+        $data = array(
+            'de'=>$de,
+            'collector'=>$collector,
+            'auth_id'=>$auth_id,
+            'list'=>$result,
+            'pagination'=>$pagination,
+        );
+        $this->assign($data);
+        $this->display();
+    }
+    //地方确认收到样品
+    public function doSamGet(){
+        $id = I('id');
+        $data = array(
+            'id'=>$id,
+            'status'=>3,
+            'lastedit'=>date("Y-m-d H:i:s"),
+        );
+        $save = D('sampling_form')->save($data);
+        if($save){
+            $ret = array(
+                'msg'=>'succ',
+            );
+            $this->ajaxReturn($ret);
+        }else{
+            $ret = array(
+                'msg'=>'确认失败',
+            );
+            $this->ajaxReturn($ret);
+        }
+    }
+    //中央待确认中心编号
+    public function zyGetCode(){
+        $admin_auth = session("admin_auth");
+//        var_dump($admin_auth);die;
+        $auth_id = $admin_auth['id'];
+        $collector = $admin_auth['name'];
+        $where = "status = 3 and collectorid = {$auth_id}";
+        $page = I("p",'int');
+        $pagesize = 10;
+        if($page<=0) $page = 1;
+        $offset = ( $page-1 ) * $pagesize;
+        $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
+        $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
+        $Page       = new \Think\Page($count,$pagesize);
+        $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $pagination       = $Page->show();// 分页显示输出*
+        $data = array(
+            'collector'=>$collector,
+            'auth_id'=>$auth_id,
+            'list'=>$result,
+            'pagination'=>$pagination,
+        );
+        $this->assign($data);
+        $this->display();
+    }
 }
