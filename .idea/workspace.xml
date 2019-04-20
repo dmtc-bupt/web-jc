@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48e44ff9-c699-4e6d-be3e-b780f2ba7d8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Admin/View/Sample/getSample.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Admin/View/Sample/zyGetCode.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Admin/View/Sample/done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Admin/View/Sample/getReport.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Admin/View/Sample/getSend.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Admin/View/Sample/viewReport.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Admin/View/Sample/zyDone.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Admin/View/Sample/zyGetSample.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Admin/View/Sample/zyGetSend.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Admin/View/Sample/zyCost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Admin/View/Sample/zyCost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Admin/View/Sample/zyNew.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Admin/View/Sample/zyNew.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +26,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1910">
-              <caret line="436" column="5" selection-start-line="436" selection-start-column="5" selection-end-line="436" selection-end-column="5" />
+            <state relative-caret-position="169">
+              <caret line="809" selection-start-line="809" selection-end-line="809" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/getSend.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="231" column="121" selection-start-line="231" selection-start-column="121" selection-end-line="231" selection-end-column="121" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyGetSend.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -32,17 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/getSample.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
+            <state relative-caret-position="532">
               <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyGetCode.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-978">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -50,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyNew.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="66" column="127" selection-start-line="66" selection-start-column="127" selection-end-line="66" selection-end-column="127" />
+            <state relative-caret-position="95">
+              <caret line="35" column="166" selection-start-line="35" selection-start-column="166" selection-end-line="35" selection-end-column="166" />
               <folding>
                 <element signature="e#1405#1411#0" expanded="true" />
               </folding>
@@ -59,56 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyCost.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-270">
-              <caret line="189" column="110" selection-start-line="189" selection-start-column="110" selection-end-line="189" selection-end-column="110" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/view.html">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyGetSample.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2945">
-              <caret line="155" column="166" selection-start-line="155" selection-start-column="166" selection-end-line="155" selection-end-column="166" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/allInput.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="23" column="164" selection-start-line="23" selection-start-column="164" selection-end-line="23" selection-end-column="164" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/input.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3933">
-              <caret line="207" column="99" selection-start-line="207" selection-start-column="99" selection-end-line="207" selection-end-column="99" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="191" column="107" selection-start-line="191" selection-start-column="107" selection-end-line="191" selection-end-column="107" />
+            <state relative-caret-position="238">
+              <caret line="226" column="119" selection-start-line="226" selection-start-column="51" selection-end-line="226" selection-end-column="119" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -154,6 +124,7 @@
       <find>save_</find>
       <find>doSamDelete</find>
       <find>doCost</find>
+      <find>view</find>
     </findStrings>
     <replaceStrings>
       <replace>$one[0].</replace>
@@ -183,9 +154,17 @@
         <option value="$PROJECT_DIR$/Application/Admin/View/Sample/allInput.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Sample/getSample.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Sample/zyGetCode.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Sample/zyNew.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Sample/zyCost.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Sample/doSend.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Sample/getReport.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Sample/viewReport.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Sample/done.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Sample/zyDone.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Sample/zyGetSample.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Sample/zyGetSend.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Sample/getSend.html" />
       </list>
     </option>
   </component>
@@ -193,9 +172,9 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="979" />
-    <option name="height" value="1040" />
+    <option name="x" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -226,6 +205,14 @@
               <item name="Application" type="462c0819:PsiDirectoryNode" />
               <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-jc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-jc" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Sample" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -274,12 +261,14 @@
       <workItem from="1555298033140" duration="24911000" />
       <workItem from="1555404078956" duration="18317000" />
       <workItem from="1555467980986" duration="19727000" />
-      <workItem from="1555556119307" duration="15989000" />
+      <workItem from="1555556119307" duration="16196000" />
+      <workItem from="1555636199256" duration="17578000" />
+      <workItem from="1555680361597" duration="17868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136415000" />
+    <option name="totallyTimeSpent" value="172068000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -293,7 +282,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20174263" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1689008" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -306,7 +295,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32719547" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3243626" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -445,13 +434,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/test.html" />
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/view.html">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/EditController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2945">
-          <caret line="155" column="166" selection-start-line="155" selection-start-column="166" selection-end-line="155" selection-end-column="166" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="417">
+          <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -465,31 +451,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/EditController.class.php">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
+        <state relative-caret-position="114">
+          <caret line="6" column="95" selection-start-line="6" selection-start-column="95" selection-end-line="6" selection-end-column="95" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/getSample.html">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyCost.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+        <state relative-caret-position="1777">
+          <caret line="266" column="5" lean-forward="true" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyGetCode.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-978">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        <state relative-caret-position="-123">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/edit.html">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="191" column="107" selection-start-line="191" selection-start-column="107" selection-end-line="191" selection-end-column="107" />
+        <state relative-caret-position="169">
+          <caret line="809" selection-start-line="809" selection-end-line="809" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/getReport.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="43" lean-forward="true" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="188" column="107" selection-start-line="188" selection-start-column="107" selection-end-line="188" selection-end-column="107" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyDone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/done.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/viewReport.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="221" column="5" selection-start-line="221" selection-start-column="5" selection-end-line="221" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -498,32 +528,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/allInput.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
+        <state relative-caret-position="152">
           <caret line="23" column="164" selection-start-line="23" selection-start-column="164" selection-end-line="23" selection-end-column="164" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1910">
-          <caret line="436" column="5" selection-start-line="436" selection-start-column="5" selection-end-line="436" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyNew.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="66" column="127" selection-start-line="66" selection-start-column="127" selection-end-line="66" selection-end-column="127" />
+        <state relative-caret-position="95">
+          <caret line="35" column="166" selection-start-line="35" selection-start-column="166" selection-end-line="35" selection-end-column="166" />
           <folding>
             <element signature="e#1405#1411#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyCost.html">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyGetSend.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="189" column="110" selection-start-line="189" selection-start-column="110" selection-end-line="189" selection-end-column="110" />
+        <state relative-caret-position="333">
+          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/getSample.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyGetSample.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="226" column="119" selection-start-line="226" selection-start-column="51" selection-end-line="226" selection-end-column="119" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/getSend.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="231" column="121" selection-start-line="231" selection-start-column="121" selection-end-line="231" selection-end-column="121" />
           <folding>
             <element signature="n#style#0;n#span#0;n#p#0;n#td#0;n#tr#19;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>

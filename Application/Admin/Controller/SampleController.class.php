@@ -246,10 +246,19 @@ class SampleController extends Controller{
 //        var_dump($admin_auth);die;
         $auth_id = $admin_auth['id'];
         $collector = $admin_auth['name'];
+        $if_super = $admin_auth['super_admin'];
         if($de == 'A'){
-            $where = "auth_id = {$auth_id} and status = 1";
+            if($if_super == 0){
+                $where = "auth_id = {$auth_id} and status = 1";
+            }elseif ($if_super == 1){
+                $where = " status = 1";
+            }
         }if($de == 'B'){
-            $where = "auth_id = {$auth_id} and status = 8";
+            if($if_super == 0){
+                $where = "auth_id = {$auth_id} and status = 8";
+            }elseif ($if_super == 1){
+                $where = "status = 8";
+            }
         }
         $page = I("p",'int');
         $pagesize = 10;
@@ -315,12 +324,21 @@ class SampleController extends Controller{
 //        var_dump($admin_auth);die;
         $auth_id = $admin_auth['id'];
         $collector = $admin_auth['name'];
+        $if_super = $admin_auth['super_admin'];
         if($de == 'A'){
             $where = "status = 1 ";
         }elseif ($de == 'B'){
-            $where = "status = 2 and collectorid = {$auth_id}";
+            if($if_super == 0){
+                $where = "status = 2 and collectorid = {$auth_id}";
+            }elseif ($if_super == 1){
+                $where = " status = 2";
+            }
         }elseif ($de == 'C'){
-            $where = "status = 8 and collectorid = {$auth_id}";
+            if($if_super == 0){
+                $where = "status = 8 and collectorid = {$auth_id}";
+            }elseif ($if_super == 1){
+                $where = " status = 8";
+            }
         }
         $page = I("p",'int');
         $pagesize = 10;
@@ -442,12 +460,25 @@ class SampleController extends Controller{
 //        var_dump($admin_auth);die;
         $auth_id = $admin_auth['id'];
         $collector = $admin_auth['name'];
+        $if_super = $admin_auth['super_admin'];
         if($de == 'A'){
-            $where = "status = 2 and auth_id = {$auth_id}";
+            if($if_super == 0){
+                $where = "status = 2 and auth_id = {$auth_id}";
+            }elseif ($if_super == 1){
+                $where = " status = 2";
+            }
         }elseif ($de == 'B'){
-            $where = "status = 3 and auth_id = {$auth_id}";
+            if($if_super == 0){
+                $where = "status = 3 and auth_id = {$auth_id}";
+            }elseif ($if_super == 1){
+                $where = " status = 3";
+            }
         }elseif ($de == 'C'){
-            $where = "status = 4 and auth_id = {$auth_id}";
+            if($if_super == 0){
+                $where = "status = 4 and auth_id = {$auth_id}";
+            }elseif ($if_super == 1){
+                $where = " status = 4";
+            }
         }
         $page = I("p",'int');
         $pagesize = 10;
@@ -495,7 +526,12 @@ class SampleController extends Controller{
 //        var_dump($admin_auth);die;
         $auth_id = $admin_auth['id'];
         $collector = $admin_auth['name'];
-        $where = "status = 3 and collectorid = {$auth_id}";
+        $if_super = $admin_auth['super_admin'];
+        if($if_super == 0){
+            $where = "status = 3 and collectorid = {$auth_id}";
+        }elseif ($if_super == 1){
+            $where = " status = 3";
+        }
         $page = I("p",'int');
         $pagesize = 10;
         if($page<=0) $page = 1;
@@ -514,4 +550,289 @@ class SampleController extends Controller{
         $this->assign($data);
         $this->display();
     }
+    //中央编辑中心编号
+    public function zyGetSample(){
+        $id = I('id');
+        $one = D('sampling_form')->where("id = {$id}")->find();
+        $admin_auth = session("admin_auth");
+
+        $collector = $admin_auth['username'];
+        $collectorid = $admin_auth['id'];
+
+        $data = array(
+            'id'=>$id,
+            'collector'=>$collector,
+            'one'=>$one,
+            'collectorid'=>$collectorid,
+        );
+//        var_dump($data);
+        $this->assign($data);
+        $this->display();
+    }
+    //中央保存中心编号
+    public function doCode(){
+        $id = I('id');
+        $collector = I('collector');
+        $collectorid = I('collectorid');
+        $centreno = I('centreno');
+        $samplestaquan = I('samplestaquan');
+        $collectdate = I('collectdate');
+
+        if(empty($centreno)){
+            $ret = array(
+                'msg'=>'中心编号不能为空'
+            );
+            $this->ajaxReturn($ret);
+        }
+        if(empty($samplestaquan)){
+            $ret = array(
+                'msg'=>'样品数量及状态不能为空'
+            );
+            $this->ajaxReturn($ret);
+        }
+        if(empty($collectdate)){
+            $ret = array(
+                'msg'=>'收样日期不能为空'
+            );
+            $this->ajaxReturn($ret);
+        }
+        $data = array(
+            'id'=>$id,
+            'collector'=>$collector,
+            'collectorid'=>$collectorid,
+            'collectdate'=>$collectdate,
+            'samplestaquan'=>$samplestaquan,
+            'centreno'=>$centreno,
+            'status'=> 4,
+            'lastedit'=>date("Y-m-d H:i:s"),
+        );
+        $save = D('sampling_form')->save($data);
+        if(!$save){
+            $ret = array(
+                'msg'=>'提交失败'
+            );
+            $this->ajaxReturn($ret);
+        }elseif ($save){
+            $ret = array(
+                'msg'=>'succ'
+            );
+            $this->ajaxReturn($ret);
+        }
+    }
+    //中央待发出报告
+    public function zyGetSend(){
+        $de = I('de','A');
+        $admin_auth = session("admin_auth");
+//        var_dump($admin_auth);die;
+        $auth_id = $admin_auth['id'];
+        $collector = $admin_auth['name'];
+        $if_super = $admin_auth['super_admin'];
+        if($de == 'A'){
+            if($if_super == 0){
+                $where = "status = 4 and collectorid = {$auth_id}";
+            }elseif ($if_super == 1){
+                $where = " status = 4";
+            }
+        }elseif ($de == 'B'){
+            if($if_super == 0){
+                $where = "status = 5 and collectorid = {$auth_id}";
+            }elseif ($if_super == 1){
+                $where = " status = 5";
+            }
+        }
+
+        $page = I("p",'int');
+        $pagesize = 10;
+        if($page<=0) $page = 1;
+        $offset = ( $page-1 ) * $pagesize;
+        $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
+        $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
+        $Page       = new \Think\Page($count,$pagesize);
+        $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $pagination       = $Page->show();// 分页显示输出*
+        $data = array(
+            'de'=>$de,
+            'collector'=>$collector,
+            'auth_id'=>$auth_id,
+            'list'=>$result,
+            'pagination'=>$pagination,
+        );
+        $this->assign($data);
+        $this->display();
+    }
+    //中央确认发出报告
+    public function getSend(){
+        $id = I('id');
+        $one = D('sampling_form')->where("id = {$id}")->find();
+        $admin_auth = session("admin_auth");
+        $collector = $admin_auth['username'];
+        $collectorid = $admin_auth['id'];
+
+        $data = array(
+            'id'=>$id,
+            'collector'=>$collector,
+            'one'=>$one,
+            'collectorid'=>$collectorid,
+        );
+//        var_dump($data);
+        $this->assign($data);
+        $this->display();
+    }
+    //进行确认操作
+    public function doSend(){
+        $id = I('id');
+        $collector = I('collector');
+        $collectorid = I('collectorid');
+        $reportdate = I('reportdate');
+
+        $data = array(
+            'id'=>$id,
+            'collector'=>$collector,
+            'collectorid'=>$collectorid,
+            'reportdate'=>$reportdate,
+            'status'=> 5,
+            'lastedit'=>date("Y-m-d H:i:s"),
+        );
+        $save = D('sampling_form')->save($data);
+        if(!$save){
+            $ret = array(
+                'msg'=>'提交失败'
+            );
+            $this->ajaxReturn($ret);
+        }elseif ($save){
+            $ret = array(
+                'msg'=>'succ'
+            );
+            $this->ajaxReturn($ret);
+        }
+    }
+
+    //地方待确认收到样品
+    public function getReport(){
+        $admin_auth = session("admin_auth");
+//        var_dump($admin_auth);die;
+        $auth_id = $admin_auth['id'];
+        $collector = $admin_auth['name'];
+        $if_super = $admin_auth['super_admin'];
+        if($if_super == 0){
+            $where = "status = 5 and auth_id = {$auth_id}";
+        }elseif ($if_super == 1){
+            $where = " status = 5";
+        }
+
+        $page = I("p",'int');
+        $pagesize = 10;
+        if($page<=0) $page = 1;
+        $offset = ( $page-1 ) * $pagesize;
+        $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
+        $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
+        $Page       = new \Think\Page($count,$pagesize);
+        $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $pagination       = $Page->show();// 分页显示输出*
+        $data = array(
+            'collector'=>$collector,
+            'auth_id'=>$auth_id,
+            'list'=>$result,
+            'pagination'=>$pagination,
+        );
+        $this->assign($data);
+        $this->display();
+    }
+    //地方查看report
+    public function viewReport(){
+        $id = I('id');
+        $one = D('sampling_form')->where("id = {$id}")->find();
+
+//        var_dump($collector);
+        $data = array(
+            'id'=>$id,
+            'one'=>$one,
+        );
+//        var_dump($data);
+        $this->assign($data);
+        $this->display();
+    }
+
+    //地方确认收到报告
+    public function doGetReport(){
+        $id = I('id');
+
+        $data = array(
+            'id'=>$id,
+            'status'=> 6,
+            'lastedit'=>date("Y-m-d H:i:s"),
+        );
+        $save = D('sampling_form')->save($data);
+        if(!$save){
+            $ret = array(
+                'msg'=>'确认失败'
+            );
+            $this->ajaxReturn($ret);
+        }elseif ($save){
+            $ret = array(
+                'msg'=>'succ'
+            );
+            $this->ajaxReturn($ret);
+        }
+    }
+
+    //地方已完成
+    public function done(){
+        $admin_auth = session("admin_auth");
+//        var_dump($admin_auth);die;
+        $auth_id = $admin_auth['id'];
+        $collector = $admin_auth['name'];
+        $if_super = $admin_auth['super_admin'];
+        if($if_super == 0){
+            $where = "status = 6 and auth_id = {$auth_id}";
+        }elseif ($if_super == 1){
+            $where = " status = 6";
+        }
+
+        $page = I("p",'int');
+        $pagesize = 10;
+        if($page<=0) $page = 1;
+        $offset = ( $page-1 ) * $pagesize;
+        $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
+        $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
+        $Page       = new \Think\Page($count,$pagesize);
+        $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $pagination       = $Page->show();// 分页显示输出*
+        $data = array(
+            'collector'=>$collector,
+            'auth_id'=>$auth_id,
+            'list'=>$result,
+            'pagination'=>$pagination,
+        );
+        $this->assign($data);
+        $this->display();
+    }
+
+    //中央已完成
+    public function zyDone(){
+        $admin_auth = session("admin_auth");
+//        var_dump($admin_auth);die;
+        $auth_id = $admin_auth['id'];
+        $collector = $admin_auth['name'];
+
+        $where = " status = 6";
+        $page = I("p",'int');
+        $pagesize = 10;
+        if($page<=0) $page = 1;
+        $offset = ( $page-1 ) * $pagesize;
+        $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
+        $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
+        $Page       = new \Think\Page($count,$pagesize);
+        $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $pagination       = $Page->show();// 分页显示输出*
+        $data = array(
+            'collector'=>$collector,
+            'auth_id'=>$auth_id,
+            'list'=>$result,
+            'pagination'=>$pagination,
+        );
+        $this->assign($data);
+        $this->display();
+    }
+
 }
