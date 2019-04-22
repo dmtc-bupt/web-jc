@@ -135,10 +135,17 @@ class InformationController extends Controller
     }
     //质检范围detail
     public function scopeDetail(){
+        $type = I('type');
+        if($type == 'A'){
+            $word = I('word');
+            $where['cate_name|metial_name|name|standard|number'] = array('like','%'.$word.'%');
+        }elseif ($type == 'B'){
+            $cate_num=I('cate_num');
+            $where = "cate_num = {$cate_num} and status = 1";
+        }
         $headPicture = D('head_image')->where('type = 3')->find();
         $footer=D('footer')->find();
-        $cate_num=I('cate_num');
-        $where = "cate_num = {$cate_num} and status = 1";
+
         $page=I("p",'int');
         if($page<=0) $page=1;
         $pagesize=50;
@@ -290,11 +297,20 @@ class InformationController extends Controller
     }
     //报告查询子页面
     public function reportQuery(){
+        $code = I('code');
+        $unit = I('unit');
+        if(!empty($code) && !empty($unit)){
+            $where = "code = {$code} and unit = {$unit}";
+            $one = D('report_query')->where($where)->find();
+        }else{
+            $one = null;
+        }
         $headPicture = D('head_image')->where('type = 3')->find();
         $footer=D('footer')->find();
         $body=array(
             'footer'=>$footer,
             'head_image'=>$headPicture,
+            'one'=>$one,
         );
         $this->assign($body);
         $this->display();
@@ -334,8 +350,8 @@ class InformationController extends Controller
             $this->ajaxReturn($ret);
         }
         $where['cate_name|metial_name|name|standard|number'] = array('like','%'.$word.'%');
-        $list = D('inspect_scope')->where($where)->select();
-        if(empty($list)){
+        $list = D('inspect_scope')->where($where)->count();
+        if($list == 0){
             $ret = array(
                 'msg'=>'没有相关内容'
             );
@@ -343,7 +359,6 @@ class InformationController extends Controller
         }else{
             $ret = array(
                 'msg'=>'succ',
-                'result'=>$list
             );
             $this->ajaxReturn($ret);
         }
