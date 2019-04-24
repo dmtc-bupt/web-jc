@@ -30,6 +30,28 @@
 </footer>
 <!--<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.5&key=6cdce0833c160c7358e0700085a42ec5"></script>-->
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.13&key=1f342e37b7e51d824cdcd9a940a3d37a"></script>
+<script type="text/javascript" src="__PUBLIC__/static/js/jquery-3.3.1.min.js"></script>
+<script>
+    function doAlertDialog(options){
+	var _text = "",_class="";
+	if(options.text) _text = options.text;
+	var _buttons = {
+    		ok:{
+    			"text":"知道了",
+    			"btnClass":'btn btn-primary btn-sm'
+    		}
+    	};
+	if(options.action){
+		var _func = options.action;
+		_buttons.ok.action = eval(_func);
+	}
+	$.alert({
+    	title: false,
+    	content: '<div class="'+_class+' talign-center fz13">'+_text+'</div>',
+    	buttons:_buttons
+	});
+}
+</script>
 <script type="text/javascript" >
     // var map = new AMap.Map('container', {
     //     resizeEnable: true,
@@ -89,7 +111,6 @@
 
 </script>
 <script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
-<script type="text/javascript" src="__PUBLIC__/static/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/static/js/bootstrap.min.js"></script>
 <script src="__PUBLIC__/static/js/swiper.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/static/js/wow.min.js"></script>
@@ -109,6 +130,15 @@
         el: '.swiper-pagination',
         clickable: true,
       },
+    });
+    var swiperZJ = new Swiper('.swiper-containerZJ', {
+      direction: 'vertical',
+      slidesPerView: 'auto',
+      freeMode: true,
+    //   scrollbar: {
+    //     el: '.swiper-scrollbar',
+    //   },
+      mousewheel: true,
     });
 </script>
 <script type="text/javascript" src="__PUBLIC__/static/js/main.js"></script>

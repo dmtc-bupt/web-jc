@@ -8,7 +8,7 @@
         <div class="col-xs-2 col-md-2 left-menu">
             <ul>
                 <li><a href="/Home/Information/file">检测资料</a></li>
-                <li><a href="/Home/Information/file2">标准资料</a></li>
+                <li><a href="/Home/Information/fileSta">标准资料</a></li>
             </ul>
         </div>
         <div class="col-xs-10 col-md-10 right-content">
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <volist name="data" id="vo">
-                <a href="{$vo['save_path']}" download="{$vo['filename']}"style="display: block;font-size: large">{$vo.filename}</a></br>
+                <a href="{$vo['save_path']}" download="{$vo['filename']}" style="display: block;font-size: large">{$vo.filename}</a></br>
             </volist>
             <nav>{$pagination1}</nav>
         </div>

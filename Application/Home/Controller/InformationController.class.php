@@ -325,7 +325,7 @@ class InformationController extends Controller
             );
             $this->ajaxReturn($ret);
         }
-        $where = "code = {$code} and unit = {$unit}";
+        $where = "code = '$code' and unit = '$unit'";
         $one = D('report_query')->where($where)->find();
         if($one){
             $ret = array(

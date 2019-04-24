@@ -303,6 +303,12 @@ hr{
 {
     height: 205px;;
 }
+/* 报告查询 */
+#content-area form .form-group .form-control #code{
+    width: 50%;
+}
+
+
 /* 实验室风采 */
 .picContainer{
     height: 400px;
@@ -378,6 +384,15 @@ hr{
     width: 32px;
     height: 32px;
 }
+/* 报告查询 */
+#container-content .right-content #right-content-details #report-query{
+    width: 60%;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
 /* footer */
 footer{
     background-color: #000;
