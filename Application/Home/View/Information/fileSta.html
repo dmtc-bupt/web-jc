@@ -29,10 +29,26 @@
                     </div>
                 </div>
             </div>
-            <volist name="standard" id="vo">
-                <a href="{$vo['save_path']}" download="{$vo['filename']}"style="display: block;font-size: large">{$vo.filename}</a></br>
-            </volist>
-            <nav>{$pagination}</nav>
+            <div class="row" id="right-content-details">
+                <div class="col-xs-12 col-md-12">
+                    <ul class="media-list" id="notice-list">
+                        <volist name="standard" id="vo" key="{i}">
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="{$vo['save_path']}" download="{$vo['filename']}">
+                                        <img class="media-object" src='__PUBLIC__/picture/number-{$i}.png' alt="......">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <a href="{$vo['save_path']}" download="{$vo['filename']}" style="display: block;font-size: large">{$vo.filename}</a>
+                                    <span>发布：{$vo.savetime}</span>
+                                </div>
+                            </li>
+                        </volist>
+                    </ul>
+                    <nav>{$pagination}</nav>
+                </div>
+            </div>
         </div>
     </div>
 </div>

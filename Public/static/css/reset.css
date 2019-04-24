@@ -22,7 +22,7 @@ a:focus {
     outline: none;
 }
 a:hover{
-    color: #f1f1f1
+    color: rgb(29,75,161)
 }
 ::selection {
     background: #337ab7;
