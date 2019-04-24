@@ -1096,7 +1096,7 @@ class EditController extends Controller {
     }
     //导出excel
     public function expt(){
-
+        import("Org.Util.PHPExcel");
         $title  = "inspection";
         $th  = array(
             array('id','范围id'),

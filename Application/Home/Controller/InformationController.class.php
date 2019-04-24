@@ -295,6 +295,21 @@ class InformationController extends Controller
         $this->assign($body);
         $this->display();
     }
+    //标准详情
+    public function standardDetail(){
+        $headPicture = D('head_image')->where('type = 4')->find();
+        $footer=D('footer')->find();
+        $type=I("type",0);
+        $id=I('id');
+        $one=D('standard')->where("type={$type}")->where("id = {$id}")->find();
+        $body=array(
+            'one'=>$one,
+            'footer'=>$footer,
+            'head_image'=>$headPicture,
+        );
+        $this->assign($body);
+        $this->display();
+    }
     //报告查询子页面
     public function reportQuery(){
         $code = I('code');

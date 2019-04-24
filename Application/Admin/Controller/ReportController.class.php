@@ -33,7 +33,7 @@ class ReportController extends Controller{
         $id = I('id','0');
         $unit = I('unit');
         $code = I('code');
-        $content = I('content');
+        $content = $_POST["content"];
         $status = I('status');
         if(empty($unit)||empty($code)||empty($content)){
             $ret = array(
