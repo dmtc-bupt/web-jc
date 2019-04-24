@@ -16,6 +16,18 @@ class EditController extends Controller {
         $this->assign('menu_active',strtolower(CONTROLLER_NAME));
         $this->assign('menu_secoud_active',strtolower(ACTION_NAME));
     }
+    //控制台显示参数
+    function console_log($data)
+    {
+        if (is_array($data) || is_object($data))
+        {
+            echo("<script>console.log('".json_encode($data)."');</script>");
+        }
+        else
+        {
+            echo("<script>console.log('".$data."');</script>");
+        }
+    }
     //首页轮播图片保存
     public function saveImage1(){
         $imgurl = I("imgurl");
@@ -135,6 +147,7 @@ class EditController extends Controller {
     //质检服务内容
     public function inspection(){
         $de=I('de','A');
+        $this->console_log($de);
         if($de == 'A'){
             $data = D("inspection_process")->find();
             $body=array(
@@ -1191,6 +1204,7 @@ class EditController extends Controller {
                 $ret['errlist'] = $errlist;
                 $ret['msg'] = "导入完毕!";
                 //return json_encode($ret,256);
+//                $this->console_log($ret['allNum']);
                 return $ret;
             }
             $ret['res'] = "1";
@@ -1199,6 +1213,7 @@ class EditController extends Controller {
             $ret['sucNum'] = $importRows;
             $ret['data'] = $ar;
             $ret['msg'] = "导入完毕";
+//            $this->console_log($ret['allNum']);
             //return json_encode($ret,256);
             return $ret;
         } else {
@@ -1218,11 +1233,7 @@ class EditController extends Controller {
 //            var_dump($data);die;
             if($data){
                 $deledata = D('inspect_scope')->where("status = 0")->delete();
-                $predata = D('inspect_scope')->where("status = 1")->select();
-                foreach($predata as $v){
-                    $v['status'] = 0;
-                    $user = D('inspect_scope')->save($v);
-                }
+                $predata = D('inspect_scope')->where("status = 1")->setField('status',0);
                 foreach($data as $v){
                     #循环写入数据库，或者开启事务..
                     $save = D('inspect_scope')->add($v);
@@ -1235,7 +1246,7 @@ class EditController extends Controller {
                     }
                 }
                 $rs = array(
-                    'msg'=> 'succ'
+                    'msg'=> 'succ',
                 );
                 $this->ajaxReturn($rs);
             }
