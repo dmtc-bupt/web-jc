@@ -297,6 +297,7 @@ if(!function_exists("SHA256Hex")) {
         $re = hash('sha256', $str, true);
         return md5(bin2hex($re));
     }
+}
 
 //    /**
 //     * Export Excel | 2017.12.06
@@ -307,12 +308,15 @@ if(!function_exists("SHA256Hex")) {
 //     * @param {string} $expCellName  标题栏
 //     * @param {array}  $expTableData 内容数组
 //     */
+//    if(!function_exists("humanTime")) {
 //    function export_excel($expTitle,$expCellName,$expTableData){
 //        $xlsTitle = iconv('utf-8', 'gb2312', $expTitle);//文件名称
 //        $fileName = $expTitle.date('_YmdHis');//or $xlsTitle 文件名称可根据自己情况设定
 //        $cellNum = count($expCellName);
 //        $dataNum = count($expTableData);
-//        vendor("PHPExcel.PHPExcel");
+//        import("Org.Util.PHPExcel");
+//        import("Org.Util.PHPExcel.IOFactory");
+//        import("Org.Util.PHPExcel.Cell");
 //        $objPHPExcel = new PHPExcel();
 //        $cellName = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','AA','AB','AC','AD','AE','AF','AG','AH','AI','AJ','AK','AL','AM','AN','AO','AP','AQ','AR','AS','AT','AU','AV','AW','AX','AY','AZ');
 //
@@ -337,6 +341,55 @@ if(!function_exists("SHA256Hex")) {
 //        $objWriter->save('php://output');
 //        exit;
 //    }
+    if(!function_exists("humanTime")) {
+        function export_excel($expTitle,$expCellName,$expTableData,$user){
+            $xlsTitle = iconv('utf-8', 'gb2312', $expTitle);//文件名称
+            $fileName = $expTitle.date('_YmdHis');//or $xlsTitle 文件名称可根据自己情况设定
+            import("Org.Util.PHPExcel");
+            import("Org.Util.PHPExcel.IOFactory");
+            import("Org.Util.PHPExcel.Cell");
+            $objPHPExcel = new PHPExcel();
+            $cellName = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','AA','AB','AC','AD','AE','AF','AG','AH','AI','AJ','AK','AL','AM','AN','AO','AP','AQ','AR','AS','AT','AU','AV','AW','AX','AY','AZ');
+            $sheet = 0;
+            foreach($user as $one){
+                if($sheet !=0){
+                    $objPHPExcel->createSheet(); //sheet=0时不需要新建sheet，直接使用默认sheet即可
+                }
+
+                $userdata = array();//当前地方收样员的数据先清零
+                $authname = $one['username'];
+                foreach($expTableData as $v){
+                    if($v['authname'] == $authname){
+                        $userdata[] = $v;
+                    }//查询当前地方收样员的数据
+                }
+                $cellNum = count($expCellName);
+                $dataNum = count($userdata);
+                $objPHPExcel->setActiveSheetIndex($sheet);
+                $objPHPExcel->getActiveSheet()->setTitle("{$authname}")->mergeCells('A1:'.$cellName[$cellNum-1].'1');//合并单元格
+                $objPHPExcel->setActiveSheetIndex($sheet)->setCellValue('A1', $expTitle.'  Export time:'.date('Y-m-d H:i:s'));
+                for($i=0;$i<$cellNum;$i++){
+                    $objPHPExcel->setActiveSheetIndex($sheet)->setCellValue($cellName[$i].'2', $expCellName[$i][1]);
+                }
+                // Miscellaneous glyphs, UTF-8
+                for($i=0;$i<$dataNum;$i++){
+                    for($j=0;$j<$cellNum;$j++){
+                        $objPHPExcel->getActiveSheet($sheet)->setCellValue($cellName[$j].($i+3), $userdata[$i][$expCellName[$j][0]]);
+                    }
+                }
+                $sheet ++;
+            }
+
+
+            ob_end_clean();//清除缓存,避免中文乱码 *************** 这一行非常重要 ******************************
+
+            header('pragma:public');
+            header('Content-type:application/vnd.ms-excel;charset=utf-8;name="'.$xlsTitle.'.xls"');
+            header("Content-Disposition:attachment;filename=$fileName.xls");//attachment新窗口打印inline本窗口打印
+            $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+            $objWriter->save('php://output');
+            exit;
+        }
 //
 //    /**
 //     * Import Excel | 2017.12.06
@@ -418,7 +471,8 @@ if(!function_exists("SHA256Hex")) {
 //        unlink($file);
 //        return array("error"=>1,"data"=>$array);
 //    }
-}
+    }
+
 if(!function_exists("uplExcel")) {
      function plExcel($filepath)
     {

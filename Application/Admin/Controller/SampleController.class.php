@@ -2,6 +2,25 @@
 namespace Admin\Controller;
 use Think\Controller;
 class SampleController extends Controller{
+    //初始化方法
+    public function _initialize(){
+        load('@.functions');
+        D("account")->checkLogin();
+        $this->assign('menu_active',strtolower(CONTROLLER_NAME));
+        $this->assign('menu_secoud_active',strtolower(ACTION_NAME));
+    }
+    //控制台显示参数
+    function console_log($data)
+    {
+        if (is_array($data) || is_object($data))
+        {
+            echo("<script>console.log('".json_encode($data)."');</script>");
+        }
+        else
+        {
+            echo("<script>console.log('".$data."');</script>");
+        }
+    }
     //地方添加申请单
     public function input(){
         $admin_auth = session("admin_auth");
@@ -180,6 +199,7 @@ class SampleController extends Controller{
                 'package_remark'=>$package_remark,
                 'status'=> 1,
                 'lastedit'=>date("Y-m-d H:i:s"),
+                'inputdate'=>date("Y-m-d"),
             );
             $save = D("sampling_form")->data($data_sample)->add();
             if($save){
@@ -228,6 +248,7 @@ class SampleController extends Controller{
                 'status'=> 1,
                 'ifedit'=>1,
                 'lastedit'=>date("Y-m-d H:i:s"),
+                'inputdate'=>date("Y-m-d"),
             );
             $save = D("sampling_form")->data($data_sample)->save();
             if($save){
@@ -312,6 +333,7 @@ class SampleController extends Controller{
             'collector'=>$collector,
             'auth_id'=>$auth_id,
             'one'=>$one,
+            'inputdate'=>date("Y-m-d"),
         );
 //        var_dump($data);
         $this->assign($data);
@@ -684,6 +706,9 @@ class SampleController extends Controller{
         $collector = I('collector');
         $collectorid = I('collectorid');
         $reportdate = I('reportdate');
+        if(empty($reportdate)){
+            $reportdate = date("Y-m-d");
+        }
 
         $data = array(
             'id'=>$id,
@@ -761,6 +786,7 @@ class SampleController extends Controller{
             'id'=>$id,
             'status'=> 6,
             'lastedit'=>date("Y-m-d H:i:s"),
+            'getdate'=>date("Y-m-d"),
         );
         $save = D('sampling_form')->save($data);
         if(!$save){
@@ -815,13 +841,12 @@ class SampleController extends Controller{
         $auth_id = $admin_auth['id'];
         $collector = $admin_auth['name'];
 
-        $where = " status = 6";
         $page = I("p",'int');
         $pagesize = 10;
         if($page<=0) $page = 1;
         $offset = ( $page-1 ) * $pagesize;
-        $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
-        $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
+        $result= D('common_system_user')->where('gid = 6')->limit("{$offset},{$pagesize}")->select();
+        $count =  D('common_system_user')->where('gid = 6')->count();//!!!!!!!!!!!!!!
         $Page       = new \Think\Page($count,$pagesize);
         $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
         $pagination       = $Page->show();// 分页显示输出*
@@ -833,6 +858,72 @@ class SampleController extends Controller{
         );
         $this->assign($data);
         $this->display();
+    }
+
+    public function zyDoneDetail(){
+        $authname = I('username');
+//        var_dump($admin_auth);die;
+
+        $where = " status = 6 and authname = '{$authname}'";
+        $page = I("p",'int');
+        $pagesize = 10;
+        if($page<=0) $page = 1;
+        $offset = ( $page-1 ) * $pagesize;
+        $result=D('sampling_form')->where($where)->limit("{$offset},{$pagesize}")->select();
+        $count = D('sampling_form')->where($where)->count();//!!!!!!!!!!!!!!
+        $Page       = new \Think\Page($count,$pagesize);
+        $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $pagination       = $Page->show();// 分页显示输出*
+        $data = array(
+
+            'list'=>$result,
+            'pagination'=>$pagination,
+        );
+        $this->assign($data);
+        $this->display();
+    }
+
+    //中央导出报告
+    public function export(){
+        $admin_auth = session("admin_auth");
+        $de = I('de',0);
+        $begindate = I('begindate');
+        $enddate = I('enddate');
+        if($de == 0){
+            $this->display();
+        }elseif ($de == 1){
+
+        }
+    }
+    //将数据导出
+    public function doExport(){
+        $begindate = I('begindate');
+        $enddate = I('enddate');
+//        $begindate = strtotime($begindate);
+//        $enddate = strtotime($enddate);
+//        $this->console_log($begindate);
+//        $this->console_log($enddate);
+        $title  = "报告统计";
+//        $where = "reportdate between {$begindate} and {$enddate}";
+
+        $map['reportdate']  = array(array('EGT',"{$begindate},"),array('ELT',"{$enddate},"),'and');
+        $th  = array(
+            array('centreno','中心编号'),
+            array('clientname','项目委托单位'),
+            array('productunit','生产单位'),
+            array('samplename','样品名称'),
+            array('testcriteria','检验依据'),
+            array('testitem','检验项目'),
+            array('testcost','检验费用'),
+            array('inputdate','第一次申请单填写时间'),
+            array('collectdate','编号确定时间'),
+            array('reportdate','报告发出时间'),
+            array('getdate','地方收到报告时间'),
+            array('authname','地方收样处'),
+        );
+        $user = D('common_system_user')->where('gid = 6')->select();
+        $data  = M('sampling_form')->where($map)->Field('centreno,clientname,productunit,samplename,testcriteria,testitem,testcost,inputdate,collectdate,reportdate,getdate,authname')->select();
+        export_excel($title,$th,$data,$user);
     }
 
 }

@@ -136,12 +136,16 @@ class InformationController extends Controller
     //质检范围detail
     public function scopeDetail(){
         $type = I('type');
+//        var_dump($type);die;
         if($type == 'A'){
             $word = I('word');
-            $where['cate_name|metial_name|name|standard|number'] = array('like','%'.$word.'%');
+            $map['cate_name|metial_name|name|standard|number'] = array('like','%'.$word.'%');
+            $map['status'] = array('eq',1);
+//            var_dump($map);die;
         }elseif ($type == 'B'){
             $cate_num=I('cate_num');
-            $where = "cate_num = {$cate_num} and status = 1";
+            $map['cate_num'] = array('eq',"{$cate_num}");
+            $map['status'] = array('eq',1);
         }
         $headPicture = D('head_image')->where('type = 3')->find();
         $footer=D('footer')->find();
@@ -150,8 +154,8 @@ class InformationController extends Controller
         if($page<=0) $page=1;
         $pagesize=50;
         $offset=($page-1)*$pagesize;
-        $scope =D('inspect_scope')->where($where)->limit("{$offset},{$pagesize}")->order('id desc')->select();
-        $count=D('inspect_scope')->where($where)->count();
+        $scope =D('inspect_scope')->where($map)->limit("{$offset},{$pagesize}")->order('id desc')->select();
+        $count=D('inspect_scope')->where($map)->count();
         $scope_p =  new \Think\Page($count,$pagesize);
         $scope_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
         $pagination= $scope_p->show();
@@ -364,8 +368,9 @@ class InformationController extends Controller
             );
             $this->ajaxReturn($ret);
         }
-        $where['cate_name|metial_name|name|standard|number'] = array('like','%'.$word.'%');
-        $list = D('inspect_scope')->where($where)->count();
+        $map['cate_name|metial_name|name|standard|number'] = array('like','%'.$word.'%');
+        $map['status'] = array('eq',1);
+        $list = D('inspect_scope')->where($map)->count();
         if($list == 0){
             $ret = array(
                 'msg'=>'没有相关内容'

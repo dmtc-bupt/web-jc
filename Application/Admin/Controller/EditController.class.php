@@ -1094,24 +1094,7 @@ class EditController extends Controller {
         }
         $this->ajaxReturn($rs);
     }
-    //导出excel
-    public function expt(){
-        import("Org.Util.PHPExcel");
-        $title  = "inspection";
-        $th  = array(
-            array('id','范围id'),
-            array('path','树路径'),
-            array('cate_name','类别名称'),
-            array('metial_name','材料名称'),
-            array('name','项目名称'),
-            array('standard','标准名称'),
-            array('number','编号'),
-            array('remark','备注'),
-            array('save_time','保存时间'),
-        );
-        $data  = M('inspect_scope')->Field('id,path,cate_name,metial_name,name,standard,number,remark,save_time')->select();
-        export_excel($title,$th,$data);
-    }
+
 
     //获取单元格内容，处理单元格合并时的NULL值情况。
     public function getCell($sheet,$col,$row){
@@ -1162,6 +1145,7 @@ class EditController extends Controller {
             $errlist = array();
             $i = 0;
             $importRows = 0;
+            $allcate = array();//用于统计大类
             for ($j = 3; $j <= $highestRow; $j++) {
                 $importRows++;
                 $cate = $this->getCell($sheet,"A",$j);   //需要导入的phone
@@ -1194,6 +1178,16 @@ class EditController extends Controller {
                     'status' => $status,
                     'save_time'=>date("Y-m-d H:i:s"),
                 );
+                //以下是统计大类的代码
+                $cateB = $cell = $sheet->getCell("A".(string)$j)->getValue();
+                $cate_numB = $cell = $sheet->getCell("B".(string)$j)->getValue();
+                if(!empty($cateB) && !empty($cate_numB)){
+                    $allcate[] = array(
+                        'cate_num'=>$cate_numB,
+                        'cate'=>$cateB,
+                        'status'=> 1,
+                    );
+                }
             }
             if ($i > 0) {
                 $ret['res'] = "0";
@@ -1203,6 +1197,7 @@ class EditController extends Controller {
                 $ret['data'] = $ar;
                 $ret['errlist'] = $errlist;
                 $ret['msg'] = "导入完毕!";
+                $ret['cate'] = $allcate;
                 //return json_encode($ret,256);
 //                $this->console_log($ret['allNum']);
                 return $ret;
@@ -1213,6 +1208,7 @@ class EditController extends Controller {
             $ret['sucNum'] = $importRows;
             $ret['data'] = $ar;
             $ret['msg'] = "导入完毕";
+            $ret['cate'] = $allcate;
 //            $this->console_log($ret['allNum']);
             //return json_encode($ret,256);
             return $ret;
@@ -1229,14 +1225,27 @@ class EditController extends Controller {
         if($excel){
             $result = $this->uplExcel($excel);
             $data = $result["data"];
+            $cate = $result['cate'];
 //            var_dump($data['errlist']);
 //            var_dump($data);die;
-            if($data){
+            if($data && $cate){
                 $deledata = D('inspect_scope')->where("status = 0")->delete();
                 $predata = D('inspect_scope')->where("status = 1")->setField('status',0);
                 foreach($data as $v){
                     #循环写入数据库，或者开启事务..
                     $save = D('inspect_scope')->add($v);
+                    if(!$save){
+                        $rs = array(
+                            'msg'=> 'fail',
+                            'info'=>'数据库保存错误'
+                        );
+                        $this->ajaxReturn($rs);
+                    }
+                }
+                $deledata = D('inspect_cate')->where("status = 0")->delete();
+                $predata = D('inspect_cate')->where("status = 1")->setField('status',0);
+                foreach($cate as $v){
+                    $save = D('inspect_cate')->add($v);
                     if(!$save){
                         $rs = array(
                             'msg'=> 'fail',
