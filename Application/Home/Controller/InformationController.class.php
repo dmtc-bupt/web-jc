@@ -57,6 +57,9 @@ class InformationController extends Controller
         $pagesize=4;
         $offset=($page-1)*$pagesize;
         $notice =D('news')->where('type=0')->limit("{$offset},{$pagesize}")->order('id desc')->select();
+        foreach($notice as &$v){
+            $v['save_time'] = substr($v['save_time'],5,5);
+        }
         $count=D('news')->where("type = 0")->count();
         $notice_p =  new \Think\Page($count,$pagesize);
         $notice_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
@@ -81,6 +84,9 @@ class InformationController extends Controller
         $pagesize2=4;
         $offset2=($page2-1)*$pagesize2;
         $industry =D('news')->where('type=1')->limit("{$offset2},{$pagesize2}")->order('id desc')->select();
+        foreach($industry as &$v){
+            $v['save_time'] = substr($v['save_time'],5,5);
+        }
         $count2=D('news')->where("type = 1")->count();
         $industry_p =  new \Think\Page($count2,$pagesize2,'','p2');
         $industry_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
@@ -239,6 +245,9 @@ class InformationController extends Controller
         $pagesize2=4;
         $offset2=($page2-1)*$pagesize2;
         $standard =D('standard')->where('type=0')->limit("{$offset2},{$pagesize2}")->order('id desc')->select();
+        foreach($standard as &$v){
+            $v['save_time'] = substr($v['save_time'],5,5);
+        }
         $count2=D('standard')->where("type = 0")->count();
         $standard_p =  new \Think\Page($count2,$pagesize2,'','p2');
         $standard_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
@@ -262,6 +271,9 @@ class InformationController extends Controller
         $pagesize2=4;
         $offset2=($page2-1)*$pagesize2;
         $standard =D('standard')->where('type=1')->limit("{$offset2},{$pagesize2}")->order('id desc')->select();
+        foreach($standard as &$v){
+            $v['save_time'] = substr($v['save_time'],5,5);
+        }
         $count2=D('standard')->where("type = 1")->count();
         $standard_p =  new \Think\Page($count2,$pagesize2,'','p2');
         $standard_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
@@ -285,6 +297,9 @@ class InformationController extends Controller
         $pagesize2=4;
         $offset2=($page2-1)*$pagesize2;
         $standard =D('standard')->where('type=2')->limit("{$offset2},{$pagesize2}")->order('id desc')->select();
+        foreach($standard as &$v){
+            $v['save_time'] = substr($v['save_time'],5,5);
+        }
         $count2=D('standard')->where("type = 2")->count();
         $standard_p =  new \Think\Page($count2,$pagesize2,'','p2');
         $standard_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
