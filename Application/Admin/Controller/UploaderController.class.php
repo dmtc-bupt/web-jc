@@ -41,7 +41,7 @@ class UploaderController extends Controller {
             }
             isset($result) && imagedestroy($result);
             imagedestroy($image);
-            $imgUrl = $this->cropImage($picAddr,960,540);
+            $imgUrl = $this->cropImage($picAddr,72,19);
             $array = array(
                 'info'=>'succ',
                 'information_pic_path'=>substr($imgUrl, 1),
