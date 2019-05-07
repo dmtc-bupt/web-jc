@@ -131,8 +131,9 @@ class InformationController extends Controller
     public function scope(){
         $headPicture = D('head_image')->where('type = 3')->find();
         $footer=D('footer')->find();
-
+        $list = D('inspect_cate')->where('status = 1')->select();
         $body=array(
+            'list'=>$list,
             'footer'=>$footer,
             'head_image'=>$headPicture,
         );

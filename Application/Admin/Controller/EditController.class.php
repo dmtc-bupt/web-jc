@@ -1179,12 +1179,12 @@ class EditController extends Controller {
                     'save_time'=>date("Y-m-d H:i:s"),
                 );
                 //以下是统计大类的代码
-                $cateB = $cell = $sheet->getCell("A".(string)$j)->getValue();
-                $cate_numB = $cell = $sheet->getCell("B".(string)$j)->getValue();
+                $cateB = $cell = $sheet->getCell("B".(string)$j)->getValue();
+                $cate_numB = $cell = $sheet->getCell("A".(string)$j)->getValue();
                 if(!empty($cateB) && !empty($cate_numB)){
                     $allcate[] = array(
                         'cate_num'=>$cate_numB,
-                        'cate'=>$cateB,
+                        'cate_name'=>$cateB,
                         'status'=> 1,
                     );
                 }
