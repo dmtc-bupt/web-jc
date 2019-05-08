@@ -7,9 +7,9 @@
     <div class="row">
         <div class="col-xs-2 col-md-2 left-menu">
             <ul>
-                <li><a href="/Home/Information/process">检测流程</a></li>
-                <li><a href="/Home/Information/scope">质检范围</a></li>
-                <li><a href="/Home/Information/reportQuery">报告查询</a></li>
+                <li><a class="hvr-underline-from-left" href="/Home/Information/process">检测流程</a></li>
+                <li><a class="hvr-underline-from-left" href="/Home/Information/scope">质检范围</a></li>
+                <li><a class="hvr-underline-from-left" href="/Home/Information/reportQuery">报告查询</a></li>
             </ul>
         </div>
         <div class="col-xs-10 col-md-10 right-content">
@@ -77,6 +77,7 @@
                     result.append(ret.data.content)
                 }else{
                     var result = $("#result")
+                    result.children().remove()
                     result.append('<div class="alert alert-success" role="alert">'+ret.msg+'</div>')
                 }
             }

@@ -43,19 +43,23 @@
 <div class="container-fluid" id="content-area">
     <div class="row">
         <div class="col-xs-12 col-md-2" id="download-left">
-            <ul class="list-group">
-                <a href="/Home/Information/file"><li class="list-group-item" id="list-group-title">资料下载<span class="glyphicon glyphicon-chevron-right"></span></li></a>
+            <div class="infomation-title">
+                <span class="infomation-title-icon"></span>
+                <span class="infomation-title-text">资料下载</span>
+            </div>
+            <hr />
+            <ul style="list-style-type: disc;" class="list-group">
                 <foreach name="file" item="vo">
                     <li class="list-group-item">
-                        <a class="list-left-title" href="{$vo['save_path']}" download="{$vo['filename']}">{$vo.filename}</a>
-                        <span class="list-left-date">{$vo.savetime}</span>
+                        <a title="{$vo.filename}" class="list-left-title hvr-bounce-to-right" href="{$vo['save_path']}" download="{$vo['filename']}">{$vo.filename}</a>
+                        <!-- <span class="list-left-date">{$vo.savetime}</span> -->
                     </li>
                 </foreach>
-              </ul>
+            </ul>
         </div>
         <div class="col-xs-12 col-md-8" id="information-news">
             <div class="infomation-title">
-                <span class="glyphicon glyphicon-leaf"></span>
+                <span class="infomation-title-icon"></span>
                 <span class="infomation-title-text">新闻中心</span>
             </div>
             <hr />
@@ -93,8 +97,8 @@
                     <ul class="list-group">
                         <foreach name="news" item="vo">
                             <li class="list-group-item">
-                                <a class="list-left-title" href="{:U('/Home/Information/newDetail')}?type={$vo.type}}&id={$vo['id']}">{$vo.title}</a>
-                                <span class="list-left-date">{$vo.save_time}</span>
+                                <a class="list-left-title hvr-bounce-to-right" href="{:U('/Home/Information/newDetail')}?type={$vo.type}}&id={$vo['id']}">{$vo.title}</a>
+                                <span class="list-left-date">[{$vo.save_time}]</span>
                             </li>
                         </foreach>
                       </ul>
@@ -104,17 +108,17 @@
                 <div class="col-xs-6 col-md-6">
                     <div class="infomation-title" style="overflow: hidden;">
                         <div style="float: left;">
-                            <span class="glyphicon glyphicon-leaf"></span>
+                            <span class="infomation-title-icon"></span>
                             <span class="infomation-title-text">质检服务</span>
                         </div>
-                        <div style="float: right;width: 70%;">
+                        <!-- <div style="float: right;width: 70%;">
                             <div class="input-group">
                                 <input id="searchText" type="text" class="form-control" placeholder="请输入检索关键字...">
                                 <span class="input-group-btn">
                                     <button class="btn btn-primary" type="button" onclick="handleSearch()">搜索</button>
                                 </span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <hr />
                     <div class="zj-list" style="height: 166px; width: 100%; overflow: hidden;">
@@ -122,39 +126,39 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" style="width: 100%; height: auto;">
                                     <li class="list-group-item">
-                                        <a class="list-left-title" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=1">砂浆及其原材料</a>
+                                        <a title="砂浆及其原材料" class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=1">砂浆及其原材料</a>
                                         <span class="list-left-date">2017/04/21 12:00:00</span>
                                     </li>
                                     <li class="list-group-item">
-                                        <a class="list-left-title" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=2">石膏制品</a>
+                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=2">石膏制品</a>
                                         <span class="list-left-date">2017/04/21 12:00:00</span>
                                     </li>
                                     <li class="list-group-item">
-                                        <a class="list-left-title" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=3">涂料及防水卷材</a>
+                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=3">涂料及防水卷材</a>
                                         <span class="list-left-date">2017/04/21 12:00:00</span>
                                     </li>
                                     <li class="list-group-item">
-                                        <a class="list-left-title" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=4">混凝土及外加剂</a>
+                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=4">混凝土及外加剂</a>
                                         <span class="list-left-date">2017/04/21 12:00:00</span>
                                     </li>
                                     <li class="list-group-item">
-                                        <a class="list-left-title" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=5">保温材料(一)</a>
+                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=5">保温材料(一)</a>
                                         <span class="list-left-date">2017/04/21 12:00:00</span>
                                     </li>
                                     <li class="list-group-item">
-                                        <a class="list-left-title" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=6">保温材料(二)</a>
+                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=6">保温材料(二)</a>
                                         <span class="list-left-date">2017/04/21 12:00:00</span>
                                     </li>
                                     <li class="list-group-item">
-                                        <a class="list-left-title" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=7">保温材料（三）</a>
+                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=7">保温材料（三）</a>
                                         <span class="list-left-date">2017/04/21 12:00:00</span>
                                     </li>
                                     <li class="list-group-item">
-                                        <a class="list-left-title" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=8">材料有害物质检测</a>
+                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=8">材料有害物质检测</a>
                                         <span class="list-left-date">2017/04/21 12:00:00</span>
                                     </li> 
                                     <li class="list-group-item">
-                                        <a class="list-left-title" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=9">环境检测</a>
+                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=9">环境检测</a>
                                         <span class="list-left-date">2017/04/21 12:00:00</span>
                                     </li>             
                                 </div>
@@ -166,50 +170,81 @@
                 </div>
                 <div class="col-xs-6 col-md-6">
                     <div class="infomation-title">
-                        <span class="glyphicon glyphicon-leaf"></span>
+                        <span class="infomation-title-icon"></span>
                         <span class="infomation-title-text">标准化工作</span>
                     </div>
                     <hr />
                     <ul class="list-group">
                         <foreach name="standard" item="vo">
                             <li class="list-group-item">
-                                <a class="list-left-title" href="{:U('/Home/Information/standardDetail')}?type={$vo.type}&id={$vo['id']}">{$vo.title}</a>
-                                <span class="list-left-date">{$vo.save_time}</span>
+                                <a class="list-left-title hvr-bounce-to-right" href="{:U('/Home/Information/standardDetail')}?type={$vo.type}&id={$vo['id']}">{$vo.title}</a>
+                                <span class="list-left-date">[{$vo.save_time}]</span>
                             </li>
                         </foreach>
-                      </ul>
+                        <!-- <foreach name="standard" item="vo">
+                            <a class="list-group-item list-left-title" style="border: none;" href="{:U('/Home/Information/standardDetail')}?type={$vo.type}&id={$vo['id']}">{$vo.title}<span class="list-left-date">{$vo.save_time}</span></a>   
+                        </foreach>
+                        <li class="list-group-item">
+                            <a class="list-left-title" href="{:U('/Home/Information/standardDetail')}?type=1&id=1">标准立项2</a>
+                            <span class="list-left-date">2019-03-20 10:56:21</span>
+                        </li> -->
+                    </ul>
                 </div>
             </div>
         </div>
         <div class="col-xs-12 col-md-2">
             <div class="infomation-title">
-                <span class="glyphicon glyphicon-leaf"></span>
+                <span class="infomation-title-icon"></span>
                 <span class="infomation-title-text">报告查询</span>
             </div>
             <hr />
-            <form role="form">
-                <div class="form-group">
-                    <label for="department">受检单位</label>
-                    <input type="text" class="form-control" id="department" 
-                            placeholder="请输入单位名称" />
-                    <label for="centerNum">中心编号</label>
-                    <input type="text" class="form-control" id="centerNum" 
-                            placeholder="请输入中心编号" />
-                    <label for="code">验证码</label>
-                    <div class="row">
-                        <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="code" 
-                            placeholder="请输入验证码" />
-                        </div>
-                        <div class="col-xs-6 col-md-6">
-                            <canvas id="canvas" style="width:100px;height:34px; cursor: pointer;" onclick="toggleVeritification();">你的浏览器不支持canvas,请更换浏览器!</canvas>
+            <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="department" class="col-sm-4 control-label">受检单位</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="department" placeholder="请输入单位名称">
                         </div>
                     </div>
-                </div>
-                <div id="result" style="display: none;"></div>
-                <button type="button" class="btn btn-primary" onclick="handleSubmit()">提交</button>
+                    <div class="form-group">
+                        <label for="centerNum" class="col-sm-4 control-label">中心编号</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="centerNum" placeholder="请输入中心编号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <label>真伪查询电话：<b style="font-weight: bold;">010-51164716</b></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12" style="text-align: center;">
+                            <button type="button" class="btn btn-primary" onclick="handleSubmit()"><i class="glyphicon glyphicon-search"></i>查询</button>
+                        </div>
+                    </div>
+                    <p id="result" style="display: none;"></p>
+                    <!-- <div class="form-group">
+                        <label for="code" class="col-sm-4 control-label">验证码</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="code">
+                        </div>
+                        <canvas class="col-sm-4" id="canvas" style="height:34px; padding: 0 13px 0 0; cursor: pointer;" onclick="toggleVeritification();">你的浏览器不支持canvas,请更换浏览器!</canvas>
+                    </div>
+                    </div> -->  
             </form>
             <hr />
+            <div class="infomation-title">
+                <span class="infomation-title-icon"></span>
+                <span class="infomation-title-text">质检范围查询</span>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="input-group">
+                    <input id="searchText" type="text" class="form-control" placeholder="请输入检索关键字...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" onclick="handleSearch()">搜索</button>
+                    </span>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-xs-12 col-md-12" id="contactor-login">
                     <button class="btn btn-primary"><i class="glyphicon glyphicon-user"></i>联络员登录</button>
@@ -223,17 +258,15 @@
     <div class="row">
         <div class="col-xs-12 col-md-12">
             <div class="infomation-title">
-                <span class="glyphicon glyphicon-leaf"></span>
-                <span class="infomation-title-text">实验室风采</span>
+                <span class="infomation-title-icon"></span>
+                <span class="infomation-title-text" style="color: #000;">实验室风采</span>
             </div>
             <hr />
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <foreach name="lab_picture" item="vo">
-                        <div class="swiper-slide">
-                            <div class="thumbnail">
-                                <img style="width: 500px; height: 300px;" src="{$vo.pic_path}" type="button" data-toggle="modal" data-target="#imgPreModal" data-whatever="{$vo.pic_path}" alt="...">
-                            </div>
+                        <div class="swiper-slide" style="width: 300px; height: 200px; background-size: cover;">
+                            <img style="width: 300px; height: 200px; background-size: cover;" src="{$vo.pic_path}" type="button" data-toggle="modal" data-target="#imgPreModal" data-whatever="{$vo.pic_path}" alt="...">                
                         </div>
                     </foreach>
                 </div>
@@ -256,14 +289,12 @@
                     <div class="col-xs-12 col-md-12">
                         <img style="width: 100%" class="showPreImg" src="" />
                     </div>
-                    <!-- <div class="col-xs-12 col-md-12">
-                        <p>这是一段描述</p>
-                    </div> -->
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript" src="__PUBLIC__/static/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
     function handleSearch(){
         var searchValue = $("#searchText").val();
@@ -276,7 +307,7 @@
             dataType:"json",
             success:function(ret){
                 if(ret.msg === 'succ'){
-                   window.location.href='/Home/Information/scopeDetail?type="A"&word='+searchValue
+                   window.location.href="{:U('/Home/Information/scopeDetail')}?type=A&word="+searchValue
                 }else{
                    window.confirm(ret.msg)
                 }
@@ -288,7 +319,6 @@
         var department = $("#department").val(),
             centerNum = $("#centerNum").val(),
             code = $("#code").val();
-        if(checkCode()){
             $.ajax({
                 type:"post",
                 url:"{:U('/Home/Information/doQuery')}",
@@ -296,167 +326,165 @@
                 dataType:"json",
                 success:function(ret){
                     if(ret.msg=='succ'){
-                       console.log(ret)
-                       var result = $("#result")
-                       result.append(ret.data.content)
-                       console.log('ddddd', ret.data.content)
-                       $("p>a").attr("target","_blank")
-                       $("p>a")[0].click()
+                       var result = $("#result")[0],
+                            downloadLink = ret.data.content;
+                       console.log('result', downloadLink)
+                       $("#result").append(downloadLink)
+                       console.log('result', result)
+                       $("#result > a").click()
+                    //    $("#result").children().remove();
                     }else{
                         window.confirm(ret.msg)
                     }
                 }
             });
-        } else {
-            window.confirm("请输入正确的验证码")
-        }
     }
 
     /* 前端验证码 */
-    var createVeritification = function(){
-	var GLOBAL_CHAR_NUM = 4;
-	var GLOBAL_CHAR_STRING = "";
-	var GLOBAL_COLOR_SET = [
-		"#AAAAAA", "#888888", "#666666", "#444444", "#000000",
-		"#FF44AA", "#FF0088", "#C10066", "#A20055", "#8C0044",
-		"#FF3333", "#FF0000", "#CC0000", "#AA0000", "#880000",
-		"#FF7744", "#FF5511", "#E63F00", "#C63300", "#A42D00",
-		"#33FFAA", "#00FF99", "#00DD77", "#00AA55", "#008844",
-		"#5599FF", "#0066FF", "#0044BB", "#003C9D", "#003377",
-		"#5555FF", "#0000FF", "#0000CC", "#0000AA", "#000088",
-		"#7744FF", "#5500FF", "#4400CC", "#2200AA", "#220088",
-		"#9955FF", "#7700FF", "#5500DD", "#4400B3", "#3A0088",
-		"#B94FFF", "#9900FF", "#7700BB", "#66009D", "#550088",
-		"#E93EFF", "#CC00FF", "#A500CC", "#7A0099", "#660077",
-		"#FF3EFF", "#FF00FF", "#CC00CC", "#990099", "#770077"
-	];
+//     var createVeritification = function(){
+// 	var GLOBAL_CHAR_NUM = 4;
+// 	var GLOBAL_CHAR_STRING = "";
+// 	var GLOBAL_COLOR_SET = [
+// 		"#AAAAAA", "#888888", "#666666", "#444444", "#000000",
+// 		"#FF44AA", "#FF0088", "#C10066", "#A20055", "#8C0044",
+// 		"#FF3333", "#FF0000", "#CC0000", "#AA0000", "#880000",
+// 		"#FF7744", "#FF5511", "#E63F00", "#C63300", "#A42D00",
+// 		"#33FFAA", "#00FF99", "#00DD77", "#00AA55", "#008844",
+// 		"#5599FF", "#0066FF", "#0044BB", "#003C9D", "#003377",
+// 		"#5555FF", "#0000FF", "#0000CC", "#0000AA", "#000088",
+// 		"#7744FF", "#5500FF", "#4400CC", "#2200AA", "#220088",
+// 		"#9955FF", "#7700FF", "#5500DD", "#4400B3", "#3A0088",
+// 		"#B94FFF", "#9900FF", "#7700BB", "#66009D", "#550088",
+// 		"#E93EFF", "#CC00FF", "#A500CC", "#7A0099", "#660077",
+// 		"#FF3EFF", "#FF00FF", "#CC00CC", "#990099", "#770077"
+// 	];
 
-	var chars = [];
-	var ctx = undefined;
-	var timer = undefined;
-	var canvasWidth = 1000;
-	var canvasHeight = 500;
+// 	var chars = [];
+// 	var ctx = undefined;
+// 	var timer = undefined;
+// 	var canvasWidth = 1000;
+// 	var canvasHeight = 500;
 
-	// 获取canvas 上下文环境
-	var getContext = function(){
-		var canvas = document.getElementById("canvas");
-		ctx =canvas.getContext("2d");
-		canvasWidth = canvas.width;
-		canvasHeight = canvas.height;
-		return ctx;
-	};
+// 	// 获取canvas 上下文环境
+// 	var getContext = function(){
+// 		var canvas = document.getElementById("canvas");
+// 		ctx =canvas.getContext("2d");
+// 		canvasWidth = canvas.width;
+// 		canvasHeight = canvas.height;
+// 		return ctx;
+// 	};
 
-	// 获取单个字符, 字符范围 0-9 A-Z a-z 
-	var getChar = function(){
-		var char = '';
-		// 返回 0- 61之间的整数
-		var seed = Math.floor(Math.random()*62);
+// 	// 获取单个字符, 字符范围 0-9 A-Z a-z 
+// 	var getChar = function(){
+// 		var char = '';
+// 		// 返回 0- 61之间的整数
+// 		var seed = Math.floor(Math.random()*62);
 
-		if(seed < 10)			// seed 在 0- 9之间,字符为数字
-			char = Math.floor(Math.random()*10);
-		else if(seed < 36)	// seed 在10-35之间,字符为大写字母
-			char = String.fromCharCode(Math.floor(Math.random()*25.99)+65);
-		else if(seed < 62)	// seed 在36-62之间,字符为小写字母
-			char = String.fromCharCode(Math.floor(Math.random()*25.99)+97);
-		return char;
-	};
+// 		if(seed < 10)			// seed 在 0- 9之间,字符为数字
+// 			char = Math.floor(Math.random()*10);
+// 		else if(seed < 36)	// seed 在10-35之间,字符为大写字母
+// 			char = String.fromCharCode(Math.floor(Math.random()*25.99)+65);
+// 		else if(seed < 62)	// seed 在36-62之间,字符为小写字母
+// 			char = String.fromCharCode(Math.floor(Math.random()*25.99)+97);
+// 		return char;
+// 	};
 
-	// 将单个字符封装为对象
-	var getPackageChars = function(){
-		for(var i=0; i<GLOBAL_CHAR_NUM; i++){
-			chars[i] = {
-				"x": canvasWidth/GLOBAL_CHAR_NUM*i,
-				"y": canvasHeight/10*7,
-				"size": Math.floor(((canvasWidth/GLOBAL_CHAR_NUM > canvasHeight)?
-					canvasHeight:canvasWidth)*8/10),
-				"char": getChar(),
-				"color": GLOBAL_COLOR_SET[Math.floor(Math.random()*(GLOBAL_COLOR_SET.length-0.01))]
-			};
-			// 字符位置移动控制 bar
-			chars[i].posCtrl = (i%2 == 0)? -1: 1;
-		}
-		return chars;
-	};
+// 	// 将单个字符封装为对象
+// 	var getPackageChars = function(){
+// 		for(var i=0; i<GLOBAL_CHAR_NUM; i++){
+// 			chars[i] = {
+// 				"x": canvasWidth/GLOBAL_CHAR_NUM*i,
+// 				"y": canvasHeight/10*7,
+// 				"size": Math.floor(((canvasWidth/GLOBAL_CHAR_NUM > canvasHeight)?
+// 					canvasHeight:canvasWidth)*8/10),
+// 				"char": getChar(),
+// 				"color": GLOBAL_COLOR_SET[Math.floor(Math.random()*(GLOBAL_COLOR_SET.length-0.01))]
+// 			};
+// 			// 字符位置移动控制 bar
+// 			chars[i].posCtrl = (i%2 == 0)? -1: 1;
+// 		}
+// 		return chars;
+// 	};
 
-	// 检测验证码是否正确
-	var veritificate = function(code){
-		var txt = "";
-		for(var i=0;i<GLOBAL_CHAR_NUM;i++)
-			txt += chars[i].char;
-		return txt.toUpperCase() == code.toUpperCase();
-	};
+// 	// 检测验证码是否正确
+// 	var veritificate = function(code){
+// 		var txt = "";
+// 		for(var i=0;i<GLOBAL_CHAR_NUM;i++)
+// 			txt += chars[i].char;
+// 		return txt.toUpperCase() == code.toUpperCase();
+// 	};
 
-	// 绘制字符
-	var draw = function(){
-		// 清空 画布
-		ctx.clearRect(0,0,canvasWidth,canvasHeight);
-		// 绘制 浅灰色背景
-		ctx.fillStyle = "#eee";
-		ctx.fillRect(0, 0, canvasWidth, canvasHeight );
-		// 绘制 字符
-		// ctx.font="72px Microsoft YaHei";
-		ctx.font="84px Georgia";
-		for(var i=0;i<GLOBAL_CHAR_NUM;i++){
-			ctx.strokeStyle = chars[i].color;
-			ctx.strokeText(chars[i].char,chars[i].x,chars[i].y);
-		}
-	};
+// 	// 绘制字符
+// 	var draw = function(){
+// 		// 清空 画布
+// 		ctx.clearRect(0,0,canvasWidth,canvasHeight);
+// 		// 绘制 浅灰色背景
+// 		ctx.fillStyle = "#eee";
+// 		ctx.fillRect(0, 0, canvasWidth, canvasHeight );
+// 		// 绘制 字符
+// 		// ctx.font="72px Microsoft YaHei";
+// 		ctx.font="84px Georgia";
+// 		for(var i=0;i<GLOBAL_CHAR_NUM;i++){
+// 			ctx.strokeStyle = chars[i].color;
+// 			ctx.strokeText(chars[i].char,chars[i].x,chars[i].y);
+// 		}
+// 	};
 
-	// 字体动画效果
-	var animation = function(){
-		// 初始化 timer
-		clearInterval(timer);
+// 	// 字体动画效果
+// 	var animation = function(){
+// 		// 初始化 timer
+// 		clearInterval(timer);
 
-		timer = setInterval(function(){
-			// 动态改变字符位置
-			for(var i=0;i<GLOBAL_CHAR_NUM;i++){
-				chars[i].y += chars[i].posCtrl;
-					if(chars[i].y < canvasHeight * 5/10 || chars[i].y > canvasHeight * 9/10)
-						chars[i].posCtrl = -chars[i].posCtrl;
-			}
-			// 重绘字符
-			draw();
-		},50);
-	};
+// 		timer = setInterval(function(){
+// 			// 动态改变字符位置
+// 			for(var i=0;i<GLOBAL_CHAR_NUM;i++){
+// 				chars[i].y += chars[i].posCtrl;
+// 					if(chars[i].y < canvasHeight * 5/10 || chars[i].y > canvasHeight * 9/10)
+// 						chars[i].posCtrl = -chars[i].posCtrl;
+// 			}
+// 			// 重绘字符
+// 			draw();
+// 		},50);
+// 	};
 
-	// 创建静态字体 canvas
-	var createStatic = function(){
-		console.log(getContext());
-		console.log(getPackageChars());
-		draw();
-	};
+// 	// 创建静态字体 canvas
+// 	var createStatic = function(){
+// 		console.log(getContext());
+// 		console.log(getPackageChars());
+// 		draw();
+// 	};
 
-	// 创建动画字体 canvas
-	var createAnimation = function(){
-		getContext();
-		getPackageChars();
-		animation();
-	};
+// 	// 创建动画字体 canvas
+// 	var createAnimation = function(){
+// 		getContext();
+// 		getPackageChars();
+// 		animation();
+// 	};
 
-	return{
-		"createStatic": createStatic,
-		"createAnimation": createAnimation,
-		"veritificate": veritificate
-	}
-};
+// 	return{
+// 		"createStatic": createStatic,
+// 		"createAnimation": createAnimation,
+// 		"veritificate": veritificate
+// 	}
+// };
 
 
-var test = new createVeritification();
-test.createAnimation();
-// test.createStatic();
+// var test = new createVeritification();
+// test.createAnimation();
+// // test.createStatic();
 
-// 点击刷新验证码
-var toggleVeritification = function(){
-	test.createAnimation();
-};
+// // 点击刷新验证码
+// var toggleVeritification = function(){
+// 	test.createAnimation();
+// };
 
-// 验证输入是否正确
-var checkCode = function(){
-	// do sth...
-    if(test.veritificate(document.getElementById("code").value)){
-        return true
-    }
-};
+// // 验证输入是否正确
+// var checkCode = function(){
+// 	// do sth...
+//     if(test.veritificate(document.getElementById("code").value)){
+//         return true
+//     }
+// };
 </script>
 <include file="Common:footer"/>
 

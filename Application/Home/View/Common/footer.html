@@ -4,15 +4,16 @@
   <div class="container">
       <div class="row">
           <div class="col-xs-4 col-md-4 footer-info">
-            <p class="wow bounceInLeft" data-wow-duration="2s"><i class="glyphicon glyphicon-lock"></i>备案号: {$footer.record}</p>
-            <p class="wow bounceInRight" data-wow-duration="2s" data-wow-delay="1"><i class="glyphicon glyphicon-envelope"></i> Email : {$footer.email}</p>
+            <p class="wow bounceInLeft" data-wow-duration="2s">备案号: {$footer.record}</p>
+            <p class="wow bounceInRight" data-wow-duration="2s" data-wow-delay="1">Email : {$footer.email}</p>
           </div>
           <div class="col-xs-4 col-md-4 footer-info">
-            <p class="wow bounceInLeft" data-wow-duration="1s" data-wow-offset="2"><i class="glyphicon glyphicon-home"></i>地址: {$footer.address}</p>
-            <p class="wow bounceInRight" data-wow-duration="1s" data-wow-delay="1" data-wow-offset="2"><i class="glyphicon glyphicon-phone-alt"></i>联系电话 : {$footer.telephone} </p>
+            <p class="wow bounceInLeft" data-wow-duration="1s" data-wow-offset="2">地址: {$footer.address}</p>
+            <p class="wow bounceInRight" data-wow-duration="1s" data-wow-delay="1" data-wow-offset="2">联系电话 : {$footer.telephone}</p>
           </div>
           <div class="col-xs-4 col-md-4 footer-img">
-            <img src="__PUBLIC__/picture/footerCode.png" alt="">
+            <img src="__PUBLIC__/picture/footerCode.png" alt="" style="width:80px;height:80px;">
+            <span style="display: inline-block;width:80px;text-align: center;">官方网站</span>
           </div>
         </div>
   </div>
@@ -21,7 +22,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-xs-12">
-            <div class="copyright"> <p>Copyright © 2013-2018 BUPT All Rights Reserved. </p>
+            <div class="copyright"><p>Copyright © 2013-2018 BUPT All Rights Reserved. </p>
             </div>
         </div>
       </div>
@@ -30,28 +31,8 @@
 </footer>
 <!--<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.5&key=6cdce0833c160c7358e0700085a42ec5"></script>-->
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.13&key=1f342e37b7e51d824cdcd9a940a3d37a"></script>
-<script type="text/javascript" src="__PUBLIC__/static/js/jquery-3.3.1.min.js"></script>
-<script>
-    function doAlertDialog(options){
-	var _text = "",_class="";
-	if(options.text) _text = options.text;
-	var _buttons = {
-    		ok:{
-    			"text":"知道了",
-    			"btnClass":'btn btn-primary btn-sm'
-    		}
-    	};
-	if(options.action){
-		var _func = options.action;
-		_buttons.ok.action = eval(_func);
-	}
-	$.alert({
-    	title: false,
-    	content: '<div class="'+_class+' talign-center fz13">'+_text+'</div>',
-    	buttons:_buttons
-	});
-}
-</script>
+<script type="text/javascript" src="__PUBLIC__/static/js/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/static/js/EasyBanner.js"></script>
 <script type="text/javascript" >
     // var map = new AMap.Map('container', {
     //     resizeEnable: true,
@@ -119,18 +100,35 @@
 </script>
 <script>
     var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 3,
-      spaceBetween: 30,
+      effect: 'coverflow',
+      grabCursor: true,
       autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      freeMode: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+         delay: 2500,
+         disableOnInteraction: false,
+    },
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
       },
     });
+    // var swiper = new Swiper('.swiper-container', {
+    //   slidesPerView: 3,
+    //   spaceBetween: 30,
+    //   autoplay: {
+    //     delay: 2500,
+    //     disableOnInteraction: false,
+    //   },
+    //   freeMode: true,
+    //   pagination: {
+    //     el: '.swiper-pagination',
+    //     clickable: true,
+    //   },
+    // });
     var swiperZJ = new Swiper('.swiper-containerZJ', {
       direction: 'vertical',
       slidesPerView: 'auto',
