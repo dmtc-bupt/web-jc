@@ -13,6 +13,27 @@ body {
     font-size: 14px;
     padding: 0;
 }
+/* html {
+    overflow-y: scroll;
+  }
+  
+  :root {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  :root body {
+    position: absolute;
+  }
+  
+  body {
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  } */
+::-webkit-scrollbar{
+    display:none;
+}
 li {
     list-style: none;
 }
@@ -50,13 +71,16 @@ hr{
 .btn-primary{
     background-color: #1E50AE;
 }
+.row{
+    margin: 0;
+}
 .container, .container-fluid{
     width: 100%;
     padding: 0 80px;
 }
 .container-two{
     width: 100%;
-    min-height: 350px;
+    min-height: 500px;
     padding: 0 20%;
 }
 .head-section,
@@ -445,6 +469,12 @@ hr{
     background-color: rgba(238, 238, 238, 0.5);
     box-shadow: 4px 4px 2px -2px #ccc;
     margin: 0 auto;
+}
+/* 二级列表hover */
+#container-content .right-content #right-content-details .media-list>li:hover .media-body .media-title-text{
+    border-bottom: #1E50AE 1px dotted;
+    color: #1E50AE;
+    
 }
 #container-content .right-content #right-content-details #report-query button{
     margin-top: 20px;

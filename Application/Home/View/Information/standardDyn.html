@@ -1,6 +1,6 @@
 <include file="Common:head" title="前台导航栏"/>
 <div class="picContainer">
-    <img src="__PUBLIC__/picture/notice.jpg" alt="标准化工作">
+    <img src="{$head_image.pic_path}" alt="标准化工作">
     <a id="fix-title" href="">标准化工作</a>
 </div>
 <div class="container-two" id="container-content" style="position: relative" }>
@@ -34,16 +34,15 @@
                 <ul class="media-list" id="notice-list">
                     <volist name="standard" id="vo" key="{i}">
                         <li class="media">
-                            <!-- <div class="media-left">
+                            <div class="media-left">
                                 <a href="{:U('/Home/Information/standardDetail')}?type=2&id={$vo['id']}">
-                                    <img class="media-object" src='__PUBLIC__/picture/number-{$i}.png' alt="......">
+                                    <img class="media-object" src='__PUBLIC__/picture/disc.png' alt="......">
                                 </a>
-                            </div> -->
+                            </div>
                             <div class="media-body">
                                 <a href="{:U('/Home/Information/standardDetail')}?type=2&id={$vo['id']}" style="color: #000;">
-                                    <h4 class="media-heading">{$vo.title}</h4>
+                                    <h4 class="media-heading">{$vo.title}<span class="scope-time">发布：{$vo.save_time}</span></h4>
                                 </a>
-                                <span>发布：{$vo.save_time}</span>
                             </div>
                         </li>
                     </volist>

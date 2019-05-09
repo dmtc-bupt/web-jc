@@ -221,7 +221,7 @@
                             <button type="button" class="btn btn-primary" onclick="handleSubmit()"><i class="glyphicon glyphicon-search"></i>查询</button>
                         </div>
                     </div>
-                    <p id="result" style="display: none;"></p>
+                    <p class="result" style="display: none;"></p>
                     <!-- <div class="form-group">
                         <label for="code" class="col-sm-4 control-label">验证码</label>
                         <div class="col-sm-4">
@@ -326,13 +326,15 @@
                 dataType:"json",
                 success:function(ret){
                     if(ret.msg=='succ'){
-                       var result = $("#result")[0],
+                       var result = $(".result")[0],
                             downloadLink = ret.data.content;
-                       console.log('result', downloadLink)
-                       $("#result").append(downloadLink)
-                       console.log('result', result)
-                       $("#result > a").click()
-                    //    $("#result").children().remove();
+                       console.log('result',$(".result")[0])
+                       console.log('result=====', $(".result").append(downloadLink))
+                       $(".result").append(downloadLink)
+                       console.log('result', $(".result"))
+                       console.log("first", $(".result > a")[0])
+                       $(".result > a")[0].click()
+                       $(".result > a")[0].remove();
                     }else{
                         window.confirm(ret.msg)
                     }

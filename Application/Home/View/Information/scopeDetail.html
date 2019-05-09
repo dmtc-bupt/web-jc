@@ -1,6 +1,6 @@
 <include file="Common:head" title="前台导航栏"/>
 <div class="picContainer">
-    <img src="__PUBLIC__/picture/notice.jpg" alt="质检范围">
+    <img src="{$head_image.pic_path}" alt="质检范围">
     <a id="fix-title" href="">质检范围</a>
 </div>
 <div class="container-two" id="container-content" style="position: relative" }>
@@ -45,6 +45,7 @@
                     <volist name="data" id="vo">
                         <tr>
                             <td>{$vo.cate_num3}</td>
+                            <td>{$vo.cate_name}</td>
                             <td>{$vo.metial_name}</td>
                             <td>{$vo.name}{$vo.number}</td>
                         </tr>

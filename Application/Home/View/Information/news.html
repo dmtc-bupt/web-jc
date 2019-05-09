@@ -1,6 +1,6 @@
 <include file="Common:head" title="前台导航栏"/>
 <div class="picContainer">
-    <img src="__PUBLIC__/picture/notice.jpg" alt="新闻中心">
+    <img src="{$head_image.pic_path}" alt="新闻中心">
     <a id="fix-title" href="">新闻中心</a>
 </div>
 <div class="container-two" id="container-content">
@@ -34,21 +34,20 @@
             <div class="row" id="right-content-details">
                 <div class="col-xs-12 col-md-12">
                     <ul class="media-list" id="notice-list">
-                        <volist name="notice" id="vo" key="{i}">
+                        <foreach name="notice" item="vo">
                             <li class="media">
-                                <!-- <div class="media-left">
+                                <div class="media-left">
                                     <a href="{:U('/Home/Information/newDetail')}?type=0&id={$vo['id']}">
-                                        <img class="media-object" src='__PUBLIC__/picture/number-{$i}.png' alt="......">
+                                        <img class="media-object" src='__PUBLIC__/picture/disc.png' alt="......">
                                     </a>
-                                </div> -->
+                                </div>
                                 <div class="media-body">
                                     <a href="{:U('/Home/Information/newDetail')}?type=0&id={$vo['id']}" style="color: #000;">
-                                        <h4 class="media-heading">{$vo.title}</h4>
+                                        <h4 class="media-heading">{$vo.title}<span class="scope-time">发布：{$vo.save_time}</span></h4>
                                     </a>
-                                    <span>发布：{$vo.save_time}</span>
                                 </div>
                             </li>
-                        </volist>
+                        </foreach>    
                     </ul>
                     <nav>{$pagination1}</nav>
                 </div>

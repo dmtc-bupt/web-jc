@@ -1,6 +1,6 @@
 <include file="Common:head" title="前台导航栏"/>
 <div class="picContainer">
-    <img src="__PUBLIC__/picture/notice.jpg" alt="质检范围">
+    <img src="{$head_image.pic_path}" alt="质检范围">
     <a id="fix-title" href="">质检范围</a>
 </div>
 <div class="container-two" id="container-content" style="position: relative" }>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="media-body">
                                 <a href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=1" style="color: #000;">
-                                    <h4 class="media-heading">{$vo.cate_name}<span class="scope-time">发布：2017-12-20 12:00:00</span></h4>
+                                    <h4 class="media-heading"><span class="media-title-text">{$vo.cate_name}</span><span class="scope-time">发布：2017-12-20 12:00:00</span></h4>
                                 </a>
                             </div>
                         </li>
