@@ -58,6 +58,31 @@
 <script src="__PUBLIC__/static/js/jquery.form.js"></script>
 <script type="text/javascript">
     function handleSubmit () {
+        var department = $("#unit").val(),
+            centerNum = $("#code").val()
+            $.ajax({
+                type:"post",
+                url:"{:U('/Home/Information/doQuery')}",
+                data:{"unit": department, "code": centerNum},
+                dataType:"json",
+                success:function(ret){
+                    if(ret.msg=='succ'){
+                    var result = $(".result")[0],
+                            downloadLink = ret.data.content;
+                    console.log('result',$(".result")[0])
+                    console.log('result=====', $(".result").append(downloadLink))
+                    $(".result").append(downloadLink)
+                    console.log('result', $(".result"))
+                    console.log("first", $(".result > a")[0])
+                    $(".result > a")[0].click()
+                    $(".result > a")[0].remove();
+                    }else{
+                        window.confirm(ret.msg)
+                }
+            }
+        });
+    }
+    function handleSubmit () {
         var unit = $("#unit").val(),
             code = $("#code").val();
         console.log("unitcode", typeof unit, typeof code)
@@ -70,15 +95,12 @@
             success:function(ret){
                 if(ret.msg=='succ'){
                     var result = $("#result")
-                    // ret.data.content = ret.data.content.replace(/\"/g, "");
-                    // console.log('=====', typeof ret.data.content)
-                    // result.append(ret.data.content)
                     result.children().remove()
-                    result.append(ret.data.content)
+                    result.append('<div class="alert alert-success" role="alert">查看报告：'+ret.data.content+'</div>')
                 }else{
                     var result = $("#result")
                     result.children().remove()
-                    result.append('<div class="alert alert-success" role="alert">'+ret.msg+'</div>')
+                    result.append('<div class="alert alert-warning" role="alert">'+ret.msg+'</div>')
                 }
             }
         });

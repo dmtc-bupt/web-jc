@@ -33,6 +33,14 @@
         </div>
         <div class="row" id="right-content-details">
             <div class="col-xs-12 col-md-12">
+                <div class="row">
+                    <div class="input-group sec-input-group">
+                        <input id="searchText" type="text" class="form-control" placeholder="请输入检索关键字...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" onclick="handleSearch()">搜索</button>
+                        </span>
+                    </div>
+                </div>
                 <ul class="media-list" id="notice-list">
                     <foreach name="list" item="vo">
                         <li class="media">
@@ -54,9 +62,25 @@
             </div>
         </div>
     </div>
-
-
-
 </div>
+<script>
+    function handleSearch(){
+        var searchValue = $("#searchText").val();
+        console.log("searchValue", typeof searchValue)
 
+        $.ajax({
+            type:"post",
+            url:"{:U('/Home/Information/searchIns')}",
+            data:{"type": "A", "word": searchValue},
+            dataType:"json",
+            success:function(ret){
+                if(ret.msg === 'succ'){
+                   window.location.href="{:U('/Home/Information/scopeDetail')}?type=A&word="+searchValue
+                }else{
+                   window.confirm(ret.msg)
+                }
+            }
+        });
+    }
+</script>
 <include file="Common:footer"/>

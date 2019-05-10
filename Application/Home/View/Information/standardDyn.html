@@ -41,15 +41,16 @@
                             </div>
                             <div class="media-body">
                                 <a href="{:U('/Home/Information/standardDetail')}?type=2&id={$vo['id']}" style="color: #000;">
-                                    <h4 class="media-heading">{$vo.title}<span class="scope-time">发布：{$vo.save_time}</span></h4>
+                                    <h4 class="media-heading"><span class="media-title-text">{$vo.title}</span><span class="scope-time">发布：{$vo.save_time}</span></h4>
                                 </a>
                             </div>
                         </li>
                     </volist>
                 </ul>
-                <nav>{$pagination}</nav>
+               
             </div>
         </div>
+        <nav>{$pagination}</nav>
     </div>
 </div>
 <include file="Common:footer"/>

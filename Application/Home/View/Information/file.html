@@ -43,13 +43,12 @@
                                 </div>
                                 <div class="media-body">
                                     <a href="{$vo['save_path']}" download="{$vo['filename']}" style="color: #000;">
-                                        <h4 class="media-heading">{$vo.filename}<span class="scope-time">发布：{$vo.savetime}</span></h4>
+                                        <h4 class="media-heading"><span class="media-title-text">{$vo.filename}</span><span class="scope-time">发布：{$vo.savetime}</span></h4>
                                     </a>
                                 </div>
                             </li>
                         </volist>
                     </ul>
-                    <nav>{$pagination}</nav>
                 </div>
             </div>
             <nav>{$pagination1}</nav>
