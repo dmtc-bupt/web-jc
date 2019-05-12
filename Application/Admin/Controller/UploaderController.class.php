@@ -197,10 +197,14 @@ class UploaderController extends Controller {
             }
             isset($result) && imagedestroy($result);
             imagedestroy($image);
-            $imgUrl = $this->cropImage($picAddr,150,100);
+            $imgUrl = $this->cropImage($picAddr,1490,1000);
+            $base = pathinfo($picAddr);//返回路径的数组信息
+            $shuiyin = $base['dirname'] .'/'. $base['filename'].'_shuiyin.'.$base['extension'];
+            $addsy = new \Think\Image();
+            $addsy->open("$imgUrl")->water('./Public/picture/shuiyin.png',7)->save("$shuiyin");
             $array = array(
                 'info'=>'succ',
-                'thumb_url'=>substr($imgUrl, 1),
+                'thumb_url'=>substr($shuiyin, 1),
                 'url'=>substr($saveUrl,1)
             );
             if($return){

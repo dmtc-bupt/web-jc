@@ -54,7 +54,7 @@ class InformationController extends Controller
         //通知公告分页
         $page=I("p",'int');
         if($page<=0) $page=1;
-        $pagesize=4;
+        $pagesize=6;
         $offset=($page-1)*$pagesize;
         $notice =D('news')->where('type=0')->limit("{$offset},{$pagesize}")->order('id desc')->select();
         foreach($notice as &$v){
@@ -81,7 +81,7 @@ class InformationController extends Controller
         //行业新闻分页
         $page2=I("p2",'int');
         if($page2<=0) $page2=1;
-        $pagesize2=4;
+        $pagesize2=6;
         $offset2=($page2-1)*$pagesize2;
         $industry =D('news')->where('type=1')->limit("{$offset2},{$pagesize2}")->order('id desc')->select();
         foreach($industry as &$v){

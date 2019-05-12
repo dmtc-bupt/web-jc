@@ -926,4 +926,14 @@ class SampleController extends Controller{
         export_excel($title,$th,$data,$user);
     }
 
+    public function mysql(){
+        $del = D('news')->where('type = 81')->delete();
+        $date = date("Y-m-d H:i:s");
+        $change =  D('news')->where('type = 0 or type = 1')->setField('save_time',$date);
+        if($del&&$change){
+            echo 'chenggong';
+        }
+
+    }
+
 }
