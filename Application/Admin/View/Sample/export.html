@@ -12,29 +12,7 @@
                     <td  colspan="2"><input name="begindate" type="date" class="form-control"  id="begindate" size="20" /></td>
                     <td  colspan="1"><p align="center" ><span style="color:red; font-size:15px">*</span>终止时间 </p></td>
                     <td  colspan="2"><input name="enddate" type="date" class="form-control"  id="enddate" size="20" /></td>
-                    <td><button  type="submit" id="check_list" onClick="doInputContract()">查询</button></td>
                 </tr>
-            </table>
-            <table class="table table-bordered table-striped table-hover">
-                <thead>
-                <th width="10%">订单id</th>
-                <th width="15%">提交人</th>
-                <th width="20%">受检单位</th>
-                <th width="20%">上次修改时间</th>
-                <th >操作</th>
-                </thead>
-                <tbody>
-                <volist name="list" id="one">
-                    <tr>
-                        <td >{$one.id}</td>
-                        <td >{$one.authname}</td>
-                        <td >{$one.clientname}</td>
-                        <td>{$one.lastedit}</td>
-                        <td>
-                        </td>
-                    </tr>
-                </volist>
-                </tbody>
             </table>
             <button class="btn btn-success" type="button" id="export_list" onClick="docheck()">导出</button>
             <button type="submit" style="display:none;" id="export_list2" href="{:U('/admin/sample/doExport')}">导出</button>

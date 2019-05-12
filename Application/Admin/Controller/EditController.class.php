@@ -443,8 +443,13 @@ class EditController extends Controller {
     }
 //联系我们信息修改
     public function contactus() {
+        $de = 'A';
         $rs=D('contact_us')->find();
-        $this->assign($rs);
+        $data = array(
+            'de'=> $de,
+            'rs'=> $rs,
+        );
+        $this->assign($data);
         $this->display();
     }
 
@@ -691,7 +696,7 @@ class EditController extends Controller {
         );
         $check = D('center_introduction')->where($where)->find();
         if($check){
-            if(D('center_introduction')->where("type = 1")->save($data)){
+            if(D('center_introduction')->where("$where")->save($data)){
                 $result['msg'] = 'succ';
             }
         }
