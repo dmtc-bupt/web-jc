@@ -109,11 +109,15 @@ hr{
 }
 .container-two{
     width: 100%;
-    min-height: 500px;
+    min-height: 650px;
     padding: 0 20%;
 }
 .container-two .right-content{
-    min-height: 500px;
+    min-height: 650px;
+    position: relative;
+}
+#carousel-example-generic{
+    margin-top: 80px;
 }
 .head-section,
 .head-section .navbar-default{
@@ -290,10 +294,14 @@ hr{
 }
 #information-news-details .list-group .list-group-item .list-left-title{
     float: left;
-    width: 80%;
+    width: 78%;
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
+}
+#information-news-details .list-group .list-group-item .list-left-date{
+    width: 20%;
+
 }
 /* 页面大标题 */
 #content-area .infomation-title,
@@ -302,7 +310,7 @@ hr{
     font-size: 24px;
     height: 34px;
     vertical-align: middle;
-    background-image: -webkit-linear-gradient(left, #33ccff, #fff 50%);
+    background-image: -webkit-linear-gradient(left, #AFDEF9, #fff 50%);
 }
 #content-area .infomation-title .infomation-title-icon,
 #lab-sence .infomation-title .infomation-title-icon
@@ -557,14 +565,21 @@ hr{
     border: none;
     color: #fff;
 }
-#container-content .right-content {
+/* #container-content .right-content{
     position: relative;
-}
+} */
 #container-content .right-content nav{
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
     left: 45%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0); */
+    margin: 0 auto;
+}
+#container-content .right-content nav .pagination{
+    width: 100%;
+    padding-left: 100px;
+    /* margin-left: 50%;
+    transform: translate(-50%, 0); */
 }
 /* footer */
 footer{

@@ -79,15 +79,11 @@
                           <foreach name="news_pic" item="vo" key="k">
                                 <if condition="$k eq 0">
                                     <div class="item active">
-                                        <img src="{$vo.pic_path}" alt="新闻图片">
-                                        <div class="carousel-caption">
-                                        </div>
+                                        <img src="{$vo.information_pic_path}" alt="新闻图片">
                                     </div>
                                     <else />
                                         <div class="item">
-                                            <img src="{$vo.pic_path}" alt="新闻图片">
-                                            <div class="carousel-caption">
-                                        </div>
+                                            <img src="{$vo.information_pic_path}" alt="新闻图片">
                                     </div>
                                 </if>
                             </foreach>
