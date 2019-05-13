@@ -91,6 +91,15 @@ p { line-height: 22px }
 hr{
     margin-top: 10px;
 }
+.table-striped > tbody > tr:nth-child(2n+1) > td{
+    background-color: rgb(209, 218, 250, .5);
+ }
+ .table-striped > tbody th{
+     background-color: #1E50AE;
+     color: #fff;
+     font-size: 20px;
+     text-align: center;
+ }
 .btn-primary{
     background-color: #1E50AE;
 }
@@ -254,7 +263,7 @@ hr{
     float: left;
     cursor: pointer;
     display: block;
-    width: 80%;
+    width: 70%;
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
@@ -283,6 +292,16 @@ hr{
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
+}
+@media screen and (max-width: 1440px){
+    #content-area .row #download-left .list-group .list-group-item .list-left-title .fake-downname{
+        display: inline-block;
+        width: 70%;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
 }
 #content-area .row #download-left .list-group .list-group-item .list-left-title .fake-download{
     float: right;
@@ -426,11 +445,56 @@ hr{
 #content-area .local-login-index .local-login-href{
     font-size: 30px;
     height: 50px;
-    padding-left: 30px;
+    padding-left: 10%;
     text-align: center;
     line-height: 50px;
     display: block;
     float: left;
+}
+@media screen and (max-width: 1880px){
+    #content-area .local-login-index .local-login-href{
+        font-size: 25px;
+        height: 50px;
+        padding-left: 10%;
+        text-align: center;
+        line-height: 50px;
+        display: block;
+        float: left;
+    }
+    #content-area .local-login-index .glyphicon-user{
+        font-size: 45px;
+        float: left;
+    }
+}
+@media screen and (max-width: 1500px){
+    #content-area .local-login-index .local-login-href{
+        font-size: 22px;
+        height: 40px;
+        padding-left: 10%;
+        text-align: center;
+        line-height: 40px;
+        display: block;
+        float: left;
+    }
+    #content-area .local-login-index .glyphicon-user{
+        font-size: 40px;
+        float: left;
+    }
+}
+@media screen and (max-width: 1300px){
+    #content-area .local-login-index .local-login-href{
+        font-size: 20px;
+        height: 35px;
+        padding-left: 10%;
+        text-align: center;
+        line-height: 35px;
+        display: block;
+        float: left;
+    }
+    #content-area .local-login-index .glyphicon-user{
+        font-size: 35px;
+        float: left;
+    }
 }
 /* 实验室风采 */
 .picContainer{
@@ -494,12 +558,12 @@ hr{
     width: 100%;
 }
 /* 资质证书 */
-#container-content .right-content #right-content-details .thumbnail>img{
+/* #container-content .right-content #right-content-details .thumbnail>img{
     display: block;
     float: left;
     width: 450px;
     height: 600px;
-}
+} */
 #container-content .right-content #right-content-details #cert-pic img{
     display: block;
     float: left;
