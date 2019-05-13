@@ -45,13 +45,13 @@
                     <foreach name="list" item="vo">
                         <li class="media">
                             <div class="media-left">
-                                <a href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=1">
+                                <a href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num={$vo.cate_num}">
                                     <img class="media-object" src='__PUBLIC__/picture/disc.png' alt="......">
                                 </a>
                             </div>
                             <div class="media-body">
-                                <a href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=1" style="color: #000;">
-                                    <h4 class="media-heading"><span class="media-title-text">{$vo.cate_name}</span><span class="scope-time">发布：2017-12-20 12:00:00</span></h4>
+                                <a href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num={$vo.cate_num}" style="color: #000;">
+                                    <h4 class="media-heading"><span class="media-title-text">{$vo.cate_name}</span></h4>
                                 </a>
                             </div>
                         </li>

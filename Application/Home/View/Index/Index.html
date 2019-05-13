@@ -79,11 +79,11 @@
                           <foreach name="news_pic" item="vo" key="k">
                                 <if condition="$k eq 0">
                                     <div class="item active">
-                                        <img src="/{$vo.information_pic_path}" alt="新闻图片">
+                                        <img src="{$vo.information_pic_path}" alt="新闻图片">
                                     </div>
                                     <else />
                                         <div class="item">
-                                            <img src="/{$vo.information_pic_path}" alt="新闻图片">
+                                            <img src="{$vo.information_pic_path}" alt="新闻图片">
                                     </div>
                                 </if>
                             </foreach>
@@ -123,8 +123,12 @@
                         <ul class="list-group swiper-containerZJ" style="width: 100%; height: 100%;">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" style="width: 100%; height: auto;">
-                                    
-                                    <li class="list-group-item">
+                                    <foreach name="list" item="vo">
+                                        <li class="list-group-item">
+                                            <a title="砂浆及其原材料" class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num={$vo.cate_num}">{$vo.cate_name}</a>
+                                        </li>
+                                    </foreach>
+                                    <!-- <li class="list-group-item">
                                         <a title="砂浆及其原材料" class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=1">砂浆及其原材料</a>
                                     </li>
                                     <li class="list-group-item">
@@ -150,7 +154,7 @@
                                     </li> 
                                     <li class="list-group-item">
                                         <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=9">环境检测</a>
-                                    </li>             
+                                    </li>              -->
                                 </div>
                             </div>
                                     <!-- Add Scroll Bar -->
@@ -288,7 +292,7 @@
                 <div class="swiper-wrapper">
                     <foreach name="lab_picture" item="vo">
                         <div class="swiper-slide" style="width: 300px; height: 200px; background-size: cover;">
-                            <img style="width: 300px; height: 200px; background-size: cover;" src="{$vo.pic_path}" type="button" data-toggle="modal" data-target="#imgPreModal" data-whatever="{$vo.pic_path}" alt="...">                
+                            <img style="width: 300px; height: 200px; background-size: cover;" src="{$vo.information_pic_path}" type="button" data-toggle="modal" data-target="#imgPreModal" data-whatever="{$vo.pic_path}" alt="...">                
                         </div>
                     </foreach>
                 </div>

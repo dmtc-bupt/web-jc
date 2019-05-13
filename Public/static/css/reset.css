@@ -98,7 +98,20 @@ hr{
      background-color: #1E50AE;
      color: #fff;
      font-size: 20px;
-     text-align: center;
+ }
+ @media screen and (max-width: 1660px){
+    .table-striped > tbody th{
+        background-color: #1E50AE;
+        color: #fff;
+        font-size: 16px;
+    }
+ }
+ @media screen and (max-width: 1440px){
+    .table-striped > tbody th{
+        background-color: #1E50AE;
+        color: #fff;
+        font-size: 14px;
+    }
  }
 .btn-primary{
     background-color: #1E50AE;
@@ -585,12 +598,17 @@ hr{
     height: 32px;
 }
 /* 质检范围 */
+.media-heading{
+    padding-top: 2px;
+    margin-bottom: 0;
+}
 #container-content .right-content #right-content-details .media-list .media-heading{
     font-size: 18px;
+
 }
 #container-content .right-content #right-content-details .media-list .media-heading .scope-time{
     float: right;
-    margin-right: 150px;
+    /* margin-right: 150px; */
     font-size: 14px;
     color: #ccc;
 }
@@ -610,10 +628,28 @@ hr{
     margin: 0 auto;
 }
 /* 二级列表hover */
+#container-content .right-content #right-content-details .media-list>li .media-body .media-title-text{
+    width: 70%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@media screen and (max-width: 1440px){
+    #container-content .right-content #right-content-details .media-list>li .media-body .media-title-text{
+        width: 50%;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+.media-left, .media-right, .media-body{
+    vertical-align: middle;
+}
 #container-content .right-content #right-content-details .media-list>li:hover .media-body .media-title-text{
     border-bottom: #1E50AE 1px dotted;
     color: #1E50AE;
-    
 }
 #container-content .right-content #right-content-details #report-query button{
     margin-top: 20px;
@@ -645,6 +681,14 @@ hr{
     padding-left: 100px;
     /* margin-left: 50%;
     transform: translate(-50%, 0); */
+}
+@media screen and (max-width: 1440px){
+    #container-content .right-content nav .pagination{
+        width: 100%;
+        padding-left: 0;
+        /* margin-left: 50%;
+        transform: translate(-50%, 0); */
+    }
 }
 /* footer */
 footer{
