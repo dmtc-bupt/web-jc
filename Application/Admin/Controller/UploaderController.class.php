@@ -214,6 +214,51 @@ class UploaderController extends Controller {
             }
         }
     }
+    //新闻封面图上传
+    public function start6($return=false){
+        $upload = new \Think\Upload();
+        $upload->maxSize   =     0 ;
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');
+        $upload->rootPath  =     './Public/attached/'; // 设置附件上传根目录
+        $upload->savePath  =     '';
+        $upload->saveName = 'time';
+        $info   =   $upload->upload();
+        if(!$info) {// 上传错误提示错误信息
+            $array['info'] = $upload->getError();
+        }else{// 上传成功 获取上传文件信息
+            $saveUrl = './Public/attached/'.$info['file']['savepath'].$info['file']['savename'];
+            $picAddr = $saveUrl;
+            $exif = exif_read_data($picAddr);
+            $image = imagecreatefromjpeg($picAddr);
+            if($exif['Orientation'] == 3) {
+                $result = imagerotate($image, 180, 0);
+                imagejpeg($result, $picAddr, 100);
+            } elseif($exif['Orientation'] == 6) {
+                $result = imagerotate($image, -90, 0);
+                imagejpeg($result, $picAddr, 100);
+            } elseif($exif['Orientation'] == 8) {
+                $result = imagerotate($image, 90, 0);
+                imagejpeg($result, $picAddr, 100);
+            }
+            isset($result) && imagedestroy($result);
+            imagedestroy($image);
+            $imgUrl = $this->cropImage($picAddr,350,205);
+            $base = pathinfo($picAddr);//返回路径的数组信息
+            $shuiyin = $base['dirname'] .'/'. $base['filename'].'_shuiyin.'.$base['extension'];
+            $addsy = new \Think\Image();
+            $addsy->open("$imgUrl")->water('./Public/picture/shuiyin.png',1)->save("$shuiyin");
+            $array = array(
+                'info'=>'succ',
+                'thumb_url'=>substr($shuiyin, 1),
+                'url'=>substr($saveUrl,1)
+            );
+            if($return){
+                return $array;
+            }else{
+                echo json_encode($array);
+            }
+        }
+    }
     /**
      * 缩略图
      */

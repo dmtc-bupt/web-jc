@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="48e44ff9-c699-4e6d-be3e-b780f2ba7d8b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Admin/Controller/EditController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Admin/Controller/EditController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Admin/Controller/UploaderController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Admin/Controller/UploaderController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Admin/View/Edit/informationPicture.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Admin/View/Edit/informationPicture.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Admin/View/Edit/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Admin/View/Edit/news.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +20,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/EditController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1900">
-              <caret line="105" column="10" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="10" />
+            <state relative-caret-position="381">
+              <caret line="208" column="71" lean-forward="true" selection-start-line="208" selection-start-column="71" selection-end-line="208" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Edit/news.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="45" column="126" selection-start-line="45" selection-start-column="126" selection-end-line="45" selection-end-column="126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Edit/informationPicture.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="72" column="48" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -28,26 +50,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/UploaderController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+            <state relative-caret-position="124">
+              <caret line="233" column="54" lean-forward="true" selection-start-line="233" selection-start-column="54" selection-end-line="233" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Edit/contactus.html">
+        <entry file="file://$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="42" column="82" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="82" />
+            <state relative-caret-position="171">
+              <caret line="9" column="130" selection-start-line="9" selection-start-column="130" selection-end-line="9" selection-end-column="130" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            <state relative-caret-position="490">
+              <caret line="935" selection-start-line="935" selection-end-line="935" />
             </state>
           </provider>
         </entry>
@@ -55,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Home/Controller/InformationController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
+            <state relative-caret-position="208">
+              <caret line="249" column="53" selection-start-line="249" selection-start-column="30" selection-end-line="249" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -96,9 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ready</find>
-      <find>f-datetime</find>
-      <find>collectDate</find>
       <find>specification</find>
       <find>de_choose</find>
       <find>$one.</find>
@@ -126,6 +145,9 @@
       <find>introduction</find>
       <find>substr($v['save_time'],5,5)</find>
       <find>contact</find>
+      <find>substr($v['save_time'],</find>
+      <find>saveInfoImage</find>
+      <find>news</find>
     </findStrings>
     <replaceStrings>
       <replace>$one[0].</replace>
@@ -158,7 +180,6 @@
         <option value="$PROJECT_DIR$/Application/Admin/View/Sample/zyGetSend.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Sample/getSend.html" />
         <option value="$PROJECT_DIR$/Public/static/js/ajaxfileupload.js" />
-        <option value="$PROJECT_DIR$/Application/Admin/View/Edit/informationPicture.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Sample/zyCost.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Sample/doGetReport.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/ReportController.class.php" />
@@ -170,14 +191,16 @@
         <option value="$PROJECT_DIR$/Application/Admin/Common/functions.php" />
         <option value="$PROJECT_DIR$/Application/Home/View/Index/Index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Edit/show.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/UploaderController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Sample/export.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/EditController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Edit/contactus.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Main/lunbo.html" />
         <option value="$PROJECT_DIR$/Application/Home/Controller/InformationController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Edit/news.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Edit/informationPicture.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/UploaderController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/EditController.class.php" />
       </list>
     </option>
   </component>
@@ -210,15 +233,20 @@
             <path>
               <item name="web-jc" type="b2602c69:ProjectViewProjectNode" />
               <item name="web-jc" type="462c0819:PsiDirectoryNode" />
-              <item name="Application" type="462c0819:PsiDirectoryNode" />
-              <item name="Home" type="462c0819:PsiDirectoryNode" />
+              <item name="ThinkPHP" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="web-jc" type="b2602c69:ProjectViewProjectNode" />
               <item name="web-jc" type="462c0819:PsiDirectoryNode" />
-              <item name="Application" type="462c0819:PsiDirectoryNode" />
-              <item name="Home" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+              <item name="ThinkPHP" type="462c0819:PsiDirectoryNode" />
+              <item name="Library" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-jc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-jc" type="462c0819:PsiDirectoryNode" />
+              <item name="ThinkPHP" type="462c0819:PsiDirectoryNode" />
+              <item name="Library" type="462c0819:PsiDirectoryNode" />
+              <item name="Think" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -281,12 +309,12 @@
       <workItem from="1557400810511" duration="6166000" />
       <workItem from="1557455897894" duration="2487000" />
       <workItem from="1557635548146" duration="16804000" />
-      <workItem from="1557711407602" duration="613000" />
+      <workItem from="1557711407602" duration="10487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="328548000" />
+    <option name="totallyTimeSpent" value="338422000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -301,7 +329,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20643431" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20643431" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -327,13 +355,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Edit/addFile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="119" selection-start-line="25" selection-start-column="119" selection-end-line="25" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/test.html" />
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyGetCode.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -386,13 +407,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Edit/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/static/js/ajaxfileupload.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -401,13 +415,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/doGetReport.html" />
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Edit/informationPicture.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
-          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Sample/zyCost.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -639,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="934" column="9" selection-start-line="934" selection-start-column="9" selection-end-line="934" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/View/Index/Index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3734">
@@ -656,24 +656,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/EditController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
-          <caret line="105" column="10" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Edit/contactus.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
           <caret line="42" column="82" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/InformationController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -697,17 +683,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/UploaderController.class.php">
+    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/InformationController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+        <state relative-caret-position="208">
+          <caret line="249" column="53" selection-start-line="249" selection-start-column="30" selection-end-line="249" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/SampleController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="935" selection-start-line="935" selection-end-line="935" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        <state relative-caret-position="171">
+          <caret line="9" column="130" selection-start-line="9" selection-start-column="130" selection-end-line="9" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Edit/informationPicture.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="72" column="48" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/UploaderController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="233" column="54" lean-forward="true" selection-start-line="233" selection-start-column="54" selection-end-line="233" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Edit/news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="45" column="126" selection-start-line="45" selection-start-column="126" selection-end-line="45" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Think/Page.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="41" column="92" selection-start-line="41" selection-start-column="92" selection-end-line="41" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/EditController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="208" column="71" lean-forward="true" selection-start-line="208" selection-start-column="71" selection-end-line="208" selection-end-column="71" />
         </state>
       </provider>
     </entry>

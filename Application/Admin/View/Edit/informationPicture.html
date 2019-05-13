@@ -37,7 +37,7 @@
         var file = $("#addfile").val();
         if(file){
             $.ajaxFileUpload({
-                url: "{:U('Uploader/start')}",
+                url: "{:U('Uploader/start6')}",
                 secureuri: false,
                 fileElementId: 'addfile',
                 dataType: 'JSON',
@@ -46,9 +46,9 @@
                     $("#addfile").val("");
                     //alert(ret.url);
                     if(ret.info=='succ'){
-                        $("input[name='information_pic_path']").val(ret.information_pic_path);
-                        $("input[name='pic_path']").val(ret.pic_path);
-                        $("#attachment img").attr("src",ret.information_pic_path);
+                        $("input[name='information_pic_path']").val(ret.thumb_url);
+                        $("input[name='pic_path']").val(ret.url);
+                        $("#attachment img").attr("src",ret.thumb_url);
                     }else{
                         var _options = {"text":"上传失败","flag":"error"};
                         if(ret.info) _options.text = ret.info;

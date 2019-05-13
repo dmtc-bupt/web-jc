@@ -927,12 +927,15 @@ class SampleController extends Controller{
     }
 
     public function mysql(){
-        $del = D('news')->where('type = 81')->delete();
-        $date = date("Y-m-d H:i:s");
-        $change =  D('news')->where('type = 0 or type = 1')->setField('save_time',$date);
-        if($del&&$change){
-            echo 'chenggong';
+        $data = D('news')->where("information_pic_path !=''" )->select();
+        foreach($data as &$v){
+            $v['information_pic_path'] = '/'.$v['information_pic_path'];
         }
+        var_dump($data);
+        foreach($data as $v){
+
+        }
+
 
     }
 

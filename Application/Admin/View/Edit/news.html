@@ -43,7 +43,7 @@
                             <if condition="$one['if_special'] eq 0">
                                 <a class="btn btn-info btn-xs" href="javascript:void(0);" onclick="doSpecial('{$one.id}')"><i class="glyphicon glyphicon-cog"></i>设为展板</a>
                             </if>
-                            <a class="btn btn-primary btn-xs" href="{:U('/admin/edit/informationPicture')}?id={$one.id}&type=I" ><i class="glyphicon glyphicon-picture"></i>插入/更换产品图片</a>
+                            <a class="btn btn-primary btn-xs" href="{:U('/admin/edit/informationPicture')}?id={$one.id}&type=I" ><i class="glyphicon glyphicon-picture"></i>插入/更换封面图片</a>
                             <a class="btn btn-primary btn-xs" href="{:U('/admin/edit/addInformation')}?id={$one.id}" ><i class="glyphicon glyphicon-cog"></i>修改内容</a>
                             <a class="btn btn-danger btn-xs" href="javascript:void(0);" onclick="onDelete('{$one.id}')" ><i class="glyphicon glyphicon-trash"></i>删除</a>
                         </td>
