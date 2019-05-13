@@ -117,7 +117,7 @@ hr{
     position: relative;
 }
 #carousel-example-generic{
-    margin-top: 80px;
+    margin-top: 100px;
 }
 .head-section,
 .head-section .navbar-default{
@@ -437,6 +437,7 @@ hr{
     height: 400px;
     width: 100%;
     margin: 0 auto;
+    margin-top: 100px;
 }
 .picContainer img{
     height: 400px;
