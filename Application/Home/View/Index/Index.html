@@ -128,33 +128,6 @@
                                             <a title="砂浆及其原材料" class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num={$vo.cate_num}">{$vo.cate_name}</a>
                                         </li>
                                     </foreach>
-                                    <!-- <li class="list-group-item">
-                                        <a title="砂浆及其原材料" class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=1">砂浆及其原材料</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=2">石膏制品</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=3">涂料及防水卷材</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=4">混凝土及外加剂</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=5">保温材料(一)</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=6">保温材料(二)</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=7">保温材料（三）</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=8">材料有害物质检测</a>
-                                    </li> 
-                                    <li class="list-group-item">
-                                        <a class="list-left-title hvr-underline-from-right" href="{:U('/Home/Information/scopeDetail')}?type=B&cate_num=9">环境检测</a>
-                                    </li>              -->
                                 </div>
                             </div>
                                     <!-- Add Scroll Bar -->
@@ -204,8 +177,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-12" style="text-align:center;">
-                            <label class="report-query-phone">真伪查询电话：<b style="font-weight: bold;">010-51164716</b></label>
+                        <div class="col-sm-6 col-xs-12 query-phone-warp" id="query-phone-warp-top" style="text-align:center;padding:0;">
+                            <label class="report-query-phone">真伪查询电话：</label>
+                        </div>
+                        <div class="col-sm-6 col-xs-12 query-phone-warp" id="query-phone-warp-bottom" style="text-align:center;font-weight: bold;padding: 0;">
+                            <label class="report-query-phone">010-51164716</label>
                         </div>
                     </div>
                     <p class="result" style="display: none;"></p>

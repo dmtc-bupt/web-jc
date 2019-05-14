@@ -123,7 +123,7 @@ hr{
     width: 100%;
     padding: 0 80px;
 }
-@media screen and (max-width: 1550px){
+@media screen and (max-width: 1560px){
     .container, .container-fluid{
         width: 100%;
         padding: 0;
@@ -406,17 +406,36 @@ hr{
 #content-area form .form-group label{
     padding: 5px 0;
 }
-@media screen and (max-width: 1400px){
+
+#content-area .report-query-index .report-query-phone{
+    margin-top: 5px;
+}
+
+#content-area form .form-group .form-control{
+    padding: 5px 5px;
+}
+@media screen and (max-width: 1440px){
     #content-area form .form-group label{
         padding-top: 5px;
         padding-bottom: 5px;
     }
-}
-#content-area .report-query-index .report-query-phone{
-    margin-top: 15px;
-}
-#content-area form .form-group .form-control{
-    padding: 5px 5px;
+    #content-area .report-query-index .query-phone-warp{
+        padding: 0;
+        margin-top: 0;
+    }
+    #content-area .report-query-index .query-phone-warp .report-query-phone{
+        padding: 0;
+        margin-top: 0;
+
+    }
+    #content-area .report-query-index #query-phone-warp-top{
+        width: 100%;
+        text-align: left;
+    }
+    #content-area .report-query-index #query-phone-warp-bottom{
+        width: 100%;
+
+    }
 }
 /* 质检范围查询 */
 #content-area .scope-query-index{

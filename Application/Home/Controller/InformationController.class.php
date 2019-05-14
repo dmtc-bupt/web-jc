@@ -62,7 +62,7 @@ class InformationController extends Controller
         }
         $count=D('news')->where("type = 0")->count();
         $notice_p =  new \Think\Page($count,$pagesize);
-        $notice_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $notice_p->setConfig('theme',"<ul class='pagination'><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li></ul>");
         $pagination1= $notice_p->show();
 
         $body=array(
@@ -89,7 +89,7 @@ class InformationController extends Controller
         }
         $count2=D('news')->where("type = 1")->count();
         $industry_p =  new \Think\Page($count2,$pagesize2,'','p2');
-        $industry_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $industry_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li></ul>");
         $pagination2= $industry_p->show();
 
         $body=array(
@@ -164,7 +164,7 @@ class InformationController extends Controller
         $scope =D('inspect_scope')->where($map)->limit("{$offset},{$pagesize}")->order('id desc')->select();
         $count=D('inspect_scope')->where($map)->count();
         $scope_p =  new \Think\Page($count,$pagesize);
-        $scope_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $scope_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li></ul>");
         $pagination= $scope_p->show();
         $body=array(
             'data'=>$scope,
@@ -187,7 +187,7 @@ class InformationController extends Controller
         $data =D('file_download')->where('type=0')->limit("{$offset},{$pagesize}")->order('id desc')->select();
         $count=D('file_download')->where("type = 0")->count();
         $data_p =  new \Think\Page($count,$pagesize);
-        $data_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $data_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li></ul>");
         $pagination1= $data_p->show();
 
         $body=array(
@@ -212,7 +212,7 @@ class InformationController extends Controller
         $standard =D('file_download')->where('type=1')->limit("{$offset2},{$pagesize2}")->order('id desc')->select();
         $count2=D('file_download')->where("type = 1")->count();
         $standard_p =  new \Think\Page($count2,$pagesize2,'','p2');
-        $standard_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $standard_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li></ul>");
         $pagination2= $standard_p->show();
 
         $body=array(
@@ -251,7 +251,7 @@ class InformationController extends Controller
         }
         $count2=D('standard')->where("type = 0")->count();
         $standard_p =  new \Think\Page($count2,$pagesize2,'','p2');
-        $standard_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $standard_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li></ul>");
         $pagination2= $standard_p->show();
 
         $body=array(
@@ -277,7 +277,7 @@ class InformationController extends Controller
         }
         $count2=D('standard')->where("type = 1")->count();
         $standard_p =  new \Think\Page($count2,$pagesize2,'','p2');
-        $standard_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $standard_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li></ul>");
         $pagination2= $standard_p->show();
 
         $body=array(
@@ -303,7 +303,7 @@ class InformationController extends Controller
         }
         $count2=D('standard')->where("type = 2")->count();
         $standard_p =  new \Think\Page($count2,$pagesize2,'','p2');
-        $standard_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
+        $standard_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li></ul>");
         $pagination2= $standard_p->show();
 
         $body=array(
