@@ -181,32 +181,42 @@ a {
 
 .logo{
     display: inline-block;
-    height:70px;
-    line-height:70px;
+    height:100px;
+    line-height:100px;
     font-size:20px;
     color: #1E50AE;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
     margin-left:4%;
     width: 35%;
     position: relative;
     z-index:9;
 }
+.logo .navbar-index{
+    display: block;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+}
 .logo #p-top{
     float: left;
+    margin-top: 15px;
+
 }
 .logo #p-bottom{
     float: left;
+    margin-top: 15px;
 }
 .logo img{
     vertical-align: middle;
     float: left;
 }
 .logo p{
+    font-size: 25px;
     vertical-align: middle;
     width: calc(100% - 100px);
-    height: 25px;
-    line-height: 25px;
+    height: 30px;
+    line-height: 30px;
     text-align: justify;
     float: left;
     padding-left: 5px;
@@ -237,21 +247,21 @@ a {
     -webkit-background-size: 200% 100%;
     -webkit-animation: masked-animation 3s infinite linear;
 }
-#header .fill-bottom{
-    position: absolute;
-    width: 100%;
-    height: 30px;
-    bottom: 0;
-    left: 0;
-    background-color: #1E50AE;
-}
+/*#header .fill-bottom{*/
+    /*position: absolute;*/
+    /*width: 100%;*/
+    /*height: 30px;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*background-color: #1E50AE;*/
+/*}*/
 #header .navs{
     position: absolute;
     top:0;
     left:0;
     width:100%;
-    height:70px;
-    line-height:70px;
+    height:100px;
+    line-height:100px;
     background: transparent;
 }
 /* .search{
@@ -295,7 +305,9 @@ a {
     text-align: center;
     transition: color 0.5s;
 }
-
+.navs>ul>.nav-index-li{
+    width: 3%;
+}
 .navs>ul>li:hover, .navs>ul>li.active{
     color: #fff;
 }
@@ -310,7 +322,7 @@ a {
 .navs .menu-container{
     position: relative;
     overflow: hidden;
-    top:-30px;
+    top:-45px;
     left:0;
     width:100%;
     height:0px;
@@ -331,7 +343,7 @@ a {
     -ms-transition: top 0.3s;
     -o-transition: top 0.3s;
     transition: top 0.3s;
-    background: rgba(30,80,174,0.7);
+    background: url(../../picture/nav.png) 100% 100% no-repeat;
     z-index: 999;
 }
 .navs .menu-bg.open{
