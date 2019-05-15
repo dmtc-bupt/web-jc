@@ -7,9 +7,19 @@
         <div class="row">
             <div class="col-xs-2 col-md-2 left-menu">
                 <ul>
-                    <li><a href="/Home/Information/standard">标准立项</a></li>
-                    <li><a href="/Home/Information/standardPub">标准发布</a></li>
-                    <li><a href="/Home/Information/standardDyn">标准动态</a></li>
+                    <if condition="$one.type eq 0">
+                        <li><a class="sec-nav-active" href="/home/Information/standard">标准立项</a></li>
+                        <li><a class="hvr-float-shadow" href="/home/Information/standardPub">标准发布</a></li>
+                        <li><a class="hvr-float-shadow" href="/home/Information/standardDyn">标准动态</a></li>
+                        <elseif condition="$one.type eq 1" />
+                            <li><a class="hvr-float-shadow" href="/home/Information/standard">标准立项</a></li>
+                            <li><a class="sec-nav-active" href="/home/Information/standardPub">标准发布</a></li>
+                            <li><a class="hvr-float-shadow" href="/home/Information/standardDyn">标准动态</a></li>
+                        <else />
+                            <li><a class="hvr-float-shadow" href="/home/Information/standard">标准立项</a></li>
+                            <li><a class="hvr-float-shadow" href="/home/Information/standardPub">标准发布</a></li>
+                            <li><a class="sec-nav-active" href="/home/Information/standardDyn">标准动态</a></li>
+                    </if>
                 </ul>
             </div>
             <div class="col-xs-10 col-md-10 right-content">

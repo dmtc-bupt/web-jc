@@ -52,7 +52,7 @@
             <ul style="list-style-type: disc;" class="list-group">
                 <foreach name="file" item="vo">
                     <li class="list-group-item">
-                        <a title="{$vo.filename}" class="list-left-title" href="{$vo['save_path']}" download="{$vo['filename']}"><span class="fake-downname  hvr-bounce-to-right">{$vo.filename}</span><span class="fake-download">[下载]</span></a>
+                        <span title="{$vo.filename}" class="list-left-title"><span class="fake-downname  hvr-bounce-to-right">{$vo.filename}</span><span class="fake-download"><a href="{$vo['save_path']}" download="{$vo['filename']}">[下载]</a></span></span>
                     </li>
                 </foreach>
             </ul>
@@ -198,11 +198,12 @@
                     </span>
                 </div>
             </div>
-            <a class="local-login-index" href="/Admin">
-                <div class="local-login-warp">
-                    <span class="local-login-href"><span class="glyphicon glyphicon-user"></span>联络员登录</span>
-                </div>
-            </a>
+            <div class="local-login">
+                <a class="local-login-index" href="/Admin">
+                    联络员登录
+                </a>
+            </div>
+            
             <!-- <div class="infomation-title">
                 <span class="infomation-title-icon"></span>
                 <span class="infomation-title-text">报告查询</span>
