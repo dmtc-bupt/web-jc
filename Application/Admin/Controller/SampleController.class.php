@@ -927,14 +927,20 @@ class SampleController extends Controller{
     }
 
     public function mysql(){
-        $data = D('news')->where("information_pic_path !=''" )->select();
-        foreach($data as &$v){
-            $v['information_pic_path'] = '/'.$v['information_pic_path'];
-        }
-        var_dump($data);
+        $data = D('lee_article')->where("category = 22 or category = 28" )->field('id,createtime')->select();
         foreach($data as $v){
-
+            $t['save_time'] = date("Y-m-d H:i:s",$v['createtime']);
+            $t['id'] = $v['id'];
+            var_dump($t);
+            $save = D('news')->save($t);
+            if(!$save){
+                echo 'shibai';
+            }
         }
+
+        echo 'chenggong';
+
+
 
 
     }
