@@ -319,6 +319,23 @@ class EditController extends Controller {
 
         $this->ajaxReturn($result);
     }
+    //删除新闻封面
+    public function doInPicDelete(){
+        $id = I('id');
+        $type = I('type');
+        $ret = array("msg"=>'fail');
+        if(!empty($id)&& $type == 'I'){
+            $del = D('news')->where("id = {$id}")->find();
+            $del['information_pic_path'] = null;
+            $save = D('news')->save($del);
+            if($save){
+                $ret= array(
+                    "msg"=>'succ'
+                );
+            }
+        }
+        $this->ajaxreturn($ret);
+    }
     //动态资讯新增
     public function addInformation(){
         $de = I('de');

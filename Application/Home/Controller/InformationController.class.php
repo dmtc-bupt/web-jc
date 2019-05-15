@@ -161,7 +161,7 @@ class InformationController extends Controller
         if($page<=0) $page=1;
         $pagesize=20;
         $offset=($page-1)*$pagesize;
-        $scope =D('inspect_scope')->where($map)->limit("{$offset},{$pagesize}")->order('id desc')->select();
+        $scope =D('inspect_scope')->where($map)->order('id')->limit("{$offset},{$pagesize}")->select();
         $count=D('inspect_scope')->where($map)->count();
         $scope_p =  new \Think\Page($count,$pagesize);
         $scope_p->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li></ul>");
