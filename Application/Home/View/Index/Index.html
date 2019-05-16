@@ -269,7 +269,7 @@
                 <div class="swiper-wrapper">
                     <foreach name="lab_picture" item="vo">
                         <div class="swiper-slide" style="width: 300px; height: 200px; background-size: cover;">
-                            <img style="width: 300px; height: 200px; background-size: cover;" src="{$vo.information_pic_path}" type="button" data-toggle="modal" data-target="#imgPreModal" data-whatever="{$vo.pic_path}" alt="...">                
+                            <img style="width: 300px; height: 200px; background-size: cover;" src="{$vo.information_pic_path}" type="button" data-toggle="modal" data-target="#imgPreModal" data-whatever="{$vo.pic_path}" alt="..." onerror="onerror=null;src='__PUBLIC__/picture/logoo.png'" />                
                         </div>
                     </foreach>
                 </div>
@@ -278,7 +278,7 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="imgPreModal" role="dialog" aria-labelledby="imgPreModalLabel">
+<div class="modal fade" id="imgPreModal" role="dialog" data-backdrop="false" aria-labelledby="imgPreModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -290,7 +290,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-xs-12 col-md-12">
-                        <img style="width: 100%" class="showPreImg" src="" />
+                        <img style="width: 600px; height: 400px; display: inline-block; margin: 0 auto;" class="showPreImg" src="" />
                     </div>
                 </div>
             </div>

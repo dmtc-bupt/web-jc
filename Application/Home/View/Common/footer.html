@@ -12,8 +12,8 @@
             <p class="wow bounceInRight" data-wow-duration="1s" data-wow-delay="1" data-wow-offset="2">联系电话 : {$footer.telephone}</p>
           </div>
           <div class="col-xs-4 col-md-4 footer-img">
-            <img src="__PUBLIC__/picture/footerCode.png" alt="" style="width:80px;height:80px;">
-            <span style="display: inline-block;width:80px;text-align: center;">官方网站</span>
+            <img src="__PUBLIC__/picture/footerCode.png" alt="" style="width:50px;height:50px;display: block;">
+            <span class="footimg-title">官方网站</span>
           </div>
         </div>
   </div>
@@ -104,7 +104,8 @@
       grabCursor: true,
       autoplay: {
          delay: 2500,
-         disableOnInteraction: false,
+        //  disableOnInteraction: true,
+         
     },
       centeredSlides: true,
       slidesPerView: 'auto',
@@ -138,6 +139,28 @@
     //   },
       mousewheel: true,
     });
+    $("#lab-sence .swiper-container .swiper-wrapper .swiper-slide>img").on('mouseenter', function(e){
+        // $("#imgPreModal").addClass("in");
+        var $this = $(this)
+        var imgModal = $('#imgPreModal')
+        imgModal.modal('show')
+        console.log('e====',e)
+        console.log('$this', $this)
+        var srcImg = $this[0].currentSrc
+        imgModal.find(".showPreImg")[0].src = srcImg
+        swiper.autoplay.stop()
+        imgModal.stop(true)
+    }).on('mouseleave', function(e){
+        var $this = $(this)
+        // $("#imgPreModal").addClass("in");
+        var imgModal = $('#imgPreModal')
+        console.log('e===sss=',e)
+        // imgModal.find(".showPreImg")[0].src = ""
+        swiper.autoplay.start()
+        imgModal.modal('hide')
+        imgModal.stop(true)
+        // console.log('==================', $this)
+    })
 </script>
 <script type="text/javascript" src="__PUBLIC__/static/js/main.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.min.js"></script>
