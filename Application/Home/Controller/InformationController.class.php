@@ -56,7 +56,7 @@ class InformationController extends Controller
         if($page<=0) $page=1;
         $pagesize=10;
         $offset=($page-1)*$pagesize;
-        $notice =D('news')->where('type=0')->limit("{$offset},{$pagesize}")->order('id desc')->select();
+        $notice =D('news')->where('type=0')->limit("{$offset},{$pagesize}")->order('save_time desc')->select();
         foreach($notice as &$v){
             $v['save_time'] = substr($v['save_time'],0,10);
         }
@@ -83,7 +83,7 @@ class InformationController extends Controller
         if($page2<=0) $page2=1;
         $pagesize2=10;
         $offset2=($page2-1)*$pagesize2;
-        $industry =D('news')->where('type=1')->limit("{$offset2},{$pagesize2}")->order('id desc')->select();
+        $industry =D('news')->where('type=1')->limit("{$offset2},{$pagesize2}")->order('save_time desc')->select();
         foreach($industry as &$v){
             $v['save_time'] = substr($v['save_time'],0,10);
         }

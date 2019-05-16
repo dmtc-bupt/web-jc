@@ -193,8 +193,8 @@ class EditController extends Controller {
             if($page<=0) $page = 1;
             $offset = ( $page-1 ) * $pagesize;
             $where="type = $type";
-            $result=D('news')->where($where)->order('id desc')->limit("{$offset},{$pagesize}")->select();
-            $count = D("news")->where($where)->order('id desc')->count();//!!!!!!!!!!!!!!
+            $result=D('news')->where($where)->order('save_time desc')->limit("{$offset},{$pagesize}")->select();
+            $count = D("news")->where($where)->order('save_time desc')->count();//!!!!!!!!!!!!!!
             $Page       = new \Think\Page($count,$pagesize);
             $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
             $pagination       = $Page->show();// 分页显示输出*
@@ -204,8 +204,8 @@ class EditController extends Controller {
             if($page2<=0) $page2 = 1;
             $offset2 = ( $page2-1 ) * $pagesize2;
             $where="type = $type";
-            $result=D('news')->where($where)->order('id desc')->limit("{$offset2},{$pagesize2}")->select();
-            $count = D("news")->where($where)->order('id desc')->count();//!!!!!!!!!!!!!!
+            $result=D('news')->where($where)->order('save_time desc')->limit("{$offset2},{$pagesize2}")->select();
+            $count = D("news")->where($where)->order('save_time desc')->count();//!!!!!!!!!!!!!!
             $Page       = new \Think\Page($count,$pagesize2,null,"p2");
             $Page->setConfig('theme',"<ul class='pagination'></li><li>%FIRST%</li><li>%UP_PAGE%</li><li>%LINK_PAGE%</li><li>%DOWN_PAGE%</li><li>%END%</li><li><a> %HEADER%  %NOW_PAGE%/%TOTAL_PAGE% 页</a></ul>");
             $pagination       = $Page->show();// 分页显示输出$Page
