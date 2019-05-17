@@ -117,19 +117,6 @@
         slideShadows : true,
       },
     });
-    // var swiper = new Swiper('.swiper-container', {
-    //   slidesPerView: 3,
-    //   spaceBetween: 30,
-    //   autoplay: {
-    //     delay: 2500,
-    //     disableOnInteraction: false,
-    //   },
-    //   freeMode: true,
-    //   pagination: {
-    //     el: '.swiper-pagination',
-    //     clickable: true,
-    //   },
-    // });
     var swiperZJ = new Swiper('.swiper-containerZJ', {
       direction: 'vertical',
       slidesPerView: 'auto',
@@ -140,26 +127,18 @@
       mousewheel: true,
     });
     $("#lab-sence .swiper-container .swiper-wrapper .swiper-slide>img").on('mouseenter', function(e){
-        // $("#imgPreModal").addClass("in");
         var $this = $(this)
         var imgModal = $('#imgPreModal')
         imgModal.modal('show')
-        console.log('e====',e)
-        console.log('$this', $this)
         var srcImg = $this[0].currentSrc
         imgModal.find(".showPreImg")[0].src = srcImg
         swiper.autoplay.stop()
         imgModal.stop(true)
     }).on('mouseleave', function(e){
-        var $this = $(this)
-        // $("#imgPreModal").addClass("in");
         var imgModal = $('#imgPreModal')
-        console.log('e===sss=',e)
-        // imgModal.find(".showPreImg")[0].src = ""
         swiper.autoplay.start()
         imgModal.modal('hide')
         imgModal.stop(true)
-        // console.log('==================', $this)
     })
 </script>
 <script type="text/javascript" src="__PUBLIC__/static/js/main.js"></script>
