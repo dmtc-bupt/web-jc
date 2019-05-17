@@ -126,15 +126,19 @@
     //   },
       mousewheel: true,
     });
-    $("#lab-sence .swiper-container .swiper-wrapper .swiper-slide>img").on('mouseenter', function(e){
+    $("#lab-sence .swiper-container .swiper-wrapper .swiper-slide>img").on('mouseover', function(e){
+        
         var $this = $(this)
+       // $(this).unbind("mousesenter,mouseleave")
         var imgModal = $('#imgPreModal')
-        imgModal.modal('show')
+        setTimeout(function(){
+            imgModal.modal('show')
+        },200)
         var srcImg = $this[0].currentSrc
         imgModal.find(".showPreImg")[0].src = srcImg
         swiper.autoplay.stop()
         imgModal.stop(true)
-    }).on('mouseleave', function(e){
+    }).on('mouseout', function(e){
         var imgModal = $('#imgPreModal')
         swiper.autoplay.start()
         imgModal.modal('hide')
